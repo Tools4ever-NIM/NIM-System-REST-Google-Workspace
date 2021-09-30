@@ -25,7 +25,23 @@ This is a native rest connector. This repo is for additional tools specific to G
 
 
 ### Populate Automated Deletion Date
-TBD
+This script column sets up the automated deletion date so it can be populated in AD when the account is disabled
+```
+let daysInFuture = 365;
+
+let date = new Date();
+date.setDate(date.getDate() + daysInFuture);
+let year = date.getUTCFullYear();
+let month = date.getUTCMonth()+1;
+let day = date.getUTCDate();
+
+if (day < 10) { day = '0' + day; }
+if (month < 10) { month = '0' + month; }
+
+let deleteDate = '' + year + '-' + month + '-' + day
+
+return deleteDate;
+```
 
 ### Evaluate Automated Deletion Date
 This script column is used to determine if Automated Delete Date is in the future. If in the future, then the result is true.
