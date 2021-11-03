@@ -1,0 +1,828 @@
+{
+    "schema": {
+        "crud_objects": {
+            "groups": {
+                "operations": {
+                    "groups_get": {
+                        "method": "get"
+                    },
+                    "group_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "id",
+                            "etag",
+                            "adminCreated",
+                            "directMembersCount",
+                            "nonEditableAliases"
+                        ],
+                        "resource_mandatory": [
+                            "email"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "group_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{id}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    },
+                    "group_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{id}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "adminCreated",
+                            "directMembersCount",
+                            "kind",
+                            "etag",
+                            "nonEditableAliases"
+                        ],
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    }
+                },
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "email": "string*",
+                    "name": "string*",
+                    "etag": "etag",
+                    "description": "string*",
+                    "adminCreated": "boolean*",
+                    "directMembersCount": "long*",
+                    "aliases": {
+                        "_nim_mode_": "array_element_update",
+                        "handler": {
+                            "crud_object": "groups_aliases",
+                            "add": {
+                                "operation": "group_alias_create",
+                                "attributes": {
+                                    "id": "id",
+                                    "alias": "_nim_element_value_"
+                                }
+                            },
+                            "remove": {
+                                "operation": "group_alias_delete",
+                                "attributes": {
+                                    "id": "id",
+                                    "alias": "_nim_element_value_"
+                                }
+                            }
+                        },
+                        "config": [
+                            "string*"
+                        ]
+                    },
+                    "nonEditableAliases": [
+                        "string*"
+                    ]
+                }
+            },
+            "groups_aliases": {
+                "operations": {
+                    "groups_aliases_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "groups",
+                            "iterator": "id",
+                            "path": "/groups/{iterator}/aliases",
+                            "base": {
+                                "group_id": "{iterator}"
+                            }
+                        },
+                        "maxPageCount": -1,
+                        "maxSessionCount": 50,
+                        "processing_options": {
+                            "output_field": "aliases"
+                        },
+                        "query_parameters": {}
+                    },
+                    "group_alias_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{id}/aliases"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "alias"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "group_alias_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{id}/aliases/{alias}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "alias"
+                        ]
+                    }
+                },
+                "resources": {
+                    "id": "string*",
+                    "primaryEmail": "string*",
+                    "alias": "string*",
+                    "kind": "string",
+                    "etag": "string"
+                }
+            },
+            "members": {
+                "operations": {
+                    "members_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "groups",
+                            "iterator": "id",
+                            "path": "/groups/{iterator}/members",
+                            "base": {
+                                "group_id": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 20
+                    },
+                    "member_add": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{group_id}/members"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag"
+                        ],
+                        "resource_mandatory": [
+                            "group_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "member_remove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/{group_id}/members/{id}"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "role",
+                            "type",
+                            "status",
+                            "delivery_settings"
+                        ],
+                        "resource_mandatory": [
+                            "group_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "member_add",
+                    "remove_operation": "member_remove",
+                    "member_table": "users",
+                    "group_table": "groups",
+                    "member_attributes": {
+                        "id": "id",
+                        "fullName": "member_name"
+                    },
+                    "group_attributes": {
+                        "id": "group_id",
+                        "name": "group_name"
+                    }
+                },
+                "resources": {
+                    "group_id": "_nim*",
+                    "kind": "string",
+                    "etag": "etag",
+                    "id": "string*",
+                    "email": "string*",
+                    "role": "string*",
+                    "type": "string*",
+                    "status": "string*",
+                    "delivery_settings": "string*"
+                }
+            },
+            "orgunits": {
+                "operations": {
+                    "org_units_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/orgunits"
+                        },
+                        "query_parameters": {
+                            "type": "ALL"
+                        },
+                        "processing_options": {
+                            "output_field": "organizationUnits"
+                        }
+                    },
+                    "org_unit_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/orgunits"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "orgUnitId",
+                            "kind",
+                            "etag",
+                            "orgUnitPath"
+                        ],
+                        "resource_mandatory": [
+                            "name"
+                        ]
+                    },
+                    "org_unit_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "orgUnitPath"
+                        ]
+                    },
+                    "org_unit_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag"
+                        ],
+                        "resource_mandatory": [
+                            "orgUnitPath"
+                        ]
+                    }
+                },
+                "key": "orgUnitId",
+                "resources": {
+                    "kind": "string",
+                    "name": "string*",
+                    "description": "string*",
+                    "etag": "string",
+                    "blockInheritance": "boolean*",
+                    "orgUnitId": "string*",
+                    "orgUnitPath": "string*",
+                    "parentOrgUnitId": "string*",
+                    "parentOrgUnitPath": "string*"
+                }
+            },
+            "privileges": {
+                "operations": {
+                    "privileges_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/roles/ALL/privileges"
+                        },
+                        "maxPageCount": 100,
+                        "query_parameters": {},
+                        "processing_options": {
+                            "output_field": "items"
+                        }
+                    }
+                },
+                "key": "serviceId",
+                "resources": {
+                    "serviceId": "string*",
+                    "kind": "string",
+                    "etag": "string",
+                    "isOuScopable": "boolean*",
+                    "privilegeName": "string*",
+                    "serviceName": "string*"
+                }
+            },
+            "roles": {
+                "operations": {
+                    "roles_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/roles"
+                        },
+                        "maxPageCount": 100,
+                        "query_parameters": {},
+                        "processing_options": {
+                            "output_field": "items"
+                        }
+                    }
+                },
+                "operations_obsolete":{
+                    "role_create": {
+                        "comment":"JVR, 2021_May_31: Don't know if we need to support. Not added and tested for now.",
+                        "method": "post",
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "roleId",
+                            "isSystemRole",
+                            "isSuperAdminRole",
+                            "kind",
+                            "etag"
+                        ],
+                        "resource_mandatory": [
+                            "roleName"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    }
+                },
+                "key": "roleId",
+                "resources": {
+                    "roleId": "string*",
+                    "roleName": "string*",
+                    "roleDescription": "string*",
+                    "rolePrivileges": [
+                        {
+                            "serviceId": "string*",
+                            "privilegeName": "string*"
+                        }
+                    ],
+                    "isSystemRole": "boolean*",
+                    "isSuperAdminRole": "boolean*",
+                    "kind": "string",
+                    "etag": "string"
+                }
+            },
+            "roleAssignments": {
+                "operations": {
+                    "roleAssignment_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/roleassignments"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "roleAssignmentId",
+                            "kind",
+                            "etag"
+                        ],
+                        "resource_mandatory": [
+                            "roleId",
+                            "assignedTo",
+                            "scopeType"
+                        ]
+                    },
+                    "roleAssignment_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/roleassignments/{roleAssignmentId}"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "roleAssignmentId"
+                        ]
+                    },
+                    "roleAssignments_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/customer/my_customer/roleassignments"
+                        },
+                        "maxPageCount": 200,
+                        "query_parameters": {},
+                        "processing_options": {
+                            "output_field": "items"
+                        }
+                    }
+                },
+                "key": "roleAssignmentId",
+                "resources": {
+                    "roleAssignmentId": "string*",
+                    "roleId": "string*",
+                    "kind": "string",
+                    "etag": "string",
+                    "assignedTo": "string*",
+                    "scopeType": "string*",
+                    "orgUnitId": "string*"
+                }
+            },
+            "users": {
+                "operations": {
+                    "users_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users",
+                            "post_processing": "child_tables"
+                        },
+                        "processing_options": {
+                            "output_field": "users"
+                        },
+                        "query_parameters": {
+                            "customer": "my_customer",
+                            "projection":"FULL"
+                        }
+                    },
+                    "user_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users",
+                            "post_processing": "child_tables"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "id",
+                            "isAdmin",
+                            "isDelegatedAdmin",
+                            "agreedToTerms",
+                            "fullName",
+                            "kind",
+                            "etag",
+                            "isMailboxSetup",
+                            "customerId",
+                            "lastLoginTime",
+                            "suspensionReason",
+                            "thumbnailPhotoUrl",
+                            "creationTime",
+                            "nonEditableAliases",
+                            "deletionTime",
+                            "thumbnailPhotoEtag",
+                            "isEnrolledIn2Sv",
+                            "isEnforcedIn2Sv"
+                        ],
+                        "resource_mandatory": [
+                            "primaryEmail",
+                            "password",
+                            "familyName",
+                            "givenName"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "user_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users/{id}",
+                            "post_processing": "child_tables"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    },
+                    "user_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users/{id}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "isAdmin",
+                            "isDelegatedAdmin",
+                            "agreedToTerms",
+                            "fullName",
+                            "kind",
+                            "etag",
+                            "isMailboxSetup",
+                            "customerId",
+                            "lastLoginTime",
+                            "suspensionReason",
+                            "thumbnailPhotoUrl",
+                            "creationTime",
+                            "nonEditableAliases",
+                            "deletionTime",
+                            "thumbnailPhotoEtag",
+                            "isEnrolledIn2Sv",
+                            "isEnforcedIn2Sv"
+                        ],
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    }
+                },
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "primaryEmail": "string*",
+                    "password": "string",
+                    "hashFunction": "string",
+                    "isAdmin": "boolean*",
+                    "isDelegatedAdmin": "boolean",
+                    "agreedToTerms": "boolean",
+                    "suspended": "boolean*",
+                    "changePasswordAtNextLogin": "boolean*",
+                    "ipWhitelisted": "boolean",
+                    "name": {
+                        "fullName": "string*",
+                        "familyName": "string*",
+                        "givenName": "string*"
+                    },
+                    "kind": "string*",
+                    "etag": "string",
+                    "emails": [
+                        {
+                            "address": "string*",
+                            "type": "string*",
+                            "customType": "string*",
+                            "primary": "boolean*"
+                        }
+                    ],
+                    "externalIds": [
+                        {
+                            "value": "string*",
+                            "type": "string*",
+                            "customType": "string*"
+                        }
+                    ],
+                    "relations": [
+                        {
+                            "value": "string*",
+                            "type": "string*",
+                            "customType": "string*"
+                        }
+                    ],
+                    "aliases": {
+                        "_nim_mode_": "array_element_update",
+                        "handler": {
+                            "crud_object": "users_aliases",
+                            "add": {
+                                "operation": "user_alias_create",
+                                "attributes": {
+                                    "id": "id",
+                                    "alias": "_nim_element_value_"
+                                }
+                            },
+                            "remove": {
+                                "operation": "user_alias_delete",
+                                "attributes": {
+                                    "id": "id",
+                                    "alias": "_nim_element_value_"
+                                }
+                            }
+                        },
+                        "config": [
+                            "string*"
+                        ]
+                    },
+                    "isMailboxSetup": "boolean*",
+                    "customerId": "string*",
+                    "addresses": [
+                        {
+                            "type": "string*",
+                            "customType": "string*",
+                            "streetAddress": "string*",
+                            "locality": "string*",
+                            "region": "string*",
+                            "postalCode": "string*"
+                        }
+                    ],
+                    "organizations": [
+                        {
+                            "name": "string*",
+                            "title": "string*",
+                            "primary": "boolean*",
+                            "type": "string*",
+                            "description": "string*"
+                        }
+                    ],
+                    "lastLoginTime": "string*",
+                    "phones": [
+                        {
+                            "value": "string*",
+                            "type": "string*"
+                        }
+                    ],
+                    "suspensionReason": "string",
+                    "thumbnailPhotoUrl": "string",
+                    "creationTime": "string",
+                    "nonEditableAliases": [
+                        "string"
+                    ],
+                    "includeInGlobalAddressList": "boolean*",
+                    "deletionTime": "string*",
+                    "thumbnailPhotoEtag": "string",
+                    "ims": [
+                        {
+                            "type": "string*",
+                            "protocol": "string*",
+                            "im": "string*",
+                            "primary": "boolean*"
+                        }
+                    ],
+                    "isEnrolledIn2Sv": "boolean",
+                    "isEnforcedIn2Sv": "boolean",
+                    "archived": "boolean",
+                    "orgUnitPath": "string",
+                    "recoveryEmail": "string",
+                    "recoveryPhone": "string"
+                },
+                "resources_with_issues": {
+                    "languages": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "posixAccounts": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "sshPublicKeys": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "notes": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "websites": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "locations": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "keywords": [
+                        {
+                            "unknown": "string"
+                        }
+                    ],
+                    "gender": [
+                        {
+                            "unknown": "string"
+                        }
+                    ]
+                }
+            },
+            "users_aliases": {
+                "operations": {
+                    "users_aliases_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "/users/{iterator}/aliases",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "call_org_gout": {
+                            "mode": "normal",
+                            "path": "/users"
+                        },
+                        "maxPageCount": -1,
+                        "maxSessionCount": 50,
+                        "processing_options": {
+                            "output_field": "aliases"
+                        },
+                        "query_parameters": {}
+                    },
+                    "user_alias_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users/{id}/aliases"
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "alias"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "user_alias_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/users/{id}/aliases/{alias}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "alias"
+                        ]
+                    }
+                },
+                "resources": {
+                    "id": "string*",
+                    "primaryEmail": "string*",
+                    "alias": "string*",
+                    "kind": "string",
+                    "etag": "string"
+                }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "https://www.googleapis.com/admin/directory/v1",
+            "get": {
+                "maxPageCount": 500,
+                "query_parameters": {
+                    "customer": "my_customer"
+                }
+            },
+            "authentication": "certificate",
+            "call_handling": "google",
+            "test_connection": {
+                "url": "/users"
+            }
+        },
+        "authOptions": {
+            "scopes": [
+                "https://www.googleapis.com/auth/admin.directory.user",
+                "https://www.googleapis.com/auth/admin.directory.group",
+                "https://www.googleapis.com/auth/admin.directory.orgunit",
+                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+            ],
+            "type": "signed-jwt",
+            "authUrl": "https://www.googleapis.com/oauth2/v4/token",
+            "postData": {
+                "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                "assertion": {
+                    "name": "JWT"
+                }
+            },
+            "JWT": {
+                "iss": {
+                    "name": "clientId"
+                },
+                "scope": {
+                    "name": "scope"
+                },
+                "aud": {
+                    "name": "endpoint"
+                },
+                "exp": {
+                    "name": "oneHour"
+                },
+                "iat": {
+                    "name": "now"
+                },
+                "sub": {
+                    "name": "tenantId"
+                }
+            }
+        }
+    }
+}
