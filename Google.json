@@ -1,5 +1,6 @@
 {
     "schema": {
+        "options": {},
         "crud_objects": {
             "groups": {
                 "operations": {
@@ -60,6 +61,7 @@
                         ]
                     }
                 },
+                "parameters": {},
                 "key": "id",
                 "resources": {
                     "id": "string*",
@@ -147,6 +149,7 @@
                         ]
                     }
                 },
+                "parameters": {},
                 "resources": {
                     "id": "string*",
                     "primaryEmail": "string*",
@@ -227,6 +230,7 @@
                         "name": "group_name"
                     }
                 },
+                "parameters": {},
                 "resources": {
                     "group_id": "_nim*",
                     "kind": "string",
@@ -301,6 +305,7 @@
                         ]
                     }
                 },
+                "parameters": {},
                 "key": "orgUnitId",
                 "resources": {
                     "kind": "string",
@@ -329,6 +334,7 @@
                         }
                     }
                 },
+                "parameters": {},
                 "key": "serviceId",
                 "resources": {
                     "serviceId": "string*",
@@ -375,6 +381,7 @@
                         ]
                     }
                 },
+                "parameters": {},
                 "key": "roleId",
                 "resources": {
                     "roleId": "string*",
@@ -438,6 +445,7 @@
                         }
                     }
                 },
+                "parameters": {},
                 "key": "roleAssignmentId",
                 "resources": {
                     "roleAssignmentId": "string*",
@@ -550,6 +558,7 @@
                         ]
                     }
                 },
+                "parameters": {},
                 "key": "id",
                 "resources": {
                     "id": "string*",
@@ -763,6 +772,7 @@
                         ]
                     }
                 },
+                "parameters": {},
                 "resources": {
                     "id": "string*",
                     "primaryEmail": "string*",
