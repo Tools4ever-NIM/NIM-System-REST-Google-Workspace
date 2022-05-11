@@ -17,7 +17,7 @@ This is a native rest connector. This repo is for additional tools specific to G
 ## Custom Schemas
 If you need to import custom schema data into NIM you can extend the table schemas by adding a custom json file. 
 
-C:\Program Files\Tools4ever\NIM\sysconfig\rest\systems\SYSTEMNAME.json
+C:\ProgramData\Tools4ever\NIM\config\rest\systems\SYSTEMNAME.json
 
 SYSTEMNAME = The name of the system in NIM.
 
