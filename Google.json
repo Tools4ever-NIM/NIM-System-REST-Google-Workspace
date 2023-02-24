@@ -103,7 +103,7 @@
             },
             "groups_settings": {
                 "operations": {
-                    "groups_get": {
+                    "groups_settings_get": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -120,6 +120,49 @@
                         "query_parameters": {
                             "alt": "json"
                         }
+                    },
+                    "group_settings_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/v1/groups/{email}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "whoCanInvite",
+                            "whoCanAdd",
+                            "allowGoogleCommunication",
+                            "maxMessageBytes",
+                            "showInGroupDirectory",
+                            "messageDisplayFont",
+                            "whoCanAddReferences",
+                            "whoCanAssignTopics",
+                            "whoCanUnassignTopic",
+                            "whoCanTakeTopics",
+                            "whoCanMarkDuplicate",
+                            "whoCanMarkNoResponseNeeded",
+                            "whoCanMarkFavoriteReplyOnAnyTopic",
+                            "whoCanMarkFavoriteReplyOnOwnTopic",
+                            "whoCanUnmarkFavoriteReplyOnAnyTopic",
+                            "whoCanEnterFreeFormTags",
+                            "whoCanModifyTagsAndCategories",
+                            "whoCanModifyMembers",
+                            "whoCanApproveMessages",
+                            "whoCanDeleteAnyPost",
+                            "whoCanDeleteTopics",
+                            "whoCanLockTopics",
+                            "whoCanMoveTopicsIn",
+                            "whoCanMoveTopicsOut",
+                            "whoCanPostAnnouncements",
+                            "whoCanHideAbuse",
+                            "whoCanMakeTopicsSticky"
+                        ],
+                        "resource_mandatory": [
+                            "email"
+                        ]
                     }
                 },
                 "key": "email",
