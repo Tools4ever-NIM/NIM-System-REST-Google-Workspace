@@ -4,13 +4,17 @@
             "groups": {
                 "operations": {
                     "groups_get": {
-                        "method": "get"
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/admin/directory/v1/groups"
+                        }
                     },
                     "group_create": {
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups"
+                            "path": "/admin/directory/v1/groups"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -32,7 +36,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{id}"
+                            "path": "/admin/directory/v1/groups/{id}"
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -44,7 +48,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{id}"
+                            "path": "/admin/directory/v1/groups/{id}"
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -97,6 +101,136 @@
                     ]
                 }
             },
+            "groups_settings": {
+                "operations": {
+                    "groups_settings_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "groups",
+                            "iterator": "email",
+                            "path": "/groups/v1/groups/{iterator}",
+                            "base": {
+                                "group_email": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            "alt": "json"
+                        }
+                    },
+                    "group_settings_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/groups/v1/groups/{email}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "whoCanInvite",
+                            "whoCanAdd",
+                            "allowGoogleCommunication",
+                            "maxMessageBytes",
+                            "showInGroupDirectory",
+                            "messageDisplayFont",
+                            "whoCanAddReferences",
+                            "whoCanAssignTopics",
+                            "whoCanUnassignTopic",
+                            "whoCanTakeTopics",
+                            "whoCanMarkDuplicate",
+                            "whoCanMarkNoResponseNeeded",
+                            "whoCanMarkFavoriteReplyOnAnyTopic",
+                            "whoCanMarkFavoriteReplyOnOwnTopic",
+                            "whoCanUnmarkFavoriteReplyOnAnyTopic",
+                            "whoCanEnterFreeFormTags",
+                            "whoCanModifyTagsAndCategories",
+                            "whoCanModifyMembers",
+                            "whoCanApproveMessages",
+                            "whoCanDeleteAnyPost",
+                            "whoCanDeleteTopics",
+                            "whoCanLockTopics",
+                            "whoCanMoveTopicsIn",
+                            "whoCanMoveTopicsOut",
+                            "whoCanPostAnnouncements",
+                            "whoCanHideAbuse",
+                            "whoCanMakeTopicsSticky"
+                        ],
+                        "resource_mandatory": [
+                            "email"
+                        ]
+                    }
+                },
+                "key": "email",
+                "resources": {
+                    "kind": "string",
+                    "email": "string*",
+                    "name": "string*",
+                    "description": "string*",
+                    "whoCanJoin": "string*",
+                    "whoCanViewMembership": "string*",
+                    "whoCanViewGroup": "string*",
+                    "whoCanInvite": "string*",
+                    "whoCanAdd": "string*",
+                    "allowExternalMembers": "string*",
+                    "whoCanPostMessage": "string*",
+                    "allowWebPosting": "string*",
+                    "primaryLanguage": "string*",
+                    "maxMessageBytes": "number*",
+                    "isArchived": "string*",
+                    "archiveOnly": "string*",
+                    "messageModerationLevel": "string*",
+                    "spamModerationLevel": "string*",
+                    "replyTo": "string*",
+                    "customReplyTo": "string*",
+                    "includeCustomFooter": "string*",
+                    "customFooterText": "string*",
+                    "sendMessageDenyNotification": "string*",
+                    "defaultMessageDenyNotificationText": "string*",
+                    "showInGroupDirectory": "string*",
+                    "allowGoogleCommunication": "string*",
+                    "membersCanPostAsTheGroup": "string*",
+                    "messageDisplayFont": "string*",
+                    "includeInGlobalAddressList": "string*",
+                    "whoCanLeaveGroup": "string*",
+                    "whoCanContactOwner": "string*",
+                    "whoCanAddReferences": "string*",
+                    "whoCanAssignTopics": "string*",
+                    "whoCanUnassignTopic": "string*",
+                    "whoCanTakeTopics": "string*",
+                    "whoCanMarkDuplicate": "string*",
+                    "whoCanMarkNoResponseNeeded": "string*",
+                    "whoCanMarkFavoriteReplyOnAnyTopic": "string*",
+                    "whoCanMarkFavoriteReplyOnOwnTopic": "string*",
+                    "whoCanUnmarkFavoriteReplyOnAnyTopic": "string*",
+                    "whoCanEnterFreeFormTags": "string*",
+                    "whoCanModifyTagsAndCategories": "string*",
+                    "favoriteRepliesOnTop": "string*",
+                    "whoCanApproveMembers": "string*",
+                    "whoCanBanUsers": "string*",
+                    "whoCanModifyMembers": "string*",
+                    "whoCanApproveMessages": "string*",
+                    "whoCanDeleteAnyPost": "string*",
+                    "whoCanDeleteTopics": "string*",
+                    "whoCanLockTopics": "string*",
+                    "whoCanMoveTopicsIn": "string*",
+                    "whoCanMoveTopicsOut": "string*",
+                    "whoCanPostAnnouncements": "string*",
+                    "whoCanHideAbuse": "string*",
+                    "whoCanMakeTopicsSticky": "string*",
+                    "whoCanModerateMembers": "string*",
+                    "whoCanModerateContent": "string*",
+                    "whoCanAssistContent": "string*",
+                    "customRolesEnabledForSettingsToBeMerged": "string*",
+                    "enableCollaborativeInbox": "string*",
+                    "whoCanDiscoverGroup": "string*",
+                    "defaultSender": "string*"
+                }
+            },
             "groups_aliases": {
                 "operations": {
                     "groups_aliases_get": {
@@ -105,7 +239,7 @@
                             "mode": "iteration",
                             "table": "groups",
                             "iterator": "id",
-                            "path": "/groups/{iterator}/aliases",
+                            "path": "/admin/directory/v1/groups/{iterator}/aliases",
                             "base": {
                                 "group_id": "{iterator}"
                             }
@@ -121,7 +255,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{id}/aliases"
+                            "path": "/admin/directory/v1/groups/{id}/aliases"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
@@ -137,7 +271,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{id}/aliases/{alias}"
+                            "path": "/admin/directory/v1/groups/{id}/aliases/{alias}"
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -163,7 +297,7 @@
                             "mode": "iteration",
                             "table": "groups",
                             "iterator": "id",
-                            "path": "/groups/{iterator}/members",
+                            "path": "/admin/directory/v1/groups/{iterator}/members",
                             "base": {
                                 "group_id": "{iterator}"
                             }
@@ -174,7 +308,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{group_id}/members"
+                            "path": "/admin/directory/v1/groups/{group_id}/members"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -193,7 +327,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/groups/{group_id}/members/{id}"
+                            "path": "/admin/directory/v1/groups/{group_id}/members/{id}"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -245,7 +379,7 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/orgunits"
+                            "path": "/admin/directory/v1/customer/my_customer/orgunits"
                         },
                         "query_parameters": {
                             "type": "ALL"
@@ -258,7 +392,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/orgunits"
+                            "path": "/admin/directory/v1/customer/my_customer/orgunits"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -276,7 +410,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                            "path": "/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -288,7 +422,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                            "path": "/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -320,7 +454,7 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/roles/ALL/privileges"
+                            "path": "/admin/directory/v1/customer/my_customer/roles/ALL/privileges"
                         },
                         "maxPageCount": 100,
                         "query_parameters": {},
@@ -345,7 +479,7 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/roles"
+                            "path": "/admin/directory/v1/customer/my_customer/roles"
                         },
                         "maxPageCount": 100,
                         "query_parameters": {},
@@ -398,7 +532,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/roleassignments"
+                            "path": "/admin/directory/v1/customer/my_customer/roleassignments"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -417,7 +551,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/roleassignments/{roleAssignmentId}"
+                            "path": "/admin/directory/v1/customer/my_customer/roleassignments/{roleAssignmentId}"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
@@ -429,7 +563,7 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "/customer/my_customer/roleassignments"
+                            "path": "/admin/directory/v1/customer/my_customer/roleassignments"
                         },
                         "maxPageCount": 200,
                         "query_parameters": {},
@@ -455,8 +589,7 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "/users",
-                            "post_processing": "child_tables"
+                            "path": "/admin/directory/v1/users"
                         },
                         "processing_options": {
                             "output_field": "users"
@@ -470,7 +603,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/users",
+                            "path": "/admin/directory/v1/users",
                             "post_processing": "child_tables"
                         },
                         "semantics": "create",
@@ -500,13 +633,16 @@
                             "password",
                             "familyName",
                             "givenName"
+                        ],
+                        "warning_only": [
+                            409
                         ]
                     },
                     "user_delete": {
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/users/{id}",
+                            "path": "/admin/directory/v1/users/{id}",
                             "post_processing": "child_tables"
                         },
                         "semantics": "delete",
@@ -519,7 +655,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "/users/{id}"
+                            "path": "/admin/directory/v1/users/{id}"
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -551,7 +687,7 @@
                 "resources": {
                     "id": "string*",
                     "primaryEmail": "string*",
-                    "password": "string",
+                    "password": "string^",
                     "hashFunction": "string",
                     "isAdmin": "boolean*",
                     "isDelegatedAdmin": "boolean",
@@ -620,7 +756,14 @@
                             "streetAddress": "string*",
                             "locality": "string*",
                             "region": "string*",
-                            "postalCode": "string*"
+                            "postalCode": "string*",
+                            "country": "string*",
+                            "countryCode": "string*",
+                            "extendedAddress": "string*",
+                            "formatted": "string*",
+                            "poBox": "string*",
+                            "primary": "boolean*",
+                            "sourceIsStructured": "boolean*"
                         }
                     ],
                     "organizations": [
@@ -629,8 +772,16 @@
                             "title": "string*",
                             "primary": "boolean*",
                             "type": "string*",
-                            "description": "string*"
+                            "description": "string*",
+                            "costCenter": "string*",
+                            "customType": "string*",
+                            "department": "string*",
+                            "domain": "string*",
+                            "fullTimeEquivalent": "string*",
+                            "location": "string*",
+                            "symbol": "string*"
                         }
+                        
                     ],
                     "lastLoginTime": "string*",
                     "phones": [
@@ -661,49 +812,70 @@
                     "archived": "boolean",
                     "orgUnitPath": "string",
                     "recoveryEmail": "string",
-                    "recoveryPhone": "string"
-                },
-                "resources_with_issues": {
-                    "languages": [
-                        {
-                            "unknown": "string"
-                        }
-                    ],
+                    "recoveryPhone": "string",
                     "posixAccounts": [
                         {
-                            "unknown": "string"
+                            "accountId": "string*",
+                            "gecos": "string*",
+                            "gid": "strin*g",
+                            "homeDirectory": "string*",
+                            "operatingSystemType": "string*",
+                            "primary": "boolean*",
+                            "shell": "string*",
+                            "systemId": "string*",
+                            "uid": "string*",
+                            "username": "string*"
+                        }
+                    ], 
+                    "languages": [
+                        {
+                            "customLanguage": "string*",
+                            "languageCode": "string*",
+                            "preference": "string*"
                         }
                     ],
                     "sshPublicKeys": [
                         {
-                            "unknown": "string"
+                            "expirationTimeUsec": "string*",
+                            "fingerprint": "string*",
+                            "key": "string*"
                         }
                     ],
-                    "notes": [
-                        {
-                            "unknown": "string"
-                        }
-                    ],
+                    "notes": {
+                        "contentType": "_:string*",
+                        "value": "_:string*"
+                    },
                     "websites": [
                         {
-                            "unknown": "string"
+                            "customType": "string*",
+                            "primary": "boolean*",
+                            "type": "string*",
+                            "value": "string*"
                         }
                     ],
                     "locations": [
                         {
-                            "unknown": "string"
+                            "area": "string*",
+                            "buildingId": "string*",
+                            "customType": "string*",
+                            "deskCode": "string*",
+                            "floorName": "string*",
+                            "floorSection": "string*",
+                            "type": "string*"
                         }
                     ],
                     "keywords": [
                         {
-                            "unknown": "string"
+                            "customType": "string*",
+                            "type": "string*",
+                            "value": "string*"
                         }
                     ],
-                    "gender": [
-                        {
-                            "unknown": "string"
-                        }
-                    ]
+                    "gender": {
+                        "addressMeAs": "_:string*",
+                        "customGener": "_:string*",
+                        "type": "_:string*"
+                    }
                 }
             },
             "users_aliases": {
@@ -714,14 +886,14 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "/users/{iterator}/aliases",
+                            "path": "/admin/directory/v1/users/{iterator}/aliases",
                             "base": {
                                 "user_id": "{iterator}"
                             }
                         },
                         "call_org_gout": {
                             "mode": "normal",
-                            "path": "/users"
+                            "path": "/admin/directory/v1/users"
                         },
                         "maxPageCount": -1,
                         "maxSessionCount": 50,
@@ -734,7 +906,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/users/{id}/aliases"
+                            "path": "/admin/directory/v1/users/{id}/aliases"
                         },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
@@ -750,7 +922,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "/users/{id}/aliases/{alias}"
+                            "path": "/admin/directory/v1/users/{id}/aliases/{alias}"
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -772,7 +944,7 @@
     },
     "rest": {
         "config": {
-            "baseUrl": "https://www.googleapis.com/admin/directory/v1",
+            "baseUrl": "https://www.googleapis.com",
             "get": {
                 "maxPageCount": 500,
                 "query_parameters": {
@@ -782,7 +954,7 @@
             "authentication": "certificate",
             "call_handling": "google",
             "test_connection": {
-                "url": "/users"
+                "url": "/admin/directory/v1/users"
             }
         },
         "authOptions": {
@@ -790,7 +962,9 @@
                 "https://www.googleapis.com/auth/admin.directory.user",
                 "https://www.googleapis.com/auth/admin.directory.group",
                 "https://www.googleapis.com/auth/admin.directory.orgunit",
-                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                "https://www.googleapis.com/auth/admin.directory.rolemanagement",
+                "https://www.googleapis.com/auth/spreadsheets",
+                "https://www.googleapis.com/auth/apps.groups.settings"
             ],
             "type": "signed-jwt",
             "authUrl": "https://www.googleapis.com/oauth2/v4/token",
