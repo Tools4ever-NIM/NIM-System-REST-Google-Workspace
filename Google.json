@@ -1,6 +1,131 @@
 {
     "schema": {
         "crud_objects": {
+            "chromeosdevices": {
+                "operations": {
+                    "chromeosdevices_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/admin/directory/v1/customer/my_customer/devices/chromeos"
+                        },
+                        "query_parameters": {
+                            "projection": "FULL"
+                        },
+                        "processing_options": {
+                            "output_field": "chromeosdevices"
+                        }
+                    },
+                    "chromeosdevice_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/admin/directory/v1/customer/my_customer/devices/chromeos/{deviceId}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag"
+                        ],
+                        "resource_mandatory": [
+                            "deviceId"
+                        ]
+                    }
+                },
+                "key": "deviceId",
+                "resources": {
+                    "deviceId": "string*",
+                    "serialNumber": "string*",
+                    "status": "string*",
+                    "lastSync": "string*",
+                    "supportEndDate": "string*",
+                    "annotatedUser": "string*",
+                    "annotatedLocation": "string*",
+                    "notes": "string*",
+                    "model": "string*",
+                    "meid": "string*",
+                    "orderNumber": "string*",
+                    "willAutoRenew": "boolean*",
+                    "osVersion": "string*",
+                    "platformVersion": "string*",
+                    "firmwareVersion": "string*",
+                    "macAddress": "string*",
+                    "bootMode": "string*",
+                    "lastEnrollmentTime": "string*",
+                    "kind": "string*",
+                    "recentUsers": [
+                        {
+                        "type": "string*",
+                        "email": "string*"
+                        }
+                    ],
+                    "activeTimeRanges": [
+                        {
+                        "activeTime": "string*",
+                        "date": "string*"
+                        }
+                    ],
+                    "ethernetMacAddress": "string*",
+                    "annotatedAssetId": "string*",
+                    "etag": "string*",        
+                    "systemRamTotal": "string*",
+                    "cpuInfo": [
+                        {
+                        "model": "string*",
+                        "architecture": "string*",
+                        "maxClockSpeedKhz": "string*",
+                        "logicalCpus": "string*"
+                        }
+                    ],
+                    "deviceFiles": [
+                        {
+                        "name": "string*",
+                        "type": "string*",
+                        "downloadUrl": "string*",
+                        "createTime": "string*"
+                        }
+                    ],
+                    "systemRamFreeReports": [
+                        {
+                        "reportTime": "string*",
+                        "systemRamFreeInfo": ["string*"]
+                        }
+                    ],
+                    "lastKnownNetwork": [
+                        {
+                        "ipAddress": "string*",
+                        "wanIpAddress": "string*"
+                        }
+                    ],
+                    "autoUpdateExpiration": "string*",
+                    "ethernetMacAddress0": "string*",
+                    "dockMacAddress": "string*",
+                    "manufactureDate": "string*",
+                    "orgUnitPath": "string*",
+                    "tpmVersionInfo": {
+                        "family": "string*",
+                        "specLevel": "string*",
+                        "manufacturer": "string*",
+                        "tpmModel": "string*",
+                        "firmwareVersion": "string*",
+                        "vendorSpecific": "string*"
+                    },
+                    "screenshotFiles": [
+                        {
+                        "name": "string*",
+                        "type": "string*",
+                        "downloadUrl": "string*",
+                        "createTime": "string*"
+                        }
+                    ],
+                    "orgUnitId": "string*",
+                    "osUpdateStatus": "string*",
+                    "firstEnrollmentTime": "string*",
+                    "lastDeprovisionTimestamp": "string*",
+                    "deprovisionReason": "string*"
+                }
+            },
             "groups": {
                 "operations": {
                     "groups_get": {
@@ -371,6 +496,87 @@
                     "type": "string*",
                     "status": "string*",
                     "delivery_settings": "string*"
+                }
+            },
+            "mobiledevices": {
+                "operations": {
+                    "mobiledevices_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/admin/directory/v1/customer/my_customer/devices/mobile"
+                        },
+                        "maxPageCount": 100,
+                        "query_parameters": {
+                            "projection": "FULL"
+                        },
+                        "processing_options": {
+                            "output_field": "mobiledevices"
+                        }
+                    },
+                    "mobiledevice_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/admin/directory/v1/customer/my_customer/devices/mobile/{resourceId}"
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "resourceId"
+                        ]
+                    }
+                },
+                "key": "resourceId",
+                "resources": {
+                    "kind": "string*",
+                    "etag": "string*",
+                    "resourceId": "string*",
+                    "deviceId": "string*",
+                    "name": ["string*"],
+                    "email": ["string*"],
+                    "model": "string*",
+                    "os": "string*",
+                    "type": "string*",
+                    "status": "string*",
+                    "hardwareId": "string*",
+                    "firstSync": "string*",
+                    "lastSync": "string*",
+                    "userAgent": "string*",
+                    "serialNumber": "string*",
+                    "imei": "string*",
+                    "meid": "string*",
+                    "wifiMacAddress": "string*",
+                    "networkOperator": "string*",
+                    "defaultLanguage": "string*",
+                    "managedAccountIsOnOwnerProfile": "boolean*",
+                    "deviceCompromisedStatus": "string*",
+                    "buildNumber": "string*",
+                    "kernelVersion": "string*",
+                    "basebandVersion": "string*",
+                    "unknownSourcesStatus": "boolean*",
+                    "developerOptionsStatus": "boolean*",
+                    "otherAccountsInfo": ["string*"],
+                    "adbStatus": "boolean*",
+                    "supportsWorkProfile": "boolean*",
+                    "manufacturer": "string*",
+                    "releaseVersion": "string*",
+                    "securityPatchLevel": "string*",
+                    "brand": "string*",
+                    "bootloaderVersion": "string*",
+                    "hardware": "string*",
+                    "encryptionStatus": "string*",
+                    "devicePasswordStatus": "string*",
+                    "privilege": "string*",
+                    "applications": [
+                        {
+                        "packageName": "string*",
+                        "displayName": "string*",
+                        "versionName": "string*",
+                        "versionCode": "string*",
+                        "permission": ["string*"]
+                        }
+                    ]
                 }
             },
             "orgunits": {
@@ -963,7 +1169,9 @@
                 "https://www.googleapis.com/auth/admin.directory.group",
                 "https://www.googleapis.com/auth/admin.directory.orgunit",
                 "https://www.googleapis.com/auth/admin.directory.rolemanagement",
-                "https://www.googleapis.com/auth/apps.groups.settings"
+                "https://www.googleapis.com/auth/apps.groups.settings",
+                "https://www.googleapis.com/auth/admin.directory.device.chromeos",
+                "https://www.googleapis.com/auth/admin.directory.device.mobile"
             ],
             "type": "signed-jwt",
             "authUrl": "https://www.googleapis.com/oauth2/v4/token",
