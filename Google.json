@@ -142,6 +142,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos/{deviceId}"
                         },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.device.chromeos"
+                            ]
+                        },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -254,6 +259,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups"
                         },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
                         "query_parameters": {
                             "customer": "my_customer"
                         }
@@ -263,6 +273,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -286,6 +301,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}"
                         },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -297,6 +317,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -362,6 +387,12 @@
                                 "group_email": "{iterator}"
                             }
                         },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group",
+                              "https://www.googleapis.com/auth/apps.groups.settings"
+                            ]
+                        },
                         "processing_options": {
                             "output_field": null
                         },
@@ -375,6 +406,12 @@
                         "call": {
                             "mode": "normal",
                             "path": "https:///groups/v1/groups/{email}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group",
+                              "https://www.googleapis.com/auth/apps.groups.settings"
+                            ]
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -493,6 +530,11 @@
                                 "group_id": "{iterator}"
                             }
                         },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
                         "maxSessionCount": 50,
                         "processing_options": {
                             "output_field": "aliases"
@@ -506,6 +548,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}/aliases"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
@@ -522,6 +569,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}/aliases/{alias}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -552,6 +604,11 @@
                                 "group_id": "{iterator}"
                             }
                         },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
                         "maxSessionCount": 20,
                         "query_parameters": {
                             "customer": "my_customer"
@@ -562,6 +619,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -581,6 +643,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/groups/{group_id}/members/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -634,6 +701,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.device.mobile"
+                            ]
+                        },
                         "query_parameters": {
                             "projection": "FULL",
                             "customer": "my_customer"
@@ -647,6 +719,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile/{resourceId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.device.mobile"
+                            ]
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -715,6 +792,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.orgunit"
+                            ]
+                        },
                         "query_parameters": {
                             "type": "ALL",
                             "customer": "my_customer"
@@ -728,6 +810,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.orgunit"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -747,6 +834,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.orgunit"
+                            ]
+                        },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -758,6 +850,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.orgunit"
+                            ]
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -791,6 +888,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roles/ALL/privileges"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                            ]
+                        },
                         "query_parameters": {
                             "customer": "my_customer"
                         },
@@ -817,33 +919,17 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roles"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                            ]
+                        },
                         "query_parameters": {
                             "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "items"
                         }
-                    }
-                },
-                "operations_obsolete":{
-                    "role_create": {
-                        "comment":"JVR, 2021_May_31: Don't know if we need to support. Not added and tested for now.",
-                        "method": "post",
-                        "semantics": "create",
-                        "resource_allowance_default": "optional",
-                        "resource_prohibited": [
-                            "roleId",
-                            "isSystemRole",
-                            "isSuperAdminRole",
-                            "kind",
-                            "etag"
-                        ],
-                        "resource_mandatory": [
-                            "roleName"
-                        ],
-                        "warning_only": [
-                            409
-                        ]
                     }
                 },
                 "key": "roleId",
@@ -871,6 +957,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                            ]
+                        },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
@@ -890,6 +981,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments/{roleAssignmentId}"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                            ]
+                        },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -901,6 +997,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                            ]
                         },
                         "query_parameters": {
                             "customer": "my_customer"
@@ -929,6 +1030,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
                         "processing_options": {
                             "output_field": "users",
                             "customer": "my_customer"
@@ -944,6 +1050,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users",
                             "post_processing": "child_tables"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -984,6 +1095,11 @@
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}",
                             "post_processing": "child_tables"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -996,6 +1112,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/twoStepVerification/turnOff"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
                             "id"
@@ -1007,6 +1128,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/signOut"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
                             "id"
@@ -1017,6 +1143,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/undelete"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
                         },
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -1030,6 +1161,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -1265,6 +1401,11 @@
                                 "user_id": "{iterator}"
                             }
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
                         "call_org_gout": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users"
@@ -1283,6 +1424,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/aliases"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -1298,6 +1444,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/aliases/{alias}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -1325,6 +1476,11 @@
                             "iterator": "id",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{iterator}/tokens"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
                         "maxSessionCount": 50,
                         "processing_options": {
                             "output_field": "items"
@@ -1338,6 +1494,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{userKey}/tokens/{clientId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -1368,6 +1529,11 @@
                             "iterator": "id",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{iterator}/verificationCodes"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
                         "maxSessionCount": 50,
                         "processing_options": {
                             "output_field": "items"
@@ -1381,6 +1547,11 @@
                         "call": {
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/generate"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
@@ -1397,6 +1568,11 @@
                             "mode": "normal",
                             "path": "https://www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/invalidate"
                         },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -1411,68 +1587,66 @@
                     "etag": "string"
                 }
             },
-            "users_settings_imap": {
+            "users_gmail_settings_imap": {
                 "operations": {
-                    "users_settings_imap_get": {
-                        "method": "get",
-                        "call": {
-                            "mode": "iteration",
-                            "table": "users",
-                            "iterator": "primaryEmail",
-                            "path": "https://www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
-                            "base": {
-                                "user_email": "{iterator}"
-                            }
-                        },
-                        "authOptions": {
-                            "scopes": [
-                              "https://www.googleapis.com/auth/gmail.settings.basic",
-                              "https://www.googleapis.com/auth/admin.directory.user",
-                              "https://www.googleapis.com/auth/admin.directory.group"
-                            ],
-                            "JWT": {
-                              "sub": "{user_email:no_encode}"
-                            }
-                        },
-                        "maxSessionCount": 50,
-                        "processing_options": {
-                            "output_field": "items"
-                        },
-                        "query_parameters": {}
-                    },
-                    "users_settings_imap_update": {
-                        "method": "put",
-                        "call": {
-                          "mode": "normal",
-                          "path": "https://www.googleapis.com/gmail/v1/users/{user_email}/settings/imap"
-                        },
-                        "authOptions": {
-                          "scopes": [
-                            "https://www.googleapis.com/auth/gmail.settings.basic",
-                            "https://www.googleapis.com/auth/admin.directory.user",
-                            "https://www.googleapis.com/auth/admin.directory.group"
-                          ],
-                          "JWT": {
-                            "sub": "{user_email:no_encode}"
-                          }
-                        },
-                        "semantics": "update",
-                        "resource_allowance_default": "optional",
-                        "resource_prohibited": [],
-                        "resource_mandatory": [
-                          "user_email"
-                        ]
+                  "imap_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "https://www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
+                      "base": {
+                        "user_email": "{iterator}"
                       }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.readonly",
+                        "https://www.googleapis.com/auth/admin.directory.user",
+                        "https://www.googleapis.com/auth/admin.directory.group"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    }
+                  },
+                  "imap_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "https://www.googleapis.com/gmail/v1/users/{user_email}/settings/imap"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic",
+                        "https://www.googleapis.com/auth/admin.directory.user",
+                        "https://www.googleapis.com/auth/admin.directory.group"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
                 },
+                "key": "user_email",
                 "resources": {
-                    "enabled": "string*",
-                    "autoExpunge": "string*",
-                    "expungeBehavior": "string*",
-                    "maxFolderSize": "string*",
-                    "kind": "string",
-                    "etag": "string"
+                  "user_email": "_nim*",
+                  "enabled": "boolean",
+                  "autoExpunge": "boolean",
+                  "expungeBehavior": "string",
+                  "maxFolderSize": "number"
                 }
-            }
+              }
         }
     },
     "rest": {
@@ -1481,7 +1655,6 @@
             "get": {
                 "maxPageCount": -1,
                 "query_parameters": {
-                    
                 }
             },
             "authentication": "certificate",
@@ -1492,20 +1665,7 @@
         },
         "authOptions": {
             "scopes": [
-                "https://www.googleapis.com/auth/admin.directory.user",
-                "https://www.googleapis.com/auth/admin.directory.group",
-                "https://www.googleapis.com/auth/admin.directory.orgunit",
-                "https://www.googleapis.com/auth/admin.directory.rolemanagement",
-                "https://www.googleapis.com/auth/apps.groups.settings",
-                "https://www.googleapis.com/auth/admin.directory.device.chromeos",
-                "https://www.googleapis.com/auth/admin.directory.device.mobile",
-                "https://www.googleapis.com/auth/admin.directory.user.security",
-                "https://www.googleapis.com/auth/gmail.settings.basic",
-                "https://www.googleapis.com/auth/classroom.courses",
-                "https://www.googleapis.com/auth/classroom.rosters",
-                "https://www.googleapis.com/auth/classroom.profile.emails",
-                "https://www.googleapis.com/auth/classroom.profile.photos",
-                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                "https://www.googleapis.com/auth/admin.directory.user"
             ],
             "type": "signed-jwt",
             "authUrl": "https://www.googleapis.com/oauth2/v4/token",
@@ -1513,7 +1673,11 @@
                 "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
                 "assertion": {
                     "name": "JWT"
-                }
+                },
+            "allowedHosts": [
+                    "licensing.googleapis.com",
+                    "www.googleapis.com"
+                ]
             },
             "JWT": {
                 "iss": {
