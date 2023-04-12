@@ -1,28 +1,33 @@
 {
     "schema": {
         "crud_objects": {
-            "courses": {
+            "classroom_courses": {
                 "operations": {
-                    "coursesList": {
+                    "courses_get": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses"
+                            "path": "classroom.googleapis.com/v1/courses"
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                              "https://www.googleapis.com/auth/classroom.courses.readonly"
                             ]
                         },
                         "processing_options": {
                             "output_field": "courses"
                         }
                     },
-                    "coursesCreate": {
+                    "courses_create": {
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses"
+                            "path": "classroom.googleapis.com/v1/courses"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.courses"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
@@ -48,11 +53,16 @@
                             409
                         ]
                     },
-                    "coursesUpdate": {
+                    "courses_update": {
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{id}"
+                            "path": "classroom.googleapis.com/v1/courses/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.courses"
+                            ]
                         },
                         "semantics": "update",
                         "resource_allowance_default": "optional",
@@ -77,11 +87,16 @@
                             409
                         ]
                     },
-                    "coursesDelete": {
+                    "courses_delete": {
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{id}"
+                            "path": "classroom.googleapis.com/v1/courses/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.courses"
+                            ]
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
@@ -115,17 +130,449 @@
                     "calendarId": "string*"
                 }
             },
+            "classroom_course_aliases": {
+                "operations": {
+                    "course_aliases_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "classroom_courses",
+                            "iterator": "id",
+                            "path": "https://classroom.googleapis.com/v1/courses/{iterator}/aliases",
+                            "base": {
+                                "course_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.courses.readonly"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "aliases"
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    },
+                    "course_aliases_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/courses/{course_id}/aliases"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.courses"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "course_id",
+                            "alias"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "course_aliases_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/courses/{course_id}/aliases/{alias}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.courses"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "course_id",
+                            "alias"
+                        ]
+                    }
+                },
+                "key": "alias",
+                "resources": {
+                   "alias": "string*",
+                   "course_id": "string*"
+                }
+            },
+            "classroom_course_students": {
+                "operations": {
+                    "course_students_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "classroom_courses",
+                            "iterator": "id",
+                            "path": "https://classroom.googleapis.com/v1/courses/{iterator}/students",
+                            "base": {
+                                "course_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters.readonly"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "students"
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    },
+                    "course_students_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/students"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "courseId",
+                            "userId"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "course_students_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/students/{userId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "courseId",
+                            "userId"
+                        ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "course_studentsCreate",
+                    "remove_operation": "course_StudentsDelete",
+                    "member_table": "users",
+                    "group_table": "classroom_courses",
+                    "member_attributes": {
+                        "id": "userId",
+                        "profile_emailAddress": "primaryEmail"
+                    },
+                    "group_attributes": {
+                        "id": "id"
+                    }
+                },
+                "key": "courseId",
+                "resources": {
+                    "courseId": "string*",
+                    "userId": "string*",
+                    "profile": {
+                        "id": "_:string*",
+                        "name": {
+                            "givenName": "_:string*",
+                            "familyName": "_:string*",
+                            "fullName": "_:string*"
+                        },
+                        "emailAddress": "_:string*",
+                        "photoUrl": "_:string*",
+                        "permissions": "_:string*",
+                        "verifiedTeacher": "_:boolean*"
+                    },
+                    "studentWorkFolder": {
+                        "id": "_:string*",
+                        "title": "_:string*",
+                        "alternateLink": "_:string*"
+                    }
+                }
+            },
+            "classroom_course_teachers": {
+                "operations": {
+                    "course_teachers_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "classroom_courses",
+                            "iterator": "id",
+                            "path": "https://classroom.googleapis.com/v1/courses/{iterator}/teachers",
+                            "base": {
+                                "course_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters.readonly"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "teachers"
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    },
+                    "course_teachers_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/teachers"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "courseId",
+                            "userId"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "course_teachers_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/teachers/{userId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "courseId",
+                            "userId"
+                        ]
+                    }
+                },
+                "key": "courseId",
+                "resources": {
+                    "courseId": "string*",
+                    "userId": "string*",
+                    "profile": {
+                        "id": "_:string*",
+                        "name": {
+                            "givenName": "_:string*",
+                            "familyName": "_:string*",
+                            "fullName": "_:string*"
+                        },
+                        "emailAddress": "_:string*",
+                        "photoUrl": "_:string*",
+                        "permissions": "_:string*",
+                        "verifiedTeacher": "_:boolean*"
+                    }
+                }
+            },
+            "classroom_invitations": {
+                "operations": {
+                    "course_invitations_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "classroom_courses",
+                            "iterator": "id",
+                            "path": "https://classroom.googleapis.com/v1/invitations?courseId={iterator}",
+                            "base": {
+                                "student_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters.readonly"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "invitations"
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    },
+                    "course_invitations_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/invitations"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                            "id"
+                        ],
+                        "resource_mandatory": [
+                            "courseId",
+                            "userId",
+                            "role"
+                        ]
+                    },
+                    "course_invitations_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/invitations/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.rosters"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    }
+                },
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "userId": "string*",
+                    "courseId": "string*",
+                    "role": "string*"
+                  }
+            },
+            "classroom_userProfiles_guardianInvitations": {
+                "operations": {
+                    "userProfiles_guardianInvitations_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "classroom_course_students",
+                            "iterator": "userId",
+                            "path": "https://classroom.googleapis.com/v1/userProfiles/{iterator}/guardianInvitations"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "guardianInvitations"
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    },
+                    "userProfiles_guardianInvitations_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/userProfiles/{studentId}/guardianInvitations"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "studentId",
+                            "invitedEmailAddress"
+                        ]
+                    }
+                },
+                "key": "invitationId",
+                "resources": {
+                    "studentId": "string*",
+                    "invitationId": "string*",
+                    "invitedEmailAddress": "string*",
+                    "state": "string*",
+                    "creationTime": "string*"
+                  }
+            },
+            "classroom_userProfiles_guardians": {
+                "operations": {
+                    "userProfiles_guardians_get": {
+                        "method": "get",
+                        "call": {
+                            "path": "https://classroom.googleapis.com/v1/userProfiles/-/guardians"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "guardians"
+                        },
+                        "query_parameters": {}
+                    },
+                    "userProfiles_guardians_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "https://classroom.googleapis.com/v1/userProfiles/{studentId}/guardians/{guardianId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "studentId",
+                            "guardianId"
+                        ]
+                    }
+                },
+                "key": "guardianId",
+                "resources": {
+                    "studentId": "string*",
+                    "guardianId": "string*",
+                    "guardianProfile": {
+                        "id": "_:string*",
+                        "name": {
+                            "givenName": "_:string*",
+                            "familyName": "_:string*",
+                            "fullName": "_:string*"
+                        },
+                        "emailAddress": "_:string*",
+                        "photoUrl": "_:string*",
+                        "permissions": "_:string*",
+                        "verifiedTeacher": "_:boolean*"
+                    },
+                    "invitedEmailAddress": "string*"
+                }
+            },
             "chromeosdevices": {
                 "operations": {
                     "chromeosdevices_get": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos"
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.device.chromeos"
+                              "https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -140,7 +587,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos/{deviceId}"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos/{deviceId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -257,11 +704,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups"
+                            "path": "www.googleapis.com/admin/directory/v1/groups"
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                              "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -272,7 +719,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups"
+                            "path": "www.googleapis.com/admin/directory/v1/groups"
                         },
                         "authOptions": {
                             "scopes": [
@@ -299,7 +746,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}"
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{id}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -316,7 +763,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}"
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{id}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -382,14 +829,13 @@
                             "mode": "iteration",
                             "table": "groups",
                             "iterator": "email",
-                            "path": "https:///groups/v1/groups/{iterator}",
+                            "path": "www.googleapis.com/groups/v1/groups/{iterator}",
                             "base": {
                                 "group_email": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group",
                               "https://www.googleapis.com/auth/apps.groups.settings"
                             ]
                         },
@@ -405,11 +851,10 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "https:///groups/v1/groups/{email}"
+                            "path": "www.googleapis.com/groups/v1/groups/{email}"
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group",
                               "https://www.googleapis.com/auth/apps.groups.settings"
                             ]
                         },
@@ -525,7 +970,7 @@
                             "mode": "iteration",
                             "table": "groups",
                             "iterator": "id",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{iterator}/aliases",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/aliases",
                             "base": {
                                 "group_id": "{iterator}"
                             }
@@ -547,7 +992,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}/aliases"
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{id}/aliases"
                         },
                         "authOptions": {
                             "scopes": [
@@ -568,7 +1013,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{id}/aliases/{alias}"
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{id}/aliases/{alias}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -591,6 +1036,292 @@
                     "etag": "string"
                 }
             },
+            "licenses": {
+                "operations": {
+                  "licenses_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "constant",
+                      "values": [
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020027",
+                          "skuName": "Google Workspace Business Starter"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020028",
+                          "skuName": "Google Workspace Business Standard"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020025",
+                          "skuName": "Google Workspace Business Plus"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010060003",
+                          "skuName": "Google Workspace Enterprise Essentials"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020029",
+                          "skuName": "Google Workspace Enterprise Starter"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020026",
+                          "skuName": "Google Workspace Enterprise Standard"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020020",
+                          "skuName": "Google Workspace Enterprise Plus (formerly G Suite Enterprise)"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "1010020030",
+                          "skuName": "Google Workspace Frontline"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "Google-Apps-Unlimited",
+                          "skuName": "G Suite Business"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "Google-Apps-For-Business",
+                          "skuName": "G Suite Basic"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "Google-Apps-Lite",
+                          "skuName": "G Suite Lite"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "Google-Apps-For-Postini",
+                          "skuName": "Google Apps Message Security"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310002",
+                          "skuName": "Google Workspace for Education Plus - Legacy"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310003",
+                          "skuName": "Google Workspace for Education Plus - Legacy (Student)"
+                        },
+                        {
+                          "productId": "Google-Apps",
+                          "productName": "Google Workspace",
+                          "skuId": "Google-Apps-For-Education",
+                          "skuName": "Google Workspace for Education Fundamentals"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310005",
+                          "skuName": "Google Workspace for Education Standard"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310006",
+                          "skuName": "Google Workspace for Education Standard (Staff)"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310007",
+                          "skuName": "Google Workspace for Education Standard (Extra Student)"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310008",
+                          "skuName": "Google Workspace for Education Plus"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310009",
+                          "skuName": "Google Workspace for Education Plus (Staff)"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310010",
+                          "skuName": "Google Workspace for Education Plus (Extra Student)"
+                        },
+                        {
+                          "productId": "101037",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010370001",
+                          "skuName": "Google Workspace for Education: Teaching and Learning Upgrade"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310002",
+                          "skuName": "Google Workspace for Education Plus - Legacy"
+                        },
+                        {
+                          "productId": "101031",
+                          "productName": "Google Workspace for Education",
+                          "skuId": "1010310003",
+                          "skuName": "Google Workspace for Education Plus - Legacy (Student)"
+                        },
+                        {
+                          "productId": "Google-Vault",
+                          "productName": "Google Vault",
+                          "skuId": "Google-Vault",
+                          "skuName": "Google Vault"
+                        },
+                        {
+                          "productId": "Google-Vault",
+                          "productName": "Google Vault",
+                          "skuId": "Google-Vault-Former-Employee",
+                          "skuName": "Google Vault - Former Employee"
+                        },
+                        {
+                          "productId": "101001",
+                          "productName": "Cloud Identity",
+                          "skuId": "1010010001",
+                          "skuName": "Cloud Identity"
+                        },
+                        {
+                          "productId": "101005",
+                          "productName": "Cloud Identity Premium",
+                          "skuId": "1010050001",
+                          "skuName": "Cloud Identity Premium"
+                        },
+                        {
+                          "productId": "101033",
+                          "productName": "Google Voice",
+                          "skuId": "1010330003",
+                          "skuName": "Google Voice Starter"
+                        },
+                        {
+                          "productId": "101033",
+                          "productName": "Google Voice",
+                          "skuId": "1010330004",
+                          "skuName": "Google Voice Standard"
+                        },
+                        {
+                          "productId": "101033",
+                          "productName": "Google Voice",
+                          "skuId": "1010330002",
+                          "skuName": "Google Voice Premier"
+                        },
+                        {
+                          "productId": "101034",
+                          "productName": "Google Workspace Archived User",
+                          "skuId": "1010340004",
+                          "skuName": "Google Workspace Enterprise Standard - Archived User",
+                          "unarchivalProductId": "Google-Apps",
+                          "unarchivalSkuId": "1010020026"
+                        },
+                        {
+                          "productId": "101034",
+                          "productName": "Google Workspace Archived User",
+                          "skuId": "1010340001",
+                          "skuName": "Google Workspace Enterprise Plus - Archived User",
+                          "unarchivalProductId": "Google-Apps",
+                          "unarchivalSkuId": "1010020020"
+                        },
+                        {
+                          "productId": "101034",
+                          "productName": "Google Workspace Archived User",
+                          "skuId": "1010340005",
+                          "skuName": "Google Workspace Business Starter - Archived User",
+                          "unarchivalProductId": "Google-Apps",
+                          "unarchivalSkuId": "1010020027"
+                        },
+                        {
+                          "productId": "101034",
+                          "productName": "Google Workspace Archived User",
+                          "skuId": "1010340006",
+                          "skuName": "Google Workspace Business Standard - Archived User",
+                          "unarchivalProductId": "Google-Apps",
+                          "unarchivalSkuId": "1010020028"
+                        },
+                        {
+                          "productId": "101034",
+                          "productName": "Google Workspace Archived User",
+                          "skuId": "1010340003",
+                          "skuName": "Google Workspace Business Plus - Archived User",
+                          "unarchivalProductId": "Google-Apps",
+                          "unarchivalSkuId": "1010020025"
+                        },
+                        {
+                          "productId": "101034",
+                          "productName": "Google Workspace Archived User",
+                          "skuId": "1010340002",
+                          "skuName": "G Suite Business - Archived User",
+                          "unarchivalProductId": "Google-Apps",
+                          "unarchivalSkuId": "Google-Apps-Unlimited"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "key": "skuId",
+                "resources": {
+                  "productId": "string*",
+                  "productName": "string*",
+                  "skuId": "string*",
+                  "skuName": "string*"
+                }
+            },
+            "license_assignments": {
+                "operations": {
+                  "licenses_assignments_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "licenses",
+                      "iterator": "skuId",
+                      "iterator_columns": [
+                        "productId"
+                      ],
+                      "path": "licensing.googleapis.com/apps/licensing/v1/product/{productId}/sku/{iterator}/users",
+                      "base": {
+                        "skuId": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/apps.licensing"
+                      ]
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    },
+                    "query_parameters": {
+                      "customerId": "{customer_id}"
+                    }
+                  }
+                },
+                "resources": {
+                  "productId": "_nim*"
+                }
+            },
             "members": {
                 "operations": {
                     "members_get": {
@@ -599,14 +1330,14 @@
                             "mode": "iteration",
                             "table": "groups",
                             "iterator": "id",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
                             "base": {
                                 "group_id": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                              "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         },
                         "maxSessionCount": 20,
@@ -618,7 +1349,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
                         },
                         "authOptions": {
                             "scopes": [
@@ -642,7 +1373,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/groups/{group_id}/members/{id}"
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members/{id}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -699,11 +1430,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile"
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.device.mobile"
+                                "https://www.googleapis.com/auth/admin.directory.device.mobile.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -718,7 +1449,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile/{resourceId}"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile/{resourceId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -790,11 +1521,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.orgunit"
+                                "https://www.googleapis.com/auth/admin.directory.orgunit.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -809,7 +1540,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
                         },
                         "authOptions": {
                             "scopes": [
@@ -832,7 +1563,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -849,7 +1580,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits{orgUnitPath:no_encode}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -886,11 +1617,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roles/ALL/privileges"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roles/ALL/privileges"
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -917,11 +1648,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roles"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roles"
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -955,7 +1686,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
                         },
                         "authOptions": {
                             "scopes": [
@@ -979,7 +1710,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments/{roleAssignmentId}"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments/{roleAssignmentId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -996,11 +1727,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly"
                             ]
                         },
                         "query_parameters": {
@@ -1009,6 +1740,18 @@
                         "processing_options": {
                             "output_field": "items"
                         }
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "roleAssignment_create",
+                    "remove_operation": "roleAssignment_delete",
+                    "member_table": "users",
+                    "group_table": "roles",
+                    "member_attributes": {
+                        "id": "assignedTo"
+                    },
+                    "group_attributes": {
+                        "roleId": "roleId"
                     }
                 },
                 "key": "roleAssignmentId",
@@ -1028,11 +1771,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users"
+                            "path": "www.googleapis.com/admin/directory/v1/users"
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user"
+                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
                             ]
                         },
                         "processing_options": {
@@ -1048,7 +1791,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users",
+                            "path": "www.googleapis.com/admin/directory/v1/users",
                             "post_processing": "child_tables"
                         },
                         "authOptions": {
@@ -1092,7 +1835,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}",
                             "post_processing": "child_tables"
                         },
                         "authOptions": {
@@ -1110,7 +1853,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/twoStepVerification/turnOff"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/twoStepVerification/turnOff"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1126,7 +1869,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/signOut"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/signOut"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1142,7 +1885,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/undelete"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/undelete"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1160,7 +1903,7 @@
                         "method": "put",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1396,19 +2139,19 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{iterator}/aliases",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/aliases",
                             "base": {
                                 "user_id": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user"
+                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
                             ]
                         },
                         "call_org_gout": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users"
+                            "path": "www.googleapis.com/admin/directory/v1/users"
                         },
                         "maxSessionCount": 50,
                         "processing_options": {
@@ -1422,7 +2165,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/aliases"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/aliases"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1443,7 +2186,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{id}/aliases/{alias}"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/aliases/{alias}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1466,6 +2209,65 @@
                     "etag": "string"
                 }
             },
+            "users_gmail_settings_imap": {
+                "operations": {
+                  "users_gmail_settings_imap_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.readonly"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_imap_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/imap"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                  "user_email": "_nim*",
+                  "enabled": "boolean",
+                  "autoExpunge": "boolean",
+                  "expungeBehavior": "string",
+                  "maxFolderSize": "number"
+                }
+            },
             "users_tokens": {
                 "operations": {
                     "users_tokens_get": {
@@ -1474,7 +2276,7 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{iterator}/tokens"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/tokens"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1493,7 +2295,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{userKey}/tokens/{clientId}"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{userKey}/tokens/{clientId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1527,7 +2329,7 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{iterator}/verificationCodes"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/verificationCodes"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1546,7 +2348,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/generate"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/generate"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1566,7 +2368,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/invalidate"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/invalidate"
                         },
                         "authOptions": {
                             "scopes": [
@@ -1586,72 +2388,13 @@
                     "kind": "string",
                     "etag": "string"
                 }
-            },
-            "users_gmail_settings_imap": {
-                "operations": {
-                  "imap_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "primaryEmail",
-                      "path": "https://www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
-                      "base": {
-                        "user_email": "{iterator}"
-                      }
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.readonly",
-                        "https://www.googleapis.com/auth/admin.directory.user",
-                        "https://www.googleapis.com/auth/admin.directory.group"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
-                    },
-                    "processing_options": {
-                      "output_field": null
-                    }
-                  },
-                  "imap_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "https://www.googleapis.com/gmail/v1/users/{user_email}/settings/imap"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic",
-                        "https://www.googleapis.com/auth/admin.directory.user",
-                        "https://www.googleapis.com/auth/admin.directory.group"
-                      ],
-                      "JWT": {
-                        "sub": "{user_email:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_email"
-                    ]
-                  }
-                },
-                "key": "user_email",
-                "resources": {
-                  "user_email": "_nim*",
-                  "enabled": "boolean",
-                  "autoExpunge": "boolean",
-                  "expungeBehavior": "string",
-                  "maxFolderSize": "number"
-                }
-              }
+            }
+
         }
     },
     "rest": {
         "config": {
-            "baseUrl": "",
+            "baseUrl": "https://",
             "get": {
                 "maxPageCount": -1,
                 "query_parameters": {
@@ -1665,7 +2408,8 @@
         },
         "authOptions": {
             "scopes": [
-                "https://www.googleapis.com/auth/admin.directory.user"
+                "https://www.googleapis.com/auth/admin.directory.user",
+                "https://www.googleapis.com/auth/admin.directory.group"
             ],
             "type": "signed-jwt",
             "authUrl": "https://www.googleapis.com/oauth2/v4/token",
@@ -1676,7 +2420,8 @@
                 },
             "allowedHosts": [
                     "licensing.googleapis.com",
-                    "www.googleapis.com"
+                    "www.googleapis.com",
+                    "classroom.googleapis.com"
                 ]
             },
             "JWT": {
@@ -1700,5 +2445,15 @@
                 }
             }
         }
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "customer_id",
+                "type": "textbox",
+                "label": "Customer ID:",
+                "value": ""
+            }
+        ]
     }
 }
