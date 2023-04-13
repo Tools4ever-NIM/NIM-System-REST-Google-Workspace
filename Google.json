@@ -702,6 +702,165 @@
                     "deprovisionReason": "string*"
                 }
             },
+            "datatransfer_transfers": {
+                "operations": {
+                    "datatransfer_transfers_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "admin.googleapis.com/admin/datatransfer/v1/transfers",
+                            "post_processing": "child_tables"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/admin.datatransfer"
+                            ]
+                        },
+                        "query_parameters": {
+                        },
+                        "processing_options": {
+                            "output_field": "dataTransfers"
+                        }
+                    },
+                    "datatransfer_transfers_create": {
+                        "method": "post",
+                        "call": {
+                          "mode": "normal",
+                          "path": "admin.googleapis.com/admin/datatransfer/v1/transfers"
+                        },
+                        "authOptions": {
+                          "scopes": [
+                            "https://www.googleapis.com/auth/admin.datatransfer"
+                          ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                          "oldOwnerUserId",
+                          "newOwnerUserId"
+                        ]
+                      }
+                },
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "oldOwnerUserId": "string*",
+                    "newOwnerUserId": "string*",
+                    "applicationDataTransfers": [
+                      {
+                        "applicationId": "string*",
+                        "applicationTransferParams": "string*",
+                        "applicationTransferStatus": "string*"
+                      }
+                    ],
+                    "overallTransferStatusCode": "string*",
+                    "requestTime": "string*"
+                  }
+            },
+            "drive_drives": {
+                "operations": {
+                    "drives_drive_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/drive/v3/drives",
+                            "post_processing": "child_tables"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/drive"
+                            ]
+                        },
+                        "query_parameters": {
+                            "useDomainAdminAccess":true,
+                            "fields": "*"
+                        },
+                        "processing_options": {
+                            "output_field": "drives"
+                        }
+                    },
+                    "drives_drive_create": {
+                        "method": "post",
+                        "call": {
+                          "mode": "normal",
+                          "path": "www.googleapis.com/drive/v3/drives"
+                        },
+                        "authOptions": {
+                          "scopes": [
+                            "https://www.googleapis.com/auth/drive"
+                          ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                          "name"
+                        ]
+                      },
+                    "drives_drive_delete": {
+                        "method": "delete",
+                        "call": {
+                          "mode": "normal",
+                          "path": "www.googleapis.com/drive/v3/drives/{id}"
+                        },
+                        "authOptions": {
+                          "scopes": [
+                            "https://www.googleapis.com/auth/drive"
+                          ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                          "id"
+                        ]
+                      }
+                },
+                "key": "id",
+                "resources": {
+                    "kind": "string*",
+                    "id": "string*",
+                    "name": "string*",
+                    "themeId": "string*",
+                    "colorRgb": "string*",
+                    "backgroundImageFile": {
+                      "id": "_:string*",
+                      "xCoordinate": "_:string*",
+                      "yCoordinate": "_:string*",
+                      "width": "_:string*"
+                    },
+                    "backgroundImageLink": "string*",
+                    "capabilities": {
+                      "canAddChildren": "_:boolean*",
+                      "canChangeCopyRequiresWriterPermissionRestriction": "_:boolean*",
+                      "canChangeDomainUsersOnlyRestriction": "_:boolean*",
+                      "canChangeDriveBackground": "_:boolean*",
+                      "canChangeDriveMembersOnlyRestriction": "_:boolean*",
+                      "canComment": "_:boolean*",
+                      "canCopy": "_:boolean*",
+                      "canDeleteChildren": "_:boolean*",
+                      "canDeleteDrive": "_:boolean*",
+                      "canDownload": "_:boolean*",
+                      "canEdit": "_:boolean*",
+                      "canListChildren": "_:boolean*",
+                      "canManageMembers": "_:boolean*",
+                      "canReadRevisions": "_:boolean*",
+                      "canRename": "_:boolean*",
+                      "canRenameDrive": "_:boolean*",
+                      "canShare": "_:boolean*",
+                      "canTrashChildren": "_:boolean*"
+                    },
+                    "createdTime": "string*",
+                    "hidden": "boolean*",
+                    "restrictions": {
+                      "adminManagedRestrictions": "_:boolean*",
+                      "copyRequiresWriterPermission": "_:boolean*",
+                      "domainUsersOnly":"_:boolean*",
+                      "driveMembersOnly": "_:boolean*"
+                    }
+                  }
+            },
             "groups": {
                 "operations": {
                     "groups_get": {
@@ -1315,15 +1474,64 @@
                       ]
                     },
                     "processing_options": {
-                      "output_field": null
+                      "output_field": "items"
                     },
                     "query_parameters": {
                       "customerId": "{customer_id}"
                     }
-                  }
+                  },
+                  "license_assignment_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "licensing.googleapis.com/apps/licensing/v1/product/{productId}/sku/{skuId}/user"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/apps.licensing"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "productId",
+                            "skuId",
+                            "userId"
+                        ],
+                        "warning_only": [
+                            412
+                        ]
+                    },
+                    "license_assignment_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "licensing.googleapis.com/apps/licensing/v1/product/{productId}/sku/{skuId}/user/{userId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/apps.licensing"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "productId",
+                            "skuId",
+                            "userId"
+                        ],
+                        "warning_only": [
+                            409,412
+                        ]
+                    }
                 },
                 "resources": {
-                  "productId": "_nim*"
+                    "productId": "_nim*",
+                    "userId": "string*",
+                    "selfLink": "string*",
+                    "skuId": "string*",
+                    "skuName": "string*",
+                    "productName": "string*"
                 }
             },
             "members": {
@@ -2213,6 +2421,275 @@
                     "etag": "string"
                 }
             },
+            "users_asps": {
+                "operations": {
+                    "users_asps_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/asps"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
+                        "maxSessionCount": 50,
+                        "processing_options": {
+                            "output_field": "items"
+                        },
+                        "query_parameters": {
+                            "customer": "my_customer"
+                        }
+                    },
+                    "users_asps_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{userKey}/asps/{codeId}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user.security"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "userKey",
+                            "codeId"
+                        ]
+                    }
+                },
+                "resources": {
+                    "id": "string*",
+                    "codeId": "string*",
+                    "name": "string*",
+                    "creationTime": "string*",
+                    "lastTimeUsed": "string*",
+                    "userKey": "string*"
+                }
+            },
+            "users_gmail_settings_autoforwarding": {
+                "operations": {
+                  "users_gmail_settings_autoforwarding_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/autoForwarding",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_autoforwarding_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/autoForwarding"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                  "user_email": "_nim*",
+                  "enabled": "boolean*",
+                  "emailAddress": "string*",
+                  "disposition": "string*"
+                }
+            },
+            "users_gmail_settings_delegates": {
+                "operations": {
+                  "users_gmail_settings_delegates_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/delegates",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": "delegates"
+                    },
+                    "warning_only": [
+                        400,204
+                    ]
+                  },
+                  "users_gmail_settings_delegate_create": {
+                    "method": "post",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/delegates"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic",
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "create",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  },
+                  "users_gmail_settings_delegate_delete": {
+                    "method": "delete",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/delegates/{delegateEmail}"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic",
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "delete",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                  "user_email": "_nim*",
+                  "delegateEmail": "boolean*",
+                  "verificationStatus": "string*"
+                }
+            },
+            "users_gmail_settings_forwardingAddresses": {
+                "operations": {
+                  "users_gmail_settings_forwardingAddresses_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/forwardingAddresses",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": "forwardingAddresses"
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_forwardingAddress_create": {
+                    "method": "post",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/forwardingAddresses"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic",
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "create",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  },
+                  "users_gmail_settings_forwardingAddress_delete": {
+                    "method": "delete",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/forwardingAddresses/{forwardingEmail}"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic",
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "delete",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                  "user_email": "_nim*",
+                  "forwardingEmail": "boolean*",
+                  "verificationStatus": "string*"
+                }
+            },
             "users_gmail_settings_imap": {
                 "operations": {
                   "users_gmail_settings_imap_get": {
@@ -2228,7 +2705,7 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail"
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
                       ],
                       "JWT": {
                         "sub": "{iterator}"
@@ -2266,10 +2743,259 @@
                 "key": "user_email",
                 "resources": {
                   "user_email": "_nim*",
-                  "enabled": "boolean",
-                  "autoExpunge": "boolean",
-                  "expungeBehavior": "string",
-                  "maxFolderSize": "number"
+                  "enabled": "boolean*",
+                  "autoExpunge": "boolean*",
+                  "expungeBehavior": "string*",
+                  "maxFolderSize": "number*"
+                }
+            },
+            "users_gmail_settings_language": {
+                "operations": {
+                  "users_gmail_settings_language_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/language",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_language_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/language"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                  "user_email": "_nim*",
+                  "displayLanguage": "string*"
+                }
+            },
+            "users_gmail_settings_pop": {
+                "operations": {
+                  "users_gmail_settings_pop_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/pop",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_pop_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/pop"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                  "user_email": "_nim*",
+                  "accessWindow": "string*",
+                  "disposition": "string*"
+                }
+            },
+            "users_gmail_settings_sendas": {
+                "operations": {
+                  "users_gmail_settings_sendas_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/sendAs",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": "sendAs"
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_sendas_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/sendAs"
+                    },
+                    "processing_options": {
+                        "output_field": "sendAs"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                    "user_email": "_nim*",
+                    "sendAsEmail": "string*",
+                    "displayName": "string*",
+                    "replyToAddress": "string*",
+                    "signature": "string*",
+                    "isPrimary": "boolean*",
+                    "isDefault": "boolean*",
+                    "treatAsAlias": "boolean*",
+                    "smtpMsa": {
+                        "host": "_:string*",
+                        "port": "_:string*",
+                        "username": "_:string*",
+                        "password": "_:string*",
+                        "securityMode": "_:string*"
+                    },
+                    "verificationStatus": "string*"
+                }
+            },
+            "users_gmail_settings_vacation": {
+                "operations": {
+                  "users_gmail_settings_vacation_get": {
+                    "method": "get",
+                    "call": {
+                      "mode": "iteration",
+                      "table": "users",
+                      "iterator": "primaryEmail",
+                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/vacation",
+                      "base": {
+                        "user_email": "{iterator}"
+                      }
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{iterator}"
+                      }
+                    },
+                    "processing_options": {
+                      "output_field": null
+                    },
+                    "warning_only": [
+                        400
+                    ]
+                  },
+                  "users_gmail_settings_vacation_update": {
+                    "method": "put",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/vacation"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                      ],
+                      "JWT": {
+                        "sub": "{user_email:no_encode}"
+                      }
+                    },
+                    "semantics": "update",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_email"
+                    ]
+                  }
+                },
+                "key": "user_email",
+                "resources": {
+                    "user_email": "_nim*",
+                    "enableAutoReply": "boolean*",
+                    "responseSubject": "string*",
+                    "responseBodyPlainText": "string*",
+                    "responseBodyHtml": "string*",
+                    "restrictToContacts": "boolean*",
+                    "restrictToDomain": "boolean*",
+                    "startTime": "string*",
+                    "endTime": "string*"
                 }
             },
             "users_tokens": {
@@ -2315,6 +3041,7 @@
                     }
                 },
                 "resources": {
+                    "id": "string*",
                     "clientId": "string*",
                     "scopes[]": "string*",
                     "userKey": "string*",
@@ -2393,7 +3120,6 @@
                     "etag": "string"
                 }
             }
-
         }
     },
     "rest": {
@@ -2413,6 +3139,7 @@
         "authOptions": {
             "scopes": [
                 "https://www.googleapis.com/auth/admin.directory.user",
+                "https://www.googleapis.com/auth/admin.directory.user.security",
                 "https://www.googleapis.com/auth/admin.directory.group"
             ],
             "type": "signed-jwt",
@@ -2426,7 +3153,8 @@
             "allowedHosts": [
                     "licensing.googleapis.com",
                     "www.googleapis.com",
-                    "classroom.googleapis.com"
+                    "classroom.googleapis.com",
+                    "admin.googleapis.com"
                 ],
            "JWT": {
                 "iss": {
