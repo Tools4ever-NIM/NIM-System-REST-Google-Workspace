@@ -2403,7 +2403,7 @@
             "authentication": "certificate",
             "call_handling": "google",
             "test_connection": {
-                "url": "/admin/directory/v1/users"
+                "url": "www.googleapis.com/admin/directory/v1/users?customer=my_customer"
             }
         },
         "authOptions": {
@@ -2418,13 +2418,13 @@
                 "assertion": {
                     "name": "JWT"
                 },
+            },
             "allowedHosts": [
                     "licensing.googleapis.com",
                     "www.googleapis.com",
                     "classroom.googleapis.com"
-                ]
-            },
-            "JWT": {
+                ],
+           "JWT": {
                 "iss": {
                     "name": "clientId"
                 },
