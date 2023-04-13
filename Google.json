@@ -11,7 +11,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses.readonly"
+                              "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "processing_options": {
@@ -138,14 +138,14 @@
                             "mode": "iteration",
                             "table": "classroom_courses",
                             "iterator": "id",
-                            "path": "https://classroom.googleapis.com/v1/courses/{iterator}/aliases",
+                            "path": "classroom.googleapis.com/v1/courses/{iterator}/aliases",
                             "base": {
                                 "course_id": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses.readonly"
+                              "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "processing_options": {
@@ -158,7 +158,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{course_id}/aliases"
+                            "path": "classroom.googleapis.com/v1/courses/{course_id}/aliases"
                         },
                         "authOptions": {
                             "scopes": [
@@ -180,7 +180,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{course_id}/aliases/{alias}"
+                            "path": "classroom.googleapis.com/v1/courses/{course_id}/aliases/{alias}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -209,14 +209,18 @@
                             "mode": "iteration",
                             "table": "classroom_courses",
                             "iterator": "id",
-                            "path": "https://classroom.googleapis.com/v1/courses/{iterator}/students",
+                            "path": "classroom.googleapis.com/v1/courses/{iterator}/students",
                             "base": {
                                 "course_id": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters.readonly"
+                                "https://www.googleapis.com/auth/classroom.courses",
+                                "https://www.googleapis.com/auth/classroom.rosters",
+                                "https://www.googleapis.com/auth/classroom.profile.emails",
+                                "https://www.googleapis.com/auth/classroom.profile.photos",
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "processing_options": {
@@ -229,7 +233,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/students"
+                            "path": "classroom.googleapis.com/v1/courses/{courseId}/students"
                         },
                         "authOptions": {
                             "scopes": [
@@ -251,7 +255,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/students/{userId}"
+                            "path": "classroom.googleapis.com/v1/courses/{courseId}/students/{userId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -310,14 +314,14 @@
                             "mode": "iteration",
                             "table": "classroom_courses",
                             "iterator": "id",
-                            "path": "https://classroom.googleapis.com/v1/courses/{iterator}/teachers",
+                            "path": "classroom.googleapis.com/v1/courses/{iterator}/teachers",
                             "base": {
                                 "course_id": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters.readonly"
+                              "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "processing_options": {
@@ -330,7 +334,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/teachers"
+                            "path": "classroom.googleapis.com/v1/courses/{courseId}/teachers"
                         },
                         "authOptions": {
                             "scopes": [
@@ -352,7 +356,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/courses/{courseId}/teachers/{userId}"
+                            "path": "classroom.googleapis.com/v1/courses/{courseId}/teachers/{userId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -393,14 +397,14 @@
                             "mode": "iteration",
                             "table": "classroom_courses",
                             "iterator": "id",
-                            "path": "https://classroom.googleapis.com/v1/invitations?courseId={iterator}",
+                            "path": "classroom.googleapis.com/v1/invitations?courseId={iterator}",
                             "base": {
                                 "student_id": "{iterator}"
                             }
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters.readonly"
+                              "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "processing_options": {
@@ -413,7 +417,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/invitations"
+                            "path": "classroom.googleapis.com/v1/invitations"
                         },
                         "authOptions": {
                             "scopes": [
@@ -435,7 +439,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/invitations/{id}"
+                            "path": "classroom.googleapis.com/v1/invitations/{id}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -465,11 +469,11 @@
                             "mode": "iteration",
                             "table": "classroom_course_students",
                             "iterator": "userId",
-                            "path": "https://classroom.googleapis.com/v1/userProfiles/{iterator}/guardianInvitations"
+                            "path": "classroom.googleapis.com/v1/userProfiles/{iterator}/guardianInvitations"
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly"
+                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "processing_options": {
@@ -482,7 +486,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/userProfiles/{studentId}/guardianInvitations"
+                            "path": "classroom.googleapis.com/v1/userProfiles/{studentId}/guardianInvitations"
                         },
                         "authOptions": {
                             "scopes": [
@@ -512,11 +516,11 @@
                     "userProfiles_guardians_get": {
                         "method": "get",
                         "call": {
-                            "path": "https://classroom.googleapis.com/v1/userProfiles/-/guardians"
+                            "path": "classroom.googleapis.com/v1/userProfiles/-/guardians"
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly"
+                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "processing_options": {
@@ -528,7 +532,7 @@
                         "method": "delete",
                         "call": {
                             "mode": "normal",
-                            "path": "https://classroom.googleapis.com/v1/userProfiles/{studentId}/guardians/{guardianId}"
+                            "path": "classroom.googleapis.com/v1/userProfiles/{studentId}/guardians/{guardianId}"
                         },
                         "authOptions": {
                             "scopes": [
@@ -572,7 +576,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly"
+                              "https://www.googleapis.com/auth/admin.directory.device.chromeos"
                             ]
                         },
                         "query_parameters": {
@@ -708,7 +712,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group.readonly"
+                              "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "query_parameters": {
@@ -1337,7 +1341,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group.readonly"
+                              "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "maxSessionCount": 20,
@@ -1434,7 +1438,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.device.mobile.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.device.mobile"
                             ]
                         },
                         "query_parameters": {
@@ -1525,7 +1529,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.orgunit.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.orgunit"
                             ]
                         },
                         "query_parameters": {
@@ -1621,7 +1625,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
                             ]
                         },
                         "query_parameters": {
@@ -1652,7 +1656,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
                             ]
                         },
                         "query_parameters": {
@@ -1731,7 +1735,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
                             ]
                         },
                         "query_parameters": {
@@ -1775,7 +1779,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.user"
                             ]
                         },
                         "processing_options": {
@@ -2146,7 +2150,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
+                                "https://www.googleapis.com/auth/admin.directory.user"
                             ]
                         },
                         "call_org_gout": {
@@ -2224,7 +2228,7 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail.readonly"
+                        "https://www.googleapis.com/auth/gmail"
                       ],
                       "JWT": {
                         "sub": "{iterator}"
@@ -2417,7 +2421,7 @@
                 "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
                 "assertion": {
                     "name": "JWT"
-                },
+                }
             },
             "allowedHosts": [
                     "licensing.googleapis.com",
