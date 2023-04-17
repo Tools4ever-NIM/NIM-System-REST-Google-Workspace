@@ -152,7 +152,7 @@
                             "output_field": "aliases"
                         },
                         "query_parameters": {},
-                        "maxSessionCount": 20
+                        "maxSessionCount": 10
                     },
                     "course_aliases_create": {
                         "method": "post",
@@ -216,18 +216,14 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.courses",
-                                "https://www.googleapis.com/auth/classroom.rosters",
-                                "https://www.googleapis.com/auth/classroom.profile.emails",
-                                "https://www.googleapis.com/auth/classroom.profile.photos",
-                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "processing_options": {
                             "output_field": "students"
                         },
                         "query_parameters": {},
-                        "maxSessionCount": 20
+                        "maxSessionCount": 10
                     },
                     "course_students_create": {
                         "method": "post",
@@ -328,7 +324,7 @@
                             "output_field": "teachers"
                         },
                         "query_parameters": {},
-                        "maxSessionCount": 20
+                        "maxSessionCount": 10
                     },
                     "course_teachers_create": {
                         "method": "post",
@@ -411,7 +407,7 @@
                             "output_field": "invitations"
                         },
                         "query_parameters": {},
-                        "maxSessionCount": 20
+                        "maxSessionCount": 10
                     },
                     "course_invitations_create": {
                         "method": "post",
@@ -480,7 +476,7 @@
                             "output_field": "guardianInvitations"
                         },
                         "query_parameters": {},
-                        "maxSessionCount": 20
+                        "maxSessionCount": 10
                     },
                     "userProfiles_guardianInvitations_create": {
                         "method": "post",
@@ -2282,7 +2278,7 @@
                         {
                             "accountId": "string*",
                             "gecos": "string*",
-                            "gid": "strin*g",
+                            "gid": "string*",
                             "homeDirectory": "string*",
                             "operatingSystemType": "string*",
                             "primary": "boolean*",
@@ -2508,7 +2504,7 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
                         "sub": "{user_email:no_encode}"
@@ -2566,7 +2562,6 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic",
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
@@ -2588,7 +2583,6 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic",
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
@@ -3138,9 +3132,7 @@
         },
         "authOptions": {
             "scopes": [
-                "https://www.googleapis.com/auth/admin.directory.user",
-                "https://www.googleapis.com/auth/admin.directory.user.security",
-                "https://www.googleapis.com/auth/admin.directory.group"
+                "https://www.googleapis.com/auth/admin.directory.user"
             ],
             "type": "signed-jwt",
             "authUrl": "https://www.googleapis.com/oauth2/v4/token",
