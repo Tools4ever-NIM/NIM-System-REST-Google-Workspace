@@ -47,12 +47,70 @@ This is a native rest connector. This repo is for additional tools specific to G
 
 
 ## Available Provisioning Actions
-* Create user account 
-* Enable user account
-* Disable user account
-* Delete user account
-* Group Membership (Add / Remove)
-
+* Chrome Devices
+    * Update Chrome Device
+* Classroom
+    * Courses
+        * Create/Update/Delete
+    * Course Aliases
+        * Create/Delete
+    * Course Students
+        * Add/Remove
+    * Course Teachers
+        * Add/Remove
+    * Course Invitations
+        * Create/Delete
+    * Guardian Invitations
+        * Create/Delete
+    * Guardians
+        * Delete
+* Drive
+    * Drive
+        * Create/Delete
+* Groups
+    * Group
+        * Create/Delete
+    * Group Alias
+        * Create/Delete
+    * Group Settings
+        * Update
+    * Group Member
+        * Add/Remove
+* License Assignments
+    * Add/Remove
+* Mobile Devices
+    * Delete
+* Org Units
+    * Create/Update/Delete
+* Role Assignments
+    * Add/Remove
+* Users
+    * User
+        * Create/Update/Delete/Undelete
+        * Sign out
+        * Turn Off 2FA
+        * Delete Tokens
+    * Alias
+        * Add/Remove
+    * Application Specific Passwords
+        * Delete
+    * Vertification Codes
+        * Create/Delete
+* Gmail
+    * Auto Forwarding
+        * Update
+    * Delegates
+        * Create/Delete
+    * Forwarding Address
+        * Create/Delete
+    * IMAP
+        * Update
+    * POP
+        * Update
+    * Send As
+        * Update
+    * Vacation
+        * Update
 
 
 ## Custom Schemas
