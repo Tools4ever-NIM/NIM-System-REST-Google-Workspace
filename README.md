@@ -15,42 +15,42 @@ This is a native rest connector. This repo is for additional tools specific to G
 * Service Account created via Cloud Console
 
 ## Authorization Scopes
-|Table                                     |Scopes                                                          | Cloud Console App                                                |
+|Table                                     |Scopes                                                          | Cloud Console                                             |
 |------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------|
-|chromeosdevices                           |https://www.googleapis.com/auth/admin.directory.device.chromeos |Admin SDK API                                                     |
-|classroom_courses                         |https://www.googleapis.com/auth/classroom.courses               |Google Classroom API                                              |
-|classroom_course_aliases                  |https://www.googleapis.com/auth/classroom.courses               |Google Classroom API                                              |
-|classroom_course_students                 |https://www.googleapis.com/auth/classroom.rosters               |Google Classroom API                                              |
-|classroom_course_teachers                 |https://www.googleapis.com/auth/classroom.rosters               |Google Classroom API                                              |
-|classroom_invitations                     |https://www.googleapis.com/auth/classroom.rosters               |Google Classroom API                                              |
-|classroom_userProfiles_guardianInvitations|https://www.googleapis.com/auth/classroom.guardianlinks.students|Google Classroom API                                              |
-|classroom_userProfiles_guardians          |https://www.googleapis.com/auth/classroom.guardianlinks.students|Google Classroom API                                              |
+|chromeosdevices                           |https://www.googleapis.com/auth/admin.directory.device.chromeos |gcloud services enable admin.googleapis.com                       |
+|classroom_courses                         |https://www.googleapis.com/auth/classroom.courses               |gcloud services enable classroom.googleapis.com                   |
+|classroom_course_aliases                  |https://www.googleapis.com/auth/classroom.courses               |gcloud services enable classroom.googleapis.com                   |
+|classroom_course_students                 |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
+|classroom_course_teachers                 |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
+|classroom_invitations                     |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
+|classroom_userProfiles_guardianInvitations|https://www.googleapis.com/auth/classroom.guardianlinks.students|gcloud services enable classroom.googleapis.com                   |
+|classroom_userProfiles_guardians          |https://www.googleapis.com/auth/classroom.guardianlinks.students|gcloud services enable classroom.googleapis.com                   |
 |datatransfer_transfers                    |https://www.googleapis.com/auth/admin.datatransfer              |                                                                  |
-|drive_drives                              |https://www.googleapis.com/auth/drive                           |Google Drive API                                                  |
-|groups                                    |https://www.googleapis.com/auth/admin.directory.group           |Admin SDK API                                                     |
-|groups_aliases                            |https://www.googleapis.com/auth/admin.directory.group           |Admin SDK API                                                     |
-|groups_settings                           |https://www.googleapis.com/auth/apps.groups.settings            |Group Settings API                                                |
+|drive_drives                              |https://www.googleapis.com/auth/drive                           |gcloud services enable drive.googleapis.com                       |
+|groups                                    |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
+|groups_aliases                            |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
+|groups_settings                           |https://www.googleapis.com/auth/apps.groups.settings            |gcloud services enable groupssettings.googleapis.com              |
 |licenses                                  |                                                                |                                                                  |
-|license_assignments                       |https://www.googleapis.com/auth/apps.licensing                  |Enterprise License Manager API                                    |
-|members                                   |https://www.googleapis.com/auth/admin.directory.group           |Admin SDK API                                                     |
-|mobiledevices                             |https://www.googleapis.com/auth/admin.directory.device.mobile   |Admin SDK API                                                     |
-|orgunits                                  |https://www.googleapis.com/auth/admin.directory.orgunit         |Admin SDK API                                                     |
-|privileges                                |https://www.googleapis.com/auth/admin.directory.rolemanagement  |Admin SDK API                                                     |
-|roleAssignments                           |https://www.googleapis.com/auth/admin.directory.rolemanagement  |Admin SDK API                                                     |
-|roles                                     |https://www.googleapis.com/auth/admin.directory.rolemanagement  |Admin SDK API                                                     |
-|users                                     |https://www.googleapis.com/auth/admin.directory.user            |Admin SDK API                                                     |
-|users_aliases                             |https://www.googleapis.com/auth/admin.directory.user            |Admin SDK API                                                     |
-|users_asps                                |https://www.googleapis.com/auth/admin.directory.user.security   |Admin SDK API                                                     |
-|users_gmail_settings_autoforwarding       |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |Gmail API |
-|users_gmail_settings_delegates            |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |Gmail API |
-|users_gmail_settings_forwardingAddresses  |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |Gmail API |
-|users_gmail_settings_imap                 |https://www.googleapis.com/auth/gmail.settings.basic            |Gmail API                                                         |
-|users_gmail_settings_language             |https://www.googleapis.com/auth/gmail.settings.basic            |Gmail API                                                         |
-|users_gmail_settings_pop                  |https://www.googleapis.com/auth/gmail.settings.basic            |Gmail API                                                         |
-|users_gmail_settings_sendas               |https://www.googleapis.com/auth/gmail.settings.basic            |Gmail API                                                         |
-|users_gmail_settings_vacation             |https://www.googleapis.com/auth/gmail.settings.basic            |Gmail API                                                         |
-|users_tokens                              |https://www.googleapis.com/auth/admin.directory.user.security   |Admin SDK API                                                     |
-|users_verificationCodes                   |https://www.googleapis.com/auth/admin.directory.user.security   |Admin SDK API                                                     |
+|license_assignments                       |https://www.googleapis.com/auth/apps.licensing                  |gcloud services enable licensing.googleapis.com                   |
+|members                                   |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
+|mobiledevices                             |https://www.googleapis.com/auth/admin.directory.device.mobile   |gcloud services enable admin.googleapis.com                       |
+|orgunits                                  |https://www.googleapis.com/auth/admin.directory.orgunit         |gcloud services enable admin.googleapis.com                       |
+|privileges                                |https://www.googleapis.com/auth/admin.directory.rolemanagement  |gcloud services enable admin.googleapis.com                       |
+|roleAssignments                           |https://www.googleapis.com/auth/admin.directory.rolemanagement  |gcloud services enable admin.googleapis.com                       |
+|roles                                     |https://www.googleapis.com/auth/admin.directory.rolemanagement  |gcloud services enable admin.googleapis.com                       |
+|users                                     |https://www.googleapis.com/auth/admin.directory.user            |gcloud services enable admin.googleapis.com                       |
+|users_aliases                             |https://www.googleapis.com/auth/admin.directory.user            |gcloud services enable admin.googleapis.com                       |
+|users_asps                                |https://www.googleapis.com/auth/admin.directory.user.security   |gcloud services enable admin.googleapis.com                       |
+|users_gmail_settings_autoforwarding       |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_delegates            |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_forwardingAddresses  |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_imap                 |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_language             |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_pop                  |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_sendas               |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
+|users_gmail_settings_vacation             |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
+|users_tokens                              |https://www.googleapis.com/auth/admin.directory.user.security   |gcloud services enable admin.googleapis.com                       |
+|users_verificationCodes                   |https://www.googleapis.com/auth/admin.directory.user.security   |gcloud services enable admin.googleapis.com                       |
 
 ### Recommended Scope Sets
 * User Provisioning
