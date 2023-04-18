@@ -135,7 +135,25 @@ C:\ProgramData\Tools4ever\NIM\config\rest\systems\SYSTEMNAME.json
 
 SYSTEMNAME = The name of the system in NIM.
 
-A a sample file (CustomSchema.json) is provide in this repo.
+```
+{
+	"schema": {
+		"crud_objects": {
+			"users": {
+				"resources": {
+					"customSchemas": {
+						"Tools4ever": {
+							"ID":"_:string*",
+							"Type":"_:string*",
+							"DeleteDate":"_:string*"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
 
 
 # NIM Docs
