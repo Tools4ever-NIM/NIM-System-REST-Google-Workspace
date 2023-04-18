@@ -2640,7 +2640,6 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic",
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
@@ -2662,7 +2661,6 @@
                     },
                     "authOptions": {
                       "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic",
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
