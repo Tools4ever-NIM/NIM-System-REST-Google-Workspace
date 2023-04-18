@@ -2573,6 +2573,9 @@
                     "resource_prohibited": [],
                     "resource_mandatory": [
                       "user_email"
+                    ],
+                    "warning_only": [
+                        409
                     ]
                   },
                   "users_gmail_settings_delegate_delete": {
@@ -2651,6 +2654,10 @@
                     "resource_prohibited": [],
                     "resource_mandatory": [
                       "user_email"
+                    ]
+                    ,
+                    "warning_only": [
+                        400,409
                     ]
                   },
                   "users_gmail_settings_forwardingAddress_delete": {
