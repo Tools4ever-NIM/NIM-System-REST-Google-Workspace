@@ -1,5 +1,4 @@
-# NIM-Conn-System-REST-Google-Workspace
-
+# NIM-System-REST-Google-Workspace
 
 This is a native rest connector. This repo is for additional tools specific to Google Workspace
 
