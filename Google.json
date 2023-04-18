@@ -1588,7 +1588,7 @@
                               "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
-                        "semantics": "create",
+                        "semantics": "delete",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
                             "kind",
