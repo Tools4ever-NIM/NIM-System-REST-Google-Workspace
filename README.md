@@ -45,6 +45,18 @@ This is a native rest connector. This repo is for additional tools specific to G
 |users_tokens                              |https://www.googleapis.com/auth/admin.directory.user.security   |
 |users_verificationCodes                   |https://www.googleapis.com/auth/admin.directory.user.security   |
 
+## Recommend Scope Sets
+* User Provisioning
+    * https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit
+* User Provisioning + Security 
+    * https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/admin.directory.user.security
+* User Provisioning + Licensing
+    * https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing
+* User Provisioning + Licensing + Security
+    *  https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security
+* Classroom
+    * https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students
+    
 
 ## Available Provisioning Actions
 * Chrome Devices
