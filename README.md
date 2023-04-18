@@ -11,7 +11,7 @@ This is a native rest connector. This repo is for additional tools specific to G
 * [Custom Schemas](#custom-schemas)
 
 # Requirements
-* Google Accoutn with Super Admin Role
+* Google Account with Super Admin Role
 * Service Account created via Cloud Console
 
 ## Authorization Scopes
@@ -54,27 +54,27 @@ This is a native rest connector. This repo is for additional tools specific to G
 
 ### Recommended Scope Sets
 * User Provisioning
-    * https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit
+    * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit```
     * Cloud Console Apps
-        * gcloud services enable admin.googleapis.com
+        * ```gcloud services enable admin.googleapis.com```
 * User Provisioning + Security 
-    * https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/admin.directory.user.security
+    * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/admin.directory.user.security```
     * Cloud Console Apps
-        * gcloud services enable admin.googleapis.com
+        * ```gcloud services enable admin.googleapis.com```
 * User Provisioning + Licensing
-    * https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing
+    * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing```
     * Cloud Console Apps
-        * gcloud services enable admin.googleapis.com
-        * gcloud services enable licensing.googleapis.com
+        * ```gcloud services enable admin.googleapis.com```
+        * ```gcloud services enable licensing.googleapis.com```
 * User Provisioning + Licensing + Security
-    *  https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security
+    *  ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security```
     * Cloud Console Apps
-        * gcloud services enable admin.googleapis.com
-        * gcloud services enable licensing.googleapis.com
+        * ```gcloud services enable admin.googleapis.com```
+        * ```gcloud services enable licensing.googleapis.com```
 * Classroom
-    * https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students
+    * ```https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students```
     * Cloud Console Apps
-        * gcloud services enable classroom.googleapis.com
+        * ```gcloud services enable classroom.googleapis.com```
     
 
 ## Available Provisioning Actions
