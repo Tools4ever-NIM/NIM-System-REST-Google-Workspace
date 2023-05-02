@@ -2475,10 +2475,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/autoForwarding",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2500,27 +2500,27 @@
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/autoForwarding"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/autoForwarding"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "enabled": "boolean*",
                   "emailAddress": "string*",
                   "disposition": "string*"
