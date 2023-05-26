@@ -998,6 +998,7 @@
                               "https://www.googleapis.com/auth/apps.groups.settings"
                             ]
                         },
+                        "maxSessionCount": 5,
                         "processing_options": {
                             "output_field": null
                         },
@@ -1139,7 +1140,7 @@
                               "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
-                        "maxSessionCount": 50,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "aliases"
                         },
@@ -1469,6 +1470,7 @@
                         "https://www.googleapis.com/auth/apps.licensing"
                       ]
                     },
+                    "maxSessionCount": 10,
                     "processing_options": {
                       "output_field": "items"
                     },
@@ -1548,7 +1550,7 @@
                               "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
-                        "maxSessionCount": 20,
+                        "maxSessionCount": 10,
                         "query_parameters": {
                             "customer": "my_customer"
                         }
@@ -2104,7 +2106,6 @@
                         "resource_mandatory": [
                             "id",
                             "orgUnitPath"
-
                         ]
                     },
                     "user_update": {
@@ -2361,7 +2362,7 @@
                             "mode": "normal",
                             "path": "www.googleapis.com/admin/directory/v1/users"
                         },
-                        "maxSessionCount": 50,
+                        "maxSessionCount": 5,
                         "processing_options": {
                             "output_field": "aliases"
                         },
@@ -2432,7 +2433,7 @@
                                 "https://www.googleapis.com/auth/admin.directory.user.security"
                             ]
                         },
-                        "maxSessionCount": 50,
+                        "maxSessionCount": 7,
                         "processing_options": {
                             "output_field": "items"
                         },
@@ -2475,10 +2476,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/autoForwarding",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2489,6 +2490,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 20,
                     "processing_options": {
                       "output_field": null
                     },
@@ -2500,27 +2502,27 @@
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/autoForwarding"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/autoForwarding"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "enabled": "boolean*",
                   "emailAddress": "string*",
                   "disposition": "string*"
@@ -2533,10 +2535,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/delegates",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2547,6 +2549,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 40,
                     "processing_options": {
                       "output_field": "delegates"
                     },
@@ -2558,21 +2561,21 @@
                     "method": "post",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/delegates"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/delegates"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "create",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ],
                     "warning_only": [
                         409
@@ -2582,27 +2585,27 @@
                     "method": "delete",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/delegates/{delegateEmail}"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/delegates/{delegateEmail}"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "delete",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "delegateEmail": "boolean*",
                   "verificationStatus": "string*"
                 }
@@ -2614,10 +2617,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/forwardingAddresses",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2628,6 +2631,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 40,
                     "processing_options": {
                       "output_field": "forwardingAddresses"
                     },
@@ -2639,21 +2643,21 @@
                     "method": "post",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/forwardingAddresses"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/forwardingAddresses"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "create",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                     ,
                     "warning_only": [
@@ -2664,27 +2668,27 @@
                     "method": "delete",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/forwardingAddresses/{forwardingEmail}"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/forwardingAddresses/{forwardingEmail}"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.sharing"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "delete",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "forwardingEmail": "boolean*",
                   "verificationStatus": "string*"
                 }
@@ -2696,10 +2700,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2710,6 +2714,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 40,
                     "processing_options": {
                       "output_field": null
                     },
@@ -2721,27 +2726,27 @@
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/imap"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/imap"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.basic"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "enabled": "boolean*",
                   "autoExpunge": "boolean*",
                   "expungeBehavior": "string*",
@@ -2755,10 +2760,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/language",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2769,6 +2774,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 10,
                     "processing_options": {
                       "output_field": null
                     },
@@ -2780,27 +2786,27 @@
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/language"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/language"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.basic"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "displayLanguage": "string*"
                 }
             },
@@ -2811,10 +2817,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/pop",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2825,6 +2831,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 40,
                     "processing_options": {
                       "output_field": null
                     },
@@ -2836,27 +2843,27 @@
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/pop"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/pop"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.basic"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                  "user_email": "_nim*",
+                  "user_id": "_nim*",
                   "accessWindow": "string*",
                   "disposition": "string*"
                 }
@@ -2868,10 +2875,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/sendAs",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2882,6 +2889,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 40,
                     "processing_options": {
                       "output_field": "sendAs"
                     },
@@ -2889,11 +2897,57 @@
                         400
                     ]
                   },
+                  "users_gmail_settings_sendas_create": {
+                    "method": "post",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
+                      ],
+                      "JWT": {
+                        "sub": "{user_id:no_encode}"
+                      }
+                    },
+                    "semantics": "create",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_id"
+                    ]
+                    ,
+                    "warning_only": [
+                        409
+                    ]
+                  },
+                  "users_gmail_settings_sendas_delete": {
+                    "method": "delete",
+                    "call": {
+                      "mode": "normal",
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs/{sendAsEmail}"
+                    },
+                    "authOptions": {
+                      "scopes": [
+                        "https://www.googleapis.com/auth/gmail.settings.sharing"
+                      ],
+                      "JWT": {
+                        "sub": "{user_id:no_encode}"
+                      }
+                    },
+                    "semantics": "delete",
+                    "resource_allowance_default": "optional",
+                    "resource_prohibited": [],
+                    "resource_mandatory": [
+                      "user_id"
+                    ]
+                  },
                   "users_gmail_settings_sendas_update": {
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/sendAs"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs/{sendAsEmail}"
                     },
                     "processing_options": {
                         "output_field": "sendAs"
@@ -2903,20 +2957,23 @@
                         "https://www.googleapis.com/auth/gmail.settings.basic"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
+                    "resource_prohibited": [
+                        "verificationStatus"
+                    ],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id",
+                      "sendAsEmail"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                    "user_email": "_nim*",
+                    "user_id": "_nim*",
                     "sendAsEmail": "string*",
                     "displayName": "string*",
                     "replyToAddress": "string*",
@@ -2941,10 +2998,10 @@
                     "call": {
                       "mode": "iteration",
                       "table": "users",
-                      "iterator": "primaryEmail",
+                      "iterator": "id",
                       "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/vacation",
                       "base": {
-                        "user_email": "{iterator}"
+                        "user_id": "{iterator}"
                       }
                     },
                     "authOptions": {
@@ -2955,6 +3012,7 @@
                         "sub": "{iterator}"
                       }
                     },
+                    "maxSessionCount": 40,
                     "processing_options": {
                       "output_field": null
                     },
@@ -2966,27 +3024,27 @@
                     "method": "put",
                     "call": {
                       "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_email}/settings/vacation"
+                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/vacation"
                     },
                     "authOptions": {
                       "scopes": [
                         "https://www.googleapis.com/auth/gmail.settings.basic"
                       ],
                       "JWT": {
-                        "sub": "{user_email:no_encode}"
+                        "sub": "{user_id:no_encode}"
                       }
                     },
                     "semantics": "update",
                     "resource_allowance_default": "optional",
                     "resource_prohibited": [],
                     "resource_mandatory": [
-                      "user_email"
+                      "user_id"
                     ]
                   }
                 },
-                "key": "user_email",
+                "key": "user_id",
                 "resources": {
-                    "user_email": "_nim*",
+                    "user_id": "_nim*",
                     "enableAutoReply": "boolean*",
                     "responseSubject": "string*",
                     "responseBodyPlainText": "string*",
@@ -3012,7 +3070,7 @@
                                 "https://www.googleapis.com/auth/admin.directory.user.security"
                             ]
                         },
-                        "maxSessionCount": 50,
+                        "maxSessionCount": 7,
                         "processing_options": {
                             "output_field": "items"
                         },
@@ -3040,6 +3098,7 @@
                     }
                 },
                 "resources": {
+                    "id": "string*",
                     "clientId": "string*",
                     "scopes[]": "string*",
                     "userKey": "string*",
@@ -3065,7 +3124,7 @@
                                 "https://www.googleapis.com/auth/admin.directory.user.security"
                             ]
                         },
-                        "maxSessionCount": 50,
+                        "maxSessionCount": 6,
                         "processing_options": {
                             "output_field": "items"
                         },
@@ -3097,7 +3156,7 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/invalidate"
+                            "path": "admin.googleapis.com/admin/directory/v1/users/{userId}/verificationCodes/invalidate"
                         },
                         "authOptions": {
                             "scopes": [
