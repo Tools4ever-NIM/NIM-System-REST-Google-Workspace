@@ -2059,6 +2059,41 @@
                             "id"
                         ]
                     },
+					"user_email_add_uncached": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/aliases"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "alias",
+                            "primaryEmail"
+                        ]
+                    },
+                    "user_email_delete_uncached": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/aliases/{alias}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "alias"
+                        ]
+                    },
                     "user_update_turnOfftwoStepVerification": {
                         "method": "post",
                         "call": {
@@ -2337,7 +2372,9 @@
                         "addressMeAs": "_:string*",
                         "customGener": "_:string*",
                         "type": "_:string*"
-                    }
+                    },
+					,
+                    "alias": "string"
                 }
             },
             "users_aliases": {
