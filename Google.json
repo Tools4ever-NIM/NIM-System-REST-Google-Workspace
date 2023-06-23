@@ -2036,9 +2036,6 @@
                             "password",
                             "familyName",
                             "givenName"
-                        ],
-                        "warning_only": [
-                            409
                         ]
                     },
                     "user_delete": {
