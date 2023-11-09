@@ -24,6 +24,7 @@ This is a native rest connector. This repo is for additional tools specific to G
 |classroom_invitations                     |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
 |classroom_userProfiles_guardianInvitations|https://www.googleapis.com/auth/classroom.guardianlinks.students|gcloud services enable classroom.googleapis.com                   |
 |classroom_userProfiles_guardians          |https://www.googleapis.com/auth/classroom.guardianlinks.students|gcloud services enable classroom.googleapis.com                   |
+|cloudidentity                             |https://www.googleapis.com/auth/cloud-identity.groups,https://www.googleapis.com/auth/cloud-platform |gcloud services enable cloudidentity.googleapis.com               |
 |datatransfer_transfers                    |https://www.googleapis.com/auth/admin.datatransfer              |                                                                  |
 |drive_drives                              |https://www.googleapis.com/auth/drive                           |gcloud services enable drive.googleapis.com                       |
 |groups                                    |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
@@ -53,13 +54,14 @@ This is a native rest connector. This repo is for additional tools specific to G
 
 ### Recommended Scope Sets
 * Everything
-  * ```https://www.googleapis.com/auth/admin.directory.device.chromeos,https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security,https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students,https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing,https://www.googleapis.com/auth/admin.directory.device.mobile,https://www.googleapis.com/auth/apps.groups.settings,https://www.googleapis.com/auth/admin.datatransfer,https://www.googleapis.com/auth/drive```
+  * ```https://www.googleapis.com/auth/admin.directory.device.chromeos,https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security,https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students,https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing,https://www.googleapis.com/auth/admin.directory.device.mobile,https://www.googleapis.com/auth/apps.groups.settings,https://www.googleapis.com/auth/admin.datatransfer,https://www.googleapis.com/auth/drive,https://www.googleapis.com/auth/cloud-identity.groups,https://www.googleapis.com/auth/cloud-platform```
   * ```gcloud services enable admin.googleapis.com```
   * ```gcloud services enable groupssettings.googleapis.com```
   * ```gcloud services enable licensing.googleapis.com```
   * ```gcloud services enable drive.googleapis.com```
   * ```gcloud services enable gmail.googleapis.com```
   * ```gcloud services enable classroom.googleapis.com```
+  * ```gcloud services enable cloudidentity.googleapis.com```
 * User Provisioning
     * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit```
     * Cloud Console Apps
