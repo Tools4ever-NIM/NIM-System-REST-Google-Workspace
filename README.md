@@ -152,12 +152,13 @@ This is a native rest connector. This repo is for additional tools specific to G
 
 
 ## Custom Schemas
-If you need to import custom schema data into NIM you can extend the table schemas by adding a custom json file. 
+### Schema Definition File
+If you need to import custom schema data into NIM you can extend the table schemas by adding a custom json file where the [SYSTEMNAME] is the name of your system within the NIM console. 
 
-C:\ProgramData\Tools4ever\NIM\config\rest\systems\SYSTEMNAME.json
+**File Path & Name**
+>C:\ProgramData\Tools4ever\NIM\config\rest\systems\[SYSTEMNAME].json
 
-SYSTEMNAME = The name of the system in NIM.
-
+**File Contents**
 ```
 {
 	"schema": {
@@ -177,7 +178,51 @@ SYSTEMNAME = The name of the system in NIM.
 	}
 }
 ```
+### Adding T4e Custom Schema Attributes
+Custom schema attributes can be added directly from the Google Admin console or the Developer API console (preferred).
 
+Open the Developer API console and use the below values for the customerId and Request Body values and then press Execute. If prompted, allow access for the application to execute the command. You should see a response payload show up once the command has finished.
+
+_Developer API Console:_
+> https://developers.google.com/admin-sdk/directory/reference/rest/v1/schemas/insert#try-it
+
+_Request Parameters:_
+```
+customerId = my_customer
+```
+
+_Request Body:_
+```
+{
+  "fields": 
+  [
+    {
+      "fieldName": "ID",
+      "fieldType": "STRING",
+      "readAccessType": "ADMINS_AND_SELF",
+      "multiValued": false,
+      "displayName": "ID"
+    },
+	{
+      "fieldName": "Type",
+      "fieldType": "STRING",
+      "readAccessType": "ADMINS_AND_SELF",
+      "multiValued": false,
+      "displayName": "Type"
+    },
+	{
+      "fieldName": "DeleteDate",
+      "fieldType": "STRING",
+      "readAccessType": "ADMINS_AND_SELF",
+      "multiValued": false,
+      "displayName": "DeleteDate"
+    }
+  ],
+  "schemaName": "Tools4ever"
+  "displayName": "Tools4ever"
+}
+```
+![image](https://github.com/Tools4ever-NIM/NIM-System-REST-Google-Workspace/assets/134305269/5be43fc3-5840-4595-938f-49a7900fdc33)
 
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
