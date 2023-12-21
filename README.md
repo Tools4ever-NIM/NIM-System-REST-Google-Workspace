@@ -1,90 +1,46 @@
-# NIM-System-REST-Google-Workspace
+# Google Workspace
+<img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Google-Workspace/assets/24281600/c2d03c50-1e52-4770-816c-418cbe7f67e3" width="256px" />
 
-This is a native rest connector. This repo is for additional tools specific to Google Workspace
 
-## Table of Contents
-* [Requirements](#requirements)
-* [Authorization Scopes](#authorization-scopes)  
-    * [Recommended Scope Sets](#recommended-scope-sets)  
-* [Available Provisioning Actions](#available-provisioning-actions)
-* [Custom Schemas](#custom-schemas)
 
-# Requirements
-* Google Account with Super Admin Role
-* Service Account created via Cloud Console
+## Data Tables
+- chromeosdevices
+- classroom_courses
+- classroom_course_aliases
+- classroom_course_students
+- classroom_course_teachers
+- classroom_invitations
+- classroom_userProfiles_guardianInvitations
+- classroom_userProfiles_guardians
+- datatransfer_transfers
+- drive_drives
+- groups
+- groups_aliases
+- groups_settings
+- licenses
+- license_assignments
+- members
+- mobiledevices
+- orgunits
+- privileges
+- roleAssignments
+- roles
+- users
+- users_aliases
+- users_asps
+- users_gmail_settings_autoforwarding
+- users_gmail_settings_delegates
+- users_gmail_settings_forwardingAddresses
+- users_gmail_settings_imap
+- users_gmail_settings_language
+- users_gmail_settings_pop
+- users_gmail_settings_sendas
+- users_gmail_settings_vacation
+- users_tokens
+- users_verificationCodes
 
-## Authorization Scopes
-|Table                                     |Scopes                                                          | Cloud Console                                             |
-|------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------|
-|chromeosdevices                           |https://www.googleapis.com/auth/admin.directory.device.chromeos |gcloud services enable admin.googleapis.com                       |
-|classroom_courses                         |https://www.googleapis.com/auth/classroom.courses               |gcloud services enable classroom.googleapis.com                   |
-|classroom_course_aliases                  |https://www.googleapis.com/auth/classroom.courses               |gcloud services enable classroom.googleapis.com                   |
-|classroom_course_students                 |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
-|classroom_course_teachers                 |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
-|classroom_invitations                     |https://www.googleapis.com/auth/classroom.rosters               |gcloud services enable classroom.googleapis.com                   |
-|classroom_userProfiles_guardianInvitations|https://www.googleapis.com/auth/classroom.guardianlinks.students|gcloud services enable classroom.googleapis.com                   |
-|classroom_userProfiles_guardians          |https://www.googleapis.com/auth/classroom.guardianlinks.students|gcloud services enable classroom.googleapis.com                   |
-|datatransfer_transfers                    |https://www.googleapis.com/auth/admin.datatransfer              |                                                                  |
-|drive_drives                              |https://www.googleapis.com/auth/drive                           |gcloud services enable drive.googleapis.com                       |
-|groups                                    |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
-|groups_aliases                            |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
-|groups_settings                           |https://www.googleapis.com/auth/apps.groups.settings            |gcloud services enable groupssettings.googleapis.com              |
-|licenses                                  |                                                                |                                                                  |
-|license_assignments                       |https://www.googleapis.com/auth/apps.licensing                  |gcloud services enable licensing.googleapis.com                   |
-|members                                   |https://www.googleapis.com/auth/admin.directory.group           |gcloud services enable admin.googleapis.com                       |
-|mobiledevices                             |https://www.googleapis.com/auth/admin.directory.device.mobile   |gcloud services enable admin.googleapis.com                       |
-|orgunits                                  |https://www.googleapis.com/auth/admin.directory.orgunit         |gcloud services enable admin.googleapis.com                       |
-|privileges                                |https://www.googleapis.com/auth/admin.directory.rolemanagement  |gcloud services enable admin.googleapis.com                       |
-|roleAssignments                           |https://www.googleapis.com/auth/admin.directory.rolemanagement  |gcloud services enable admin.googleapis.com                       |
-|roles                                     |https://www.googleapis.com/auth/admin.directory.rolemanagement  |gcloud services enable admin.googleapis.com                       |
-|users                                     |https://www.googleapis.com/auth/admin.directory.user            |gcloud services enable admin.googleapis.com                       |
-|users_aliases                             |https://www.googleapis.com/auth/admin.directory.user            |gcloud services enable admin.googleapis.com                       |
-|users_asps                                |https://www.googleapis.com/auth/admin.directory.user.security   |gcloud services enable admin.googleapis.com                       |
-|users_gmail_settings_autoforwarding       |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_delegates            |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_forwardingAddresses  |https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing             |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_imap                 |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_language             |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_pop                  |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_sendas               |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
-|users_gmail_settings_vacation             |https://www.googleapis.com/auth/gmail.settings.basic            |gcloud services enable gmail.googleapis.com                       |
-|users_tokens                              |https://www.googleapis.com/auth/admin.directory.user.security   |gcloud services enable admin.googleapis.com                       |
-|users_verificationCodes                   |https://www.googleapis.com/auth/admin.directory.user.security   |gcloud services enable admin.googleapis.com                       |
 
-### Recommended Scope Sets
-* Everything
-  * ```https://www.googleapis.com/auth/admin.directory.device.chromeos,https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security,https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students,https://www.googleapis.com/auth/gmail.settings.basic,https://www.googleapis.com/auth/gmail.settings.sharing,https://www.googleapis.com/auth/admin.directory.device.mobile,https://www.googleapis.com/auth/apps.groups.settings,https://www.googleapis.com/auth/admin.datatransfer,https://www.googleapis.com/auth/drive```
-  * ```gcloud services enable admin.googleapis.com```
-  * ```gcloud services enable groupssettings.googleapis.com```
-  * ```gcloud services enable licensing.googleapis.com```
-  * ```gcloud services enable drive.googleapis.com```
-  * ```gcloud services enable gmail.googleapis.com```
-  * ```gcloud services enable classroom.googleapis.com```
-* User Provisioning
-    * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit```
-    * Cloud Console Apps
-        * ```gcloud services enable admin.googleapis.com```
-* User Provisioning + Security 
-    * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/admin.directory.user.security```
-    * Cloud Console Apps
-        * ```gcloud services enable admin.googleapis.com```
-* User Provisioning + Licensing
-    * ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing```
-    * Cloud Console Apps
-        * ```gcloud services enable admin.googleapis.com```
-        * ```gcloud services enable licensing.googleapis.com```
-* User Provisioning + Licensing + Security
-    *  ```https://www.googleapis.com/auth/admin.directory.user,https://www.googleapis.com/auth/admin.directory.group,https://www.googleapis.com/auth/admin.directory.orgunit,https://www.googleapis.com/auth/apps.licensing,https://www.googleapis.com/auth/admin.directory.user.security```
-    * Cloud Console Apps
-        * ```gcloud services enable admin.googleapis.com```
-        * ```gcloud services enable licensing.googleapis.com```
-* Classroom
-    * ```https://www.googleapis.com/auth/classroom.courses,https://www.googleapis.com/auth/classroom.rosters,https://www.googleapis.com/auth/classroom.guardianlinks.students```
-    * Cloud Console Apps
-        * ```gcloud services enable classroom.googleapis.com```
-    
-
-## Available Provisioning Actions
+## Actions
 * Chrome Devices
     * Update Chrome Device
 * Classroom
@@ -151,78 +107,8 @@ This is a native rest connector. This repo is for additional tools specific to G
         * Update
 
 
-## Custom Schemas
-### Schema Definition File
-If you need to import custom schema data into NIM you can extend the table schemas by adding a custom json file where the [SYSTEMNAME] is the name of your system within the NIM console. 
-
-**File Path & Name**
->C:\ProgramData\Tools4ever\NIM\config\rest\systems\\[SYSTEMNAME].json
-
-**File Contents**
-```
-{
-	"schema": {
-		"crud_objects": {
-			"users": {
-				"resources": {
-					"customSchemas": {
-						"Tools4ever": {
-							"ID":"_:string*",
-							"Type":"_:string*",
-							"DeleteDate":"_:string*"
-						}
-					}
-				}
-			}
-		}
-	}
-}
-```
-### Adding T4e Custom Schema Attributes
-Custom schema attributes can be added directly from the Google Admin console or the Developer API console (preferred).
-
-Open the Developer API console and use the below values for the customerId and Request Body values and then press Execute. If prompted, allow access for the application to execute the command. You should see a response payload show up once the command has finished.
-
-_Developer API Console:_
-> https://developers.google.com/admin-sdk/directory/reference/rest/v1/schemas/insert#try-it
-
-_Request Parameters:_
-```
-customerId = my_customer
-```
-
-_Request Body:_
-```
-{
-  "fields": 
-  [
-    {
-      "fieldName": "ID",
-      "fieldType": "STRING",
-      "readAccessType": "ADMINS_AND_SELF",
-      "multiValued": false,
-      "displayName": "ID"
-    },
-	{
-      "fieldName": "Type",
-      "fieldType": "STRING",
-      "readAccessType": "ADMINS_AND_SELF",
-      "multiValued": false,
-      "displayName": "Type"
-    },
-	{
-      "fieldName": "DeleteDate",
-      "fieldType": "STRING",
-      "readAccessType": "ADMINS_AND_SELF",
-      "multiValued": false,
-      "displayName": "DeleteDate"
-    }
-  ],
-  "schemaName": "Tools4ever"
-  "displayName": "Tools4ever"
-}
-```
-![image](https://github.com/Tools4ever-NIM/NIM-System-REST-Google-Workspace/assets/134305269/5be43fc3-5840-4595-938f-49a7900fdc33)
+# NIM Docs
+The official NIM documentation can be found at: https://docs.nimsuite.com
 
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
