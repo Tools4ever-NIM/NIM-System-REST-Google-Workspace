@@ -11,7 +11,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "processing_options": {
@@ -26,7 +26,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "semantics": "create",
@@ -47,7 +47,6 @@
                         "resource_mandatory": [
                             "name",
                             "section"
-                            
                         ],
                         "warning_only": [
                             409
@@ -61,7 +60,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "semantics": "update",
@@ -95,7 +94,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "semantics": "delete",
@@ -145,7 +144,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "processing_options": {
@@ -162,7 +161,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "semantics": "create",
@@ -184,7 +183,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses"
                             ]
                         },
                         "semantics": "delete",
@@ -197,8 +196,8 @@
                 },
                 "key": "alias",
                 "resources": {
-                   "alias": "string*",
-                   "course_id": "string*"
+                    "alias": "string*",
+                    "course_id": "string*"
                 }
             },
             "classroom_course_students": {
@@ -233,7 +232,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "semantics": "create",
@@ -255,7 +254,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "semantics": "delete",
@@ -317,7 +316,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "processing_options": {
@@ -334,7 +333,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "semantics": "create",
@@ -356,7 +355,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "semantics": "delete",
@@ -400,7 +399,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "processing_options": {
@@ -417,7 +416,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "semantics": "create",
@@ -439,7 +438,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters"
                             ]
                         },
                         "semantics": "delete",
@@ -455,7 +454,7 @@
                     "userId": "string*",
                     "courseId": "string*",
                     "role": "string*"
-                  }
+                }
             },
             "classroom_userProfiles_guardianInvitations": {
                 "operations": {
@@ -469,7 +468,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "processing_options": {
@@ -486,7 +485,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "semantics": "create",
@@ -505,7 +504,7 @@
                     "invitedEmailAddress": "string*",
                     "state": "string*",
                     "creationTime": "string*"
-                  }
+                }
             },
             "classroom_userProfiles_guardians": {
                 "operations": {
@@ -516,7 +515,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "processing_options": {
@@ -532,7 +531,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
                             ]
                         },
                         "semantics": "delete",
@@ -572,7 +571,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.device.chromeos"
+                                "https://www.googleapis.com/auth/admin.directory.device.chromeos"
                             ]
                         },
                         "query_parameters": {
@@ -591,7 +590,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.device.chromeos"
+                                "https://www.googleapis.com/auth/admin.directory.device.chromeos"
                             ]
                         },
                         "semantics": "update",
@@ -628,46 +627,48 @@
                     "kind": "string*",
                     "recentUsers": [
                         {
-                        "type": "string*",
-                        "email": "string*"
+                            "type": "string*",
+                            "email": "string*"
                         }
                     ],
                     "activeTimeRanges": [
                         {
-                        "activeTime": "string*",
-                        "date": "string*"
+                            "activeTime": "string*",
+                            "date": "string*"
                         }
                     ],
                     "ethernetMacAddress": "string*",
                     "annotatedAssetId": "string*",
-                    "etag": "string*",        
+                    "etag": "string*",
                     "systemRamTotal": "string*",
                     "cpuInfo": [
                         {
-                        "model": "string*",
-                        "architecture": "string*",
-                        "maxClockSpeedKhz": "string*",
-                        "logicalCpus": "string*"
+                            "model": "string*",
+                            "architecture": "string*",
+                            "maxClockSpeedKhz": "string*",
+                            "logicalCpus": "string*"
                         }
                     ],
                     "deviceFiles": [
                         {
-                        "name": "string*",
-                        "type": "string*",
-                        "downloadUrl": "string*",
-                        "createTime": "string*"
+                            "name": "string*",
+                            "type": "string*",
+                            "downloadUrl": "string*",
+                            "createTime": "string*"
                         }
                     ],
                     "systemRamFreeReports": [
                         {
-                        "reportTime": "string*",
-                        "systemRamFreeInfo": ["string*"]
+                            "reportTime": "string*",
+                            "systemRamFreeInfo": [
+                                "string*"
+                            ]
                         }
                     ],
                     "lastKnownNetwork": [
                         {
-                        "ipAddress": "string*",
-                        "wanIpAddress": "string*"
+                            "ipAddress": "string*",
+                            "wanIpAddress": "string*"
                         }
                     ],
                     "autoUpdateExpiration": "string*",
@@ -685,10 +686,10 @@
                     },
                     "screenshotFiles": [
                         {
-                        "name": "string*",
-                        "type": "string*",
-                        "downloadUrl": "string*",
-                        "createTime": "string*"
+                            "name": "string*",
+                            "type": "string*",
+                            "downloadUrl": "string*",
+                            "createTime": "string*"
                         }
                     ],
                     "orgUnitId": "string*",
@@ -709,11 +710,10 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.datatransfer"
+                                "https://www.googleapis.com/auth/admin.datatransfer"
                             ]
                         },
-                        "query_parameters": {
-                        },
+                        "query_parameters": {},
                         "processing_options": {
                             "output_field": "dataTransfers"
                         }
@@ -721,22 +721,22 @@
                     "datatransfer_transfers_create": {
                         "method": "post",
                         "call": {
-                          "mode": "normal",
-                          "path": "admin.googleapis.com/admin/datatransfer/v1/transfers"
+                            "mode": "normal",
+                            "path": "admin.googleapis.com/admin/datatransfer/v1/transfers"
                         },
                         "authOptions": {
-                          "scopes": [
-                            "https://www.googleapis.com/auth/admin.datatransfer"
-                          ]
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.datatransfer"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
                         "resource_prohibited": [],
                         "resource_mandatory": [
-                          "oldOwnerUserId",
-                          "newOwnerUserId"
+                            "oldOwnerUserId",
+                            "newOwnerUserId"
                         ]
-                      }
+                    }
                 },
                 "key": "id",
                 "resources": {
@@ -744,15 +744,15 @@
                     "oldOwnerUserId": "string*",
                     "newOwnerUserId": "string*",
                     "applicationDataTransfers": [
-                      {
-                        "applicationId": "string*",
-                        "applicationTransferParams": "string*",
-                        "applicationTransferStatus": "string*"
-                      }
+                        {
+                            "applicationId": "string*",
+                            "applicationTransferParams": "string*",
+                            "applicationTransferStatus": "string*"
+                        }
                     ],
                     "overallTransferStatusCode": "string*",
                     "requestTime": "string*"
-                  }
+                }
             },
             "drive_drives": {
                 "operations": {
@@ -765,11 +765,11 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/drive"
+                                "https://www.googleapis.com/auth/drive"
                             ]
                         },
                         "query_parameters": {
-                            "useDomainAdminAccess":true,
+                            "useDomainAdminAccess": true,
                             "fields": "*"
                         },
                         "processing_options": {
@@ -779,39 +779,39 @@
                     "drives_drive_create": {
                         "method": "post",
                         "call": {
-                          "mode": "normal",
-                          "path": "www.googleapis.com/drive/v3/drives"
+                            "mode": "normal",
+                            "path": "www.googleapis.com/drive/v3/drives"
                         },
                         "authOptions": {
-                          "scopes": [
-                            "https://www.googleapis.com/auth/drive"
-                          ]
+                            "scopes": [
+                                "https://www.googleapis.com/auth/drive"
+                            ]
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [],
                         "resource_mandatory": [
-                          "name"
+                            "name"
                         ]
-                      },
+                    },
                     "drives_drive_delete": {
                         "method": "delete",
                         "call": {
-                          "mode": "normal",
-                          "path": "www.googleapis.com/drive/v3/drives/{id}"
+                            "mode": "normal",
+                            "path": "www.googleapis.com/drive/v3/drives/{id}"
                         },
                         "authOptions": {
-                          "scopes": [
-                            "https://www.googleapis.com/auth/drive"
-                          ]
+                            "scopes": [
+                                "https://www.googleapis.com/auth/drive"
+                            ]
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "prohibited",
                         "resource_prohibited": [],
                         "resource_mandatory": [
-                          "id"
+                            "id"
                         ]
-                      }
+                    }
                 },
                 "key": "id",
                 "resources": {
@@ -821,41 +821,41 @@
                     "themeId": "string*",
                     "colorRgb": "string*",
                     "backgroundImageFile": {
-                      "id": "_:string*",
-                      "xCoordinate": "_:string*",
-                      "yCoordinate": "_:string*",
-                      "width": "_:string*"
+                        "id": "_:string*",
+                        "xCoordinate": "_:string*",
+                        "yCoordinate": "_:string*",
+                        "width": "_:string*"
                     },
                     "backgroundImageLink": "string*",
                     "capabilities": {
-                      "canAddChildren": "_:boolean*",
-                      "canChangeCopyRequiresWriterPermissionRestriction": "_:boolean*",
-                      "canChangeDomainUsersOnlyRestriction": "_:boolean*",
-                      "canChangeDriveBackground": "_:boolean*",
-                      "canChangeDriveMembersOnlyRestriction": "_:boolean*",
-                      "canComment": "_:boolean*",
-                      "canCopy": "_:boolean*",
-                      "canDeleteChildren": "_:boolean*",
-                      "canDeleteDrive": "_:boolean*",
-                      "canDownload": "_:boolean*",
-                      "canEdit": "_:boolean*",
-                      "canListChildren": "_:boolean*",
-                      "canManageMembers": "_:boolean*",
-                      "canReadRevisions": "_:boolean*",
-                      "canRename": "_:boolean*",
-                      "canRenameDrive": "_:boolean*",
-                      "canShare": "_:boolean*",
-                      "canTrashChildren": "_:boolean*"
+                        "canAddChildren": "_:boolean*",
+                        "canChangeCopyRequiresWriterPermissionRestriction": "_:boolean*",
+                        "canChangeDomainUsersOnlyRestriction": "_:boolean*",
+                        "canChangeDriveBackground": "_:boolean*",
+                        "canChangeDriveMembersOnlyRestriction": "_:boolean*",
+                        "canComment": "_:boolean*",
+                        "canCopy": "_:boolean*",
+                        "canDeleteChildren": "_:boolean*",
+                        "canDeleteDrive": "_:boolean*",
+                        "canDownload": "_:boolean*",
+                        "canEdit": "_:boolean*",
+                        "canListChildren": "_:boolean*",
+                        "canManageMembers": "_:boolean*",
+                        "canReadRevisions": "_:boolean*",
+                        "canRename": "_:boolean*",
+                        "canRenameDrive": "_:boolean*",
+                        "canShare": "_:boolean*",
+                        "canTrashChildren": "_:boolean*"
                     },
                     "createdTime": "string*",
                     "hidden": "boolean*",
                     "restrictions": {
-                      "adminManagedRestrictions": "_:boolean*",
-                      "copyRequiresWriterPermission": "_:boolean*",
-                      "domainUsersOnly":"_:boolean*",
-                      "driveMembersOnly": "_:boolean*"
+                        "adminManagedRestrictions": "_:boolean*",
+                        "copyRequiresWriterPermission": "_:boolean*",
+                        "domainUsersOnly": "_:boolean*",
+                        "driveMembersOnly": "_:boolean*"
                     }
-                  }
+                }
             },
             "groups": {
                 "operations": {
@@ -867,7 +867,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "query_parameters": {
@@ -882,7 +882,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "create",
@@ -909,7 +909,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "delete",
@@ -926,7 +926,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "update",
@@ -995,7 +995,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/apps.groups.settings"
+                                "https://www.googleapis.com/auth/apps.groups.settings"
                             ]
                         },
                         "maxSessionCount": 5,
@@ -1015,7 +1015,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/apps.groups.settings"
+                                "https://www.googleapis.com/auth/apps.groups.settings"
                             ]
                         },
                         "semantics": "update",
@@ -1137,7 +1137,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "maxSessionCount": 10,
@@ -1156,7 +1156,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "create",
@@ -1177,7 +1177,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "delete",
@@ -1198,287 +1198,287 @@
             },
             "licenses": {
                 "operations": {
-                  "licenses_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "constant",
-                      "values": [
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020027",
-                          "skuName": "Google Workspace Business Starter"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020028",
-                          "skuName": "Google Workspace Business Standard"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020025",
-                          "skuName": "Google Workspace Business Plus"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010060003",
-                          "skuName": "Google Workspace Enterprise Essentials"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020029",
-                          "skuName": "Google Workspace Enterprise Starter"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020026",
-                          "skuName": "Google Workspace Enterprise Standard"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020020",
-                          "skuName": "Google Workspace Enterprise Plus (formerly G Suite Enterprise)"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "1010020030",
-                          "skuName": "Google Workspace Frontline"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "Google-Apps-Unlimited",
-                          "skuName": "G Suite Business"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "Google-Apps-For-Business",
-                          "skuName": "G Suite Basic"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "Google-Apps-Lite",
-                          "skuName": "G Suite Lite"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "Google-Apps-For-Postini",
-                          "skuName": "Google Apps Message Security"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310002",
-                          "skuName": "Google Workspace for Education Plus - Legacy"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310003",
-                          "skuName": "Google Workspace for Education Plus - Legacy (Student)"
-                        },
-                        {
-                          "productId": "Google-Apps",
-                          "productName": "Google Workspace",
-                          "skuId": "Google-Apps-For-Education",
-                          "skuName": "Google Workspace for Education Fundamentals"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310005",
-                          "skuName": "Google Workspace for Education Standard"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310006",
-                          "skuName": "Google Workspace for Education Standard (Staff)"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310007",
-                          "skuName": "Google Workspace for Education Standard (Extra Student)"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310008",
-                          "skuName": "Google Workspace for Education Plus"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310009",
-                          "skuName": "Google Workspace for Education Plus (Staff)"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310010",
-                          "skuName": "Google Workspace for Education Plus (Extra Student)"
-                        },
-                        {
-                          "productId": "101037",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010370001",
-                          "skuName": "Google Workspace for Education: Teaching and Learning Upgrade"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310002",
-                          "skuName": "Google Workspace for Education Plus - Legacy"
-                        },
-                        {
-                          "productId": "101031",
-                          "productName": "Google Workspace for Education",
-                          "skuId": "1010310003",
-                          "skuName": "Google Workspace for Education Plus - Legacy (Student)"
-                        },
-                        {
-                          "productId": "Google-Vault",
-                          "productName": "Google Vault",
-                          "skuId": "Google-Vault",
-                          "skuName": "Google Vault"
-                        },
-                        {
-                          "productId": "Google-Vault",
-                          "productName": "Google Vault",
-                          "skuId": "Google-Vault-Former-Employee",
-                          "skuName": "Google Vault - Former Employee"
-                        },
-                        {
-                          "productId": "101001",
-                          "productName": "Cloud Identity",
-                          "skuId": "1010010001",
-                          "skuName": "Cloud Identity"
-                        },
-                        {
-                          "productId": "101005",
-                          "productName": "Cloud Identity Premium",
-                          "skuId": "1010050001",
-                          "skuName": "Cloud Identity Premium"
-                        },
-                        {
-                          "productId": "101033",
-                          "productName": "Google Voice",
-                          "skuId": "1010330003",
-                          "skuName": "Google Voice Starter"
-                        },
-                        {
-                          "productId": "101033",
-                          "productName": "Google Voice",
-                          "skuId": "1010330004",
-                          "skuName": "Google Voice Standard"
-                        },
-                        {
-                          "productId": "101033",
-                          "productName": "Google Voice",
-                          "skuId": "1010330002",
-                          "skuName": "Google Voice Premier"
-                        },
-                        {
-                          "productId": "101034",
-                          "productName": "Google Workspace Archived User",
-                          "skuId": "1010340004",
-                          "skuName": "Google Workspace Enterprise Standard - Archived User",
-                          "unarchivalProductId": "Google-Apps",
-                          "unarchivalSkuId": "1010020026"
-                        },
-                        {
-                          "productId": "101034",
-                          "productName": "Google Workspace Archived User",
-                          "skuId": "1010340001",
-                          "skuName": "Google Workspace Enterprise Plus - Archived User",
-                          "unarchivalProductId": "Google-Apps",
-                          "unarchivalSkuId": "1010020020"
-                        },
-                        {
-                          "productId": "101034",
-                          "productName": "Google Workspace Archived User",
-                          "skuId": "1010340005",
-                          "skuName": "Google Workspace Business Starter - Archived User",
-                          "unarchivalProductId": "Google-Apps",
-                          "unarchivalSkuId": "1010020027"
-                        },
-                        {
-                          "productId": "101034",
-                          "productName": "Google Workspace Archived User",
-                          "skuId": "1010340006",
-                          "skuName": "Google Workspace Business Standard - Archived User",
-                          "unarchivalProductId": "Google-Apps",
-                          "unarchivalSkuId": "1010020028"
-                        },
-                        {
-                          "productId": "101034",
-                          "productName": "Google Workspace Archived User",
-                          "skuId": "1010340003",
-                          "skuName": "Google Workspace Business Plus - Archived User",
-                          "unarchivalProductId": "Google-Apps",
-                          "unarchivalSkuId": "1010020025"
-                        },
-                        {
-                          "productId": "101034",
-                          "productName": "Google Workspace Archived User",
-                          "skuId": "1010340002",
-                          "skuName": "G Suite Business - Archived User",
-                          "unarchivalProductId": "Google-Apps",
-                          "unarchivalSkuId": "Google-Apps-Unlimited"
+                    "licenses_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "constant",
+                            "values": [
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020027",
+                                    "skuName": "Google Workspace Business Starter"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020028",
+                                    "skuName": "Google Workspace Business Standard"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020025",
+                                    "skuName": "Google Workspace Business Plus"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010060003",
+                                    "skuName": "Google Workspace Enterprise Essentials"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020029",
+                                    "skuName": "Google Workspace Enterprise Starter"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020026",
+                                    "skuName": "Google Workspace Enterprise Standard"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020020",
+                                    "skuName": "Google Workspace Enterprise Plus (formerly G Suite Enterprise)"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020030",
+                                    "skuName": "Google Workspace Frontline"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "Google-Apps-Unlimited",
+                                    "skuName": "G Suite Business"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "Google-Apps-For-Business",
+                                    "skuName": "G Suite Basic"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "Google-Apps-Lite",
+                                    "skuName": "G Suite Lite"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "Google-Apps-For-Postini",
+                                    "skuName": "Google Apps Message Security"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310002",
+                                    "skuName": "Google Workspace for Education Plus - Legacy"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310003",
+                                    "skuName": "Google Workspace for Education Plus - Legacy (Student)"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "Google-Apps-For-Education",
+                                    "skuName": "Google Workspace for Education Fundamentals"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310005",
+                                    "skuName": "Google Workspace for Education Standard"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310006",
+                                    "skuName": "Google Workspace for Education Standard (Staff)"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310007",
+                                    "skuName": "Google Workspace for Education Standard (Extra Student)"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310008",
+                                    "skuName": "Google Workspace for Education Plus"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310009",
+                                    "skuName": "Google Workspace for Education Plus (Staff)"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310010",
+                                    "skuName": "Google Workspace for Education Plus (Extra Student)"
+                                },
+                                {
+                                    "productId": "101037",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010370001",
+                                    "skuName": "Google Workspace for Education: Teaching and Learning Upgrade"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310002",
+                                    "skuName": "Google Workspace for Education Plus - Legacy"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310003",
+                                    "skuName": "Google Workspace for Education Plus - Legacy (Student)"
+                                },
+                                {
+                                    "productId": "Google-Vault",
+                                    "productName": "Google Vault",
+                                    "skuId": "Google-Vault",
+                                    "skuName": "Google Vault"
+                                },
+                                {
+                                    "productId": "Google-Vault",
+                                    "productName": "Google Vault",
+                                    "skuId": "Google-Vault-Former-Employee",
+                                    "skuName": "Google Vault - Former Employee"
+                                },
+                                {
+                                    "productId": "101001",
+                                    "productName": "Cloud Identity",
+                                    "skuId": "1010010001",
+                                    "skuName": "Cloud Identity"
+                                },
+                                {
+                                    "productId": "101005",
+                                    "productName": "Cloud Identity Premium",
+                                    "skuId": "1010050001",
+                                    "skuName": "Cloud Identity Premium"
+                                },
+                                {
+                                    "productId": "101033",
+                                    "productName": "Google Voice",
+                                    "skuId": "1010330003",
+                                    "skuName": "Google Voice Starter"
+                                },
+                                {
+                                    "productId": "101033",
+                                    "productName": "Google Voice",
+                                    "skuId": "1010330004",
+                                    "skuName": "Google Voice Standard"
+                                },
+                                {
+                                    "productId": "101033",
+                                    "productName": "Google Voice",
+                                    "skuId": "1010330002",
+                                    "skuName": "Google Voice Premier"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace Archived User",
+                                    "skuId": "1010340004",
+                                    "skuName": "Google Workspace Enterprise Standard - Archived User",
+                                    "unarchivalProductId": "Google-Apps",
+                                    "unarchivalSkuId": "1010020026"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace Archived User",
+                                    "skuId": "1010340001",
+                                    "skuName": "Google Workspace Enterprise Plus - Archived User",
+                                    "unarchivalProductId": "Google-Apps",
+                                    "unarchivalSkuId": "1010020020"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace Archived User",
+                                    "skuId": "1010340005",
+                                    "skuName": "Google Workspace Business Starter - Archived User",
+                                    "unarchivalProductId": "Google-Apps",
+                                    "unarchivalSkuId": "1010020027"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace Archived User",
+                                    "skuId": "1010340006",
+                                    "skuName": "Google Workspace Business Standard - Archived User",
+                                    "unarchivalProductId": "Google-Apps",
+                                    "unarchivalSkuId": "1010020028"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace Archived User",
+                                    "skuId": "1010340003",
+                                    "skuName": "Google Workspace Business Plus - Archived User",
+                                    "unarchivalProductId": "Google-Apps",
+                                    "unarchivalSkuId": "1010020025"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace Archived User",
+                                    "skuId": "1010340002",
+                                    "skuName": "G Suite Business - Archived User",
+                                    "unarchivalProductId": "Google-Apps",
+                                    "unarchivalSkuId": "Google-Apps-Unlimited"
+                                }
+                            ]
                         }
-                      ]
                     }
-                  }
                 },
                 "key": "skuId",
                 "resources": {
-                  "productId": "string*",
-                  "productName": "string*",
-                  "skuId": "string*",
-                  "skuName": "string*"
+                    "productId": "string*",
+                    "productName": "string*",
+                    "skuId": "string*",
+                    "skuName": "string*"
                 }
             },
             "license_assignments": {
                 "operations": {
-                  "licenses_assignments_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "licenses",
-                      "iterator": "skuId",
-                      "iterator_columns": [
-                        "productId"
-                      ],
-                      "path": "licensing.googleapis.com/apps/licensing/v1/product/{productId}/sku/{iterator}/users",
-                      "base": {
-                        "skuId": "{iterator}"
-                      }
+                    "licenses_assignments_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "licenses",
+                            "iterator": "skuId",
+                            "iterator_columns": [
+                                "productId"
+                            ],
+                            "path": "licensing.googleapis.com/apps/licensing/v1/product/{productId}/sku/{iterator}/users",
+                            "base": {
+                                "skuId": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/apps.licensing"
+                            ]
+                        },
+                        "maxSessionCount": 10,
+                        "processing_options": {
+                            "output_field": "items"
+                        },
+                        "query_parameters": {
+                            "customerId": "{customer_id}"
+                        }
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/apps.licensing"
-                      ]
-                    },
-                    "maxSessionCount": 10,
-                    "processing_options": {
-                      "output_field": "items"
-                    },
-                    "query_parameters": {
-                      "customerId": "{customer_id}"
-                    }
-                  },
-                  "license_assignment_create": {
+                    "license_assignment_create": {
                         "method": "post",
                         "call": {
                             "mode": "normal",
@@ -1486,7 +1486,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/apps.licensing"
+                                "https://www.googleapis.com/auth/apps.licensing"
                             ]
                         },
                         "semantics": "create",
@@ -1508,7 +1508,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/apps.licensing"
+                                "https://www.googleapis.com/auth/apps.licensing"
                             ]
                         },
                         "semantics": "delete",
@@ -1519,8 +1519,22 @@
                             "userId"
                         ],
                         "warning_only": [
-                            409,412
+                            409,
+                            412
                         ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "license_assignment_create",
+                    "remove_operation": "license_assignment_delete",
+                    "member_table": "users",
+                    "group_table": "licenses",
+                    "member_attributes": {
+                        "primaryEmail": "userId"
+                    },
+                    "group_attributes": {
+                        "skuId": "skuId",
+                        "productId": "productId"
                     }
                 },
                 "resources": {
@@ -1547,7 +1561,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "maxSessionCount": 10,
@@ -1563,7 +1577,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "create",
@@ -1587,7 +1601,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                              "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
                         "semantics": "delete",
@@ -1679,8 +1693,12 @@
                     "etag": "string*",
                     "resourceId": "string*",
                     "deviceId": "string*",
-                    "name": ["string*"],
-                    "email": ["string*"],
+                    "name": [
+                        "string*"
+                    ],
+                    "email": [
+                        "string*"
+                    ],
                     "model": "string*",
                     "os": "string*",
                     "type": "string*",
@@ -1702,7 +1720,9 @@
                     "basebandVersion": "string*",
                     "unknownSourcesStatus": "boolean*",
                     "developerOptionsStatus": "boolean*",
-                    "otherAccountsInfo": ["string*"],
+                    "otherAccountsInfo": [
+                        "string*"
+                    ],
                     "adbStatus": "boolean*",
                     "supportsWorkProfile": "boolean*",
                     "manufacturer": "string*",
@@ -1716,11 +1736,13 @@
                     "privilege": "string*",
                     "applications": [
                         {
-                        "packageName": "string*",
-                        "displayName": "string*",
-                        "versionName": "string*",
-                        "versionCode": "string*",
-                        "permission": ["string*"]
+                            "packageName": "string*",
+                            "displayName": "string*",
+                            "versionName": "string*",
+                            "versionCode": "string*",
+                            "permission": [
+                                "string*"
+                            ]
                         }
                     ]
                 }
@@ -1994,7 +2016,7 @@
                         },
                         "query_parameters": {
                             "customer": "my_customer",
-                            "projection":"FULL"
+                            "projection": "FULL"
                         }
                     },
                     "user_create": {
@@ -2056,7 +2078,7 @@
                             "id"
                         ]
                     },
-					"user_email_add_uncached": {
+                    "user_email_add_uncached": {
                         "method": "post",
                         "call": {
                             "mode": "normal",
@@ -2178,6 +2200,7 @@
                     }
                 },
                 "key": "id",
+                "keyRefs":["primaryEmail"],
                 "resources": {
                     "id": "string*",
                     "primaryEmail": "string*",
@@ -2275,7 +2298,6 @@
                             "location": "string*",
                             "symbol": "string*"
                         }
-                        
                     ],
                     "lastLoginTime": "string*",
                     "phones": [
@@ -2320,7 +2342,7 @@
                             "uid": "string*",
                             "username": "string*"
                         }
-                    ], 
+                    ],
                     "languages": [
                         {
                             "customLanguage": "string*",
@@ -2504,505 +2526,504 @@
             },
             "users_gmail_settings_autoforwarding": {
                 "operations": {
-                  "users_gmail_settings_autoforwarding_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/autoForwarding",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_autoforwarding_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/autoForwarding",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 20,
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
-                    },
-                    "maxSessionCount": 20,
-                    "processing_options": {
-                      "output_field": null
-                    },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_autoforwarding_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/autoForwarding"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_autoforwarding_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/autoForwarding"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
-                  "user_id": "_nim*",
-                  "enabled": "boolean*",
-                  "emailAddress": "string*",
-                  "disposition": "string*"
+                    "user_id": "_nim*",
+                    "enabled": "boolean*",
+                    "emailAddress": "string*",
+                    "disposition": "string*"
                 }
             },
             "users_gmail_settings_delegates": {
                 "operations": {
-                  "users_gmail_settings_delegates_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/delegates",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_delegates_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/delegates",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 40,
+                        "processing_options": {
+                            "output_field": "delegates"
+                        },
+                        "warning_only": [
+                            400,
+                            204
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
+                    "users_gmail_settings_delegate_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/delegates"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
                     },
-                    "maxSessionCount": 40,
-                    "processing_options": {
-                      "output_field": "delegates"
-                    },
-                    "warning_only": [
-                        400,204
-                    ]
-                  },
-                  "users_gmail_settings_delegate_create": {
-                    "method": "post",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/delegates"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "create",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ],
-                    "warning_only": [
-                        409
-                    ]
-                  },
-                  "users_gmail_settings_delegate_delete": {
-                    "method": "delete",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/delegates/{delegateEmail}"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "delete",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_delegate_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/delegates/{delegateEmail}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
-                  "user_id": "_nim*",
-                  "delegateEmail": "boolean*",
-                  "verificationStatus": "string*"
+                    "user_id": "_nim*",
+                    "delegateEmail": "boolean*",
+                    "verificationStatus": "string*"
                 }
             },
             "users_gmail_settings_forwardingAddresses": {
                 "operations": {
-                  "users_gmail_settings_forwardingAddresses_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/forwardingAddresses",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_forwardingAddresses_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/forwardingAddresses",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 40,
+                        "processing_options": {
+                            "output_field": "forwardingAddresses"
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
+                    "users_gmail_settings_forwardingAddress_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/forwardingAddresses"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
                     },
-                    "maxSessionCount": 40,
-                    "processing_options": {
-                      "output_field": "forwardingAddresses"
-                    },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_forwardingAddress_create": {
-                    "method": "post",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/forwardingAddresses"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "create",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                    ,
-                    "warning_only": [
-                        409
-                    ]
-                  },
-                  "users_gmail_settings_forwardingAddress_delete": {
-                    "method": "delete",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/forwardingAddresses/{forwardingEmail}"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "delete",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_forwardingAddress_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/forwardingAddresses/{forwardingEmail}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
-                  "user_id": "_nim*",
-                  "forwardingEmail": "boolean*",
-                  "verificationStatus": "string*"
+                    "user_id": "_nim*",
+                    "forwardingEmail": "boolean*",
+                    "verificationStatus": "string*"
                 }
             },
             "users_gmail_settings_imap": {
                 "operations": {
-                  "users_gmail_settings_imap_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_imap_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 40,
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
-                    },
-                    "maxSessionCount": 40,
-                    "processing_options": {
-                      "output_field": null
-                    },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_imap_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/imap"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_imap_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/imap"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
-                  "user_id": "_nim*",
-                  "enabled": "boolean*",
-                  "autoExpunge": "boolean*",
-                  "expungeBehavior": "string*",
-                  "maxFolderSize": "number*"
+                    "user_id": "_nim*",
+                    "enabled": "boolean*",
+                    "autoExpunge": "boolean*",
+                    "expungeBehavior": "string*",
+                    "maxFolderSize": "number*"
                 }
             },
             "users_gmail_settings_language": {
                 "operations": {
-                  "users_gmail_settings_language_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/language",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_language_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/language",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 10,
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
-                    },
-                    "maxSessionCount": 10,
-                    "processing_options": {
-                      "output_field": null
-                    },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_language_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/language"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_language_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/language"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
-                  "user_id": "_nim*",
-                  "displayLanguage": "string*"
+                    "user_id": "_nim*",
+                    "displayLanguage": "string*"
                 }
             },
             "users_gmail_settings_pop": {
                 "operations": {
-                  "users_gmail_settings_pop_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/pop",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_pop_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/pop",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 40,
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
-                    },
-                    "maxSessionCount": 40,
-                    "processing_options": {
-                      "output_field": null
-                    },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_pop_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/pop"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_pop_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/pop"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
-                  "user_id": "_nim*",
-                  "accessWindow": "string*",
-                  "disposition": "string*"
+                    "user_id": "_nim*",
+                    "accessWindow": "string*",
+                    "disposition": "string*"
                 }
             },
             "users_gmail_settings_sendas": {
                 "operations": {
-                  "users_gmail_settings_sendas_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/sendAs",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_sendas_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/sendAs",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 40,
+                        "processing_options": {
+                            "output_field": "sendAs"
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
+                    "users_gmail_settings_sendas_create": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
                     },
-                    "maxSessionCount": 40,
-                    "processing_options": {
-                      "output_field": "sendAs"
+                    "users_gmail_settings_sendas_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs/{sendAsEmail}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
                     },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_sendas_create": {
-                    "method": "post",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "create",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                    ,
-                    "warning_only": [
-                        409
-                    ]
-                  },
-                  "users_gmail_settings_sendas_delete": {
-                    "method": "delete",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs/{sendAsEmail}"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.sharing"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "delete",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  },
-                  "users_gmail_settings_sendas_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs/{sendAsEmail}"
-                    },
-                    "processing_options": {
-                        "output_field": "sendAs"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [
-                        "verificationStatus"
-                    ],
-                    "resource_mandatory": [
-                      "user_id",
-                      "sendAsEmail"
-                    ]
-                  }
+                    "users_gmail_settings_sendas_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/sendAs/{sendAsEmail}"
+                        },
+                        "processing_options": {
+                            "output_field": "sendAs"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "verificationStatus"
+                        ],
+                        "resource_mandatory": [
+                            "user_id",
+                            "sendAsEmail"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
@@ -3026,54 +3047,54 @@
             },
             "users_gmail_settings_vacation": {
                 "operations": {
-                  "users_gmail_settings_vacation_get": {
-                    "method": "get",
-                    "call": {
-                      "mode": "iteration",
-                      "table": "users",
-                      "iterator": "id",
-                      "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/vacation",
-                      "base": {
-                        "user_id": "{iterator}"
-                      }
+                    "users_gmail_settings_vacation_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/vacation",
+                            "base": {
+                                "user_id": "{iterator}"
+                            }
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{iterator}"
+                            }
+                        },
+                        "maxSessionCount": 40,
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "warning_only": [
+                            400
+                        ]
                     },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{iterator}"
-                      }
-                    },
-                    "maxSessionCount": 40,
-                    "processing_options": {
-                      "output_field": null
-                    },
-                    "warning_only": [
-                        400
-                    ]
-                  },
-                  "users_gmail_settings_vacation_update": {
-                    "method": "put",
-                    "call": {
-                      "mode": "normal",
-                      "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/vacation"
-                    },
-                    "authOptions": {
-                      "scopes": [
-                        "https://www.googleapis.com/auth/gmail.settings.basic"
-                      ],
-                      "JWT": {
-                        "sub": "{user_id:no_encode}"
-                      }
-                    },
-                    "semantics": "update",
-                    "resource_allowance_default": "optional",
-                    "resource_prohibited": [],
-                    "resource_mandatory": [
-                      "user_id"
-                    ]
-                  }
+                    "users_gmail_settings_vacation_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{user_id}/settings/vacation"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.basic"
+                            ],
+                            "JWT": {
+                                "sub": "{user_id:no_encode}"
+                            }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "user_id"
+                        ]
+                    }
                 },
                 "key": "user_id",
                 "resources": {
@@ -3217,8 +3238,7 @@
             "baseUrl": "https://",
             "get": {
                 "maxPageCount": -1,
-                "query_parameters": {
-                }
+                "query_parameters": {}
             },
             "authentication": "certificate",
             "call_handling": "google",
@@ -3239,12 +3259,12 @@
                 }
             },
             "allowedHosts": [
-                    "licensing.googleapis.com",
-                    "www.googleapis.com",
-                    "classroom.googleapis.com",
-                    "admin.googleapis.com"
-                ],
-           "JWT": {
+                "licensing.googleapis.com",
+                "www.googleapis.com",
+                "classroom.googleapis.com",
+                "admin.googleapis.com"
+            ],
+            "JWT": {
                 "iss": {
                     "name": "clientId"
                 },
