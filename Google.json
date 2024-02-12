@@ -1566,7 +1566,8 @@
                         },
                         "maxSessionCount": 10,
                         "query_parameters": {
-                            "customer": "my_customer"
+                            "customer": "my_customer",
+                            "roles": "MEMBER"
                         }
                     },
                     "member_add": {
@@ -1574,6 +1575,10 @@
                         "call": {
                             "mode": "normal",
                             "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
+                        },
+                        "body": {
+                            "_nim_merge_attributes_": true,
+                            "role": "MEMBER"                            
                         },
                         "authOptions": {
                             "scopes": [
@@ -1584,7 +1589,8 @@
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
                             "kind",
-                            "etag"
+                            "etag",
+                            "role"
                         ],
                         "resource_mandatory": [
                             "group_id"
@@ -1625,6 +1631,228 @@
                 "groupmembership": {
                     "add_operation": "member_add",
                     "remove_operation": "member_remove",
+                    "member_table": "users",
+                    "group_table": "groups",
+                    "member_attributes": {
+                        "id": "id",
+                        "fullName": "member_name"
+                    },
+                    "group_attributes": {
+                        "id": "group_id",
+                        "name": "group_name"
+                    }
+                },
+                "resources": {
+                    "group_id": "_nim*",
+                    "kind": "string",
+                    "etag": "etag",
+                    "id": "string*",
+                    "email": "string*",
+                    "role": "string*",
+                    "type": "string*",
+                    "status": "string*",
+                    "delivery_settings": "string*"
+                }
+            },
+            "owners": {
+                "operations": {
+                    "owners_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "groups",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
+                            "base": {
+                                "group_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "members"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
+                        "maxSessionCount": 10,
+                        "query_parameters": {
+                            "customer": "my_customer",
+                            "roles": "OWNER"
+                        }
+                    },
+                    "owner_add": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
+                        },
+                        "body": {
+                            "_nim_merge_attributes_": true,
+                            "role": "OWNER"                            
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "role"
+                        ],
+                        "resource_mandatory": [
+                            "group_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "owner_remove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "role",
+                            "type",
+                            "status",
+                            "delivery_settings"
+                        ],
+                        "resource_mandatory": [
+                            "group_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "owner_add",
+                    "remove_operation": "owner_remove",
+                    "member_table": "users",
+                    "group_table": "groups",
+                    "member_attributes": {
+                        "id": "id",
+                        "fullName": "member_name"
+                    },
+                    "group_attributes": {
+                        "id": "group_id",
+                        "name": "group_name"
+                    }
+                },
+                "resources": {
+                    "group_id": "_nim*",
+                    "kind": "string",
+                    "etag": "etag",
+                    "id": "string*",
+                    "email": "string*",
+                    "role": "string*",
+                    "type": "string*",
+                    "status": "string*",
+                    "delivery_settings": "string*"
+                }
+            },
+            "managers": {
+                "operations": {
+                    "managers_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "groups",
+                            "iterator": "id",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
+                            "base": {
+                                "group_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "members"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
+                        "maxSessionCount": 10,
+                        "query_parameters": {
+                            "customer": "my_customer",
+                            "roles": "MANAGER"
+                        }
+                    },
+                    "manager_add": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
+                        },
+                        "body": {
+                            "_nim_merge_attributes_": true,
+                            "role": "MANAGER"                            
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "role"
+                        ],
+                        "resource_mandatory": [
+                            "group_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "manager_remove": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members/{id}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.group"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "kind",
+                            "etag",
+                            "role",
+                            "type",
+                            "status",
+                            "delivery_settings"
+                        ],
+                        "resource_mandatory": [
+                            "group_id"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    }
+                },
+                "groupmembership": {
+                    "add_operation": "manager_add",
+                    "remove_operation": "manager_remove",
                     "member_table": "users",
                     "group_table": "groups",
                     "member_attributes": {
@@ -2200,7 +2428,9 @@
                     }
                 },
                 "key": "id",
-                "keyRefs":["primaryEmail"],
+                "keyRefs": [
+                    "primaryEmail"
+                ],
                 "resources": {
                     "id": "string*",
                     "primaryEmail": "string*",
