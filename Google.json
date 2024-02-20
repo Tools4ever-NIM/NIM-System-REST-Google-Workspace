@@ -699,6 +699,53 @@
                     "deprovisionReason": "string*"
                 }
             },
+            "custom_fields": {
+                "operations": {
+                    "roles_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "admin.googleapis.com/admin/directory/v1/customer/{customer_id}/schemas"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.userschema"
+                            ]
+                        },
+                        "query_parameters": {
+                            "customer": "{customer_id}"
+                        },
+                        "processing_options": {
+                            "output_field": "schemas"
+                        }
+                    }
+                },
+                "key": "schemaId",
+                "resources": {
+                    "schemaId": "string*",
+                    "schemaName": "string*",
+                    "fields": [
+                        {
+                            "fieldName": "string*",
+                            "fieldId": "string*",
+                            "fieldType": "string*",
+                            "multiValued": "boolean*",
+                            "kind": "string*",
+                            "etag": "string*",
+                            "indexed": "boolean*",
+                            "displayName": "string*",
+                            "readAccessType": "string*",
+                            "numericIndexingSpec": {
+                              "minValue": "_:number*",
+                              "maxValue": "_:number*"
+                            }
+                        }
+                    ],
+                    "displayName": "string*",
+                    "kind": "string*",
+                    "etag": "string*"
+                }
+            },
             "datatransfer_transfers": {
                 "operations": {
                     "datatransfer_transfers_get": {
