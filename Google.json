@@ -1567,7 +1567,7 @@
                         "maxSessionCount": 10,
                         "query_parameters": {
                             "customer": "my_customer",
-                            "roles": "MEMBER"
+                            "roles": "{members_roles}"
                         }
                     },
                     "member_add": {
@@ -3523,6 +3523,12 @@
                 "type": "textbox",
                 "label": "Customer ID:",
                 "value": ""
+            },
+			{
+                "name": "members_roles",
+                "type": "textbox",
+                "label": "Group Member Roles:",
+                "value": "MEMBER,OWNER,MANAGER"
             }
         ]
     }
