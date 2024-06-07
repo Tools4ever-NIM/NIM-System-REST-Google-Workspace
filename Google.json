@@ -3340,6 +3340,97 @@
                     "endTime": "string*"
                 }
             },
+            "users_photos": {
+                "operations": {
+                    "users_photos_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "users",
+                            "iterator": "id",
+                            "path": "admin.googleapis.com/admin/directory/v1/users/{iterator}/photos/thumbnail"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
+                        "maxSessionCount": 7,
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {
+                            "customer": "my_customer"
+                        },
+                        "warning_only": [
+                            404
+                        ]
+                    },
+                    "users_photos_create": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/photos/thumbnail"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "photoData"
+                        ]
+                    },
+                    "users_photos_update": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/photos/thumbnail"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "photoData"
+                        ]
+                    },
+                    "users_photos_delete": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/users/{id}/photos/thumbnail"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.user"
+                            ]
+                        },
+                        "semantics": "delete",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id"
+                        ]
+                    }
+                },
+                "resources": {
+                    "id": "string*",
+                    "primaryEmail": "string*",
+                    "kind": "string*",
+                    "etag": "string*",
+                    "photoData": "string*",
+                    "mimeType": "string*",
+                    "width": "string*",
+                    "height": "string*"
+                }
+            },
             "users_tokens": {
                 "operations": {
                     "users_tokens_get": {
