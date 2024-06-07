@@ -36,6 +36,7 @@
 - users_gmail_settings_pop
 - users_gmail_settings_sendas
 - users_gmail_settings_vacation
+- users_photos
 - users_tokens
 - users_verificationCodes
 
@@ -88,6 +89,8 @@
         * Add/Remove
     * Application Specific Passwords
         * Delete
+    * Photos
+        * Create/Update/Delete  
     * Vertification Codes
         * Create/Delete
 * Gmail
