@@ -3554,8 +3554,69 @@
             "call_handling": "google",
             "test_connection": {
                 "url": "www.googleapis.com/admin/directory/v1/users?customer=my_customer&maxResults=1"
+            },
+			"retry": [
+            {
+                "type": "connectionError",
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 1,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            }, {
+                "type": "statusCode",
+                "statusCode": 500,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 1,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            }, {
+                "type": "statusCode",
+                "statusCode": 503,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 1,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            }, {
+                "type": "statusCode",
+                "statusCode": 403,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 10,
+                    "ceiling": 60, 
+                    "timeSlice": 60000
+                },
+                "filterPath": "_reason",
+                "filterValues": ["quotaExceeded", "rateLimitExceeded"]
+            }, {
+                "type": "statusCode",
+                "statusCode": 429,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 10,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            }, {
+                "type": "statusCode",
+                "statusCode": 412,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 10,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                },
+                "filterPath": "_reason",
+                "filterValues": ["conditionNotMet"]
             }
+      ]
         },
+		
         "authOptions": {
             "scopes": [
                 "https://www.googleapis.com/auth/admin.directory.user"
