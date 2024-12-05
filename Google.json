@@ -1282,12 +1282,6 @@
                                     "skuName": "Google Workspace for Education Plus - Legacy"
                                 },
                                 {
-                                    "productId": "101031",
-                                    "productName": "Google Workspace for Education",
-                                    "skuId": "1010310003",
-                                    "skuName": "Google Workspace for Education Plus - Legacy (Student)"
-                                },
-                                {
                                     "productId": "Google-Apps",
                                     "productName": "Google Workspace",
                                     "skuId": "Google-Apps-For-Education",
@@ -1334,12 +1328,6 @@
                                     "productName": "Google Workspace for Education",
                                     "skuId": "1010370001",
                                     "skuName": "Google Workspace for Education: Teaching and Learning Upgrade"
-                                },
-                                {
-                                    "productId": "101031",
-                                    "productName": "Google Workspace for Education",
-                                    "skuId": "1010310002",
-                                    "skuName": "Google Workspace for Education Plus - Legacy"
                                 },
                                 {
                                     "productId": "101031",
