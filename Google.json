@@ -3554,9 +3554,8 @@
             "call_handling": "google",
             "test_connection": {
                 "url": "www.googleapis.com/admin/directory/v1/users?customer=my_customer&maxResults=1"
-            }
-        },
-		"retry": [
+            },
+			"retry": [
             {
                 "type": "connectionError",
                 "retry": {
@@ -3589,8 +3588,8 @@
                 "retry": {
                     "type": "exponential",
                     "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "ceiling": 60, 
+                    "timeSlice": 60000
                 },
                 "filterPath": "_reason",
                 "filterValues": ["quotaExceeded", "rateLimitExceeded"]
@@ -3615,7 +3614,9 @@
                 "filterPath": "_reason",
                 "filterValues": ["conditionNotMet"]
             }
-      ],
+      ]
+        },
+		
         "authOptions": {
             "scopes": [
                 "https://www.googleapis.com/auth/admin.directory.user"
