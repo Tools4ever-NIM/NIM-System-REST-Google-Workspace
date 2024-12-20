@@ -2256,8 +2256,7 @@
                             ]
                         },
                         "processing_options": {
-                            "output_field": "users",
-                            "customer": "my_customer"
+                            "output_field": "users"
                         },
                         "query_parameters": {
                             "customer": "my_customer",
@@ -2659,10 +2658,6 @@
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.user"
                             ]
-                        },
-                        "call_org_gout": {
-                            "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/users"
                         },
                         "maxSessionCount": 5,
                         "processing_options": {
