@@ -3370,7 +3370,7 @@
                             "output_field": null
                         },
                         "warning_only": [
-                            404
+                            404,403
                         ]
                     },
                     "users_photos_create": {
