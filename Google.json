@@ -3587,7 +3587,8 @@
                     "ceiling": 10, 
                     "timeSlice": 5
                 }
-            }, {
+            }, 
+			{
                 "type": "statusCode",
                 "statusCode": 500,
                 "retry": {
@@ -3596,7 +3597,18 @@
                     "ceiling": 10, 
                     "timeSlice": 5
                 }
-            }, {
+            }, 
+			{
+                "type": "statusCode",
+                "statusCode": 502,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 1,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            },
+			{
                 "type": "statusCode",
                 "statusCode": 503,
                 "retry": {
