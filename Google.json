@@ -1566,8 +1566,7 @@
                             "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
                         },
                         "body": {
-                            "_nim_merge_attributes_": true,
-                            "role": "MEMBER"                            
+                            "_nim_merge_attributes_": true
                         },
                         "authOptions": {
                             "scopes": [
@@ -1578,8 +1577,7 @@
                         "resource_allowance_default": "optional",
                         "resource_prohibited": [
                             "kind",
-                            "etag",
-                            "role"
+                            "etag"
                         ],
                         "resource_mandatory": [
                             "group_id"
@@ -1652,7 +1650,8 @@
                     "group_table": "groups",
                     "member_attributes": {
                         "id": "id",
-                        "fullName": "member_name"
+                        "fullName": "member_name",
+                        "role": "role"
                     },
                     "group_attributes": {
                         "id": "group_id",
