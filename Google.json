@@ -150,7 +150,6 @@
                         "processing_options": {
                             "output_field": "aliases"
                         },
-                        "query_parameters": {},
                         "maxSessionCount": 10
                     },
                     "course_aliases_create": {
@@ -221,7 +220,6 @@
                         "processing_options": {
                             "output_field": "students"
                         },
-                        "query_parameters": {},
                         "maxSessionCount": 10
                     },
                     "course_students_create": {
@@ -322,7 +320,6 @@
                         "processing_options": {
                             "output_field": "teachers"
                         },
-                        "query_parameters": {},
                         "maxSessionCount": 10
                     },
                     "course_teachers_create": {
@@ -405,7 +402,6 @@
                         "processing_options": {
                             "output_field": "invitations"
                         },
-                        "query_parameters": {},
                         "maxSessionCount": 10
                     },
                     "course_invitations_create": {
@@ -474,7 +470,6 @@
                         "processing_options": {
                             "output_field": "guardianInvitations"
                         },
-                        "query_parameters": {},
                         "maxSessionCount": 10
                     },
                     "userProfiles_guardianInvitations_create": {
@@ -520,8 +515,7 @@
                         },
                         "processing_options": {
                             "output_field": "guardians"
-                        },
-                        "query_parameters": {}
+                        }
                     },
                     "userProfiles_guardians_delete": {
                         "method": "delete",
@@ -567,16 +561,16 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos",
+                            "queryParameters": {
+                                "projection": "FULL",
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.device.chromeos"
                             ]
-                        },
-                        "query_parameters": {
-                            "projection": "FULL",
-                            "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "chromeosdevices"
@@ -713,7 +707,6 @@
                                 "https://www.googleapis.com/auth/admin.datatransfer"
                             ]
                         },
-                        "query_parameters": {},
                         "processing_options": {
                             "output_field": "dataTransfers"
                         }
@@ -761,17 +754,18 @@
                         "call": {
                             "mode": "normal",
                             "path": "www.googleapis.com/drive/v3/drives",
-                            "post_processing": "child_tables"
+                            "post_processing": "child_tables",
+                            "queryParameters": {
+                                "useDomainAdminAccess": true,
+                                "fields": "*"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/drive"
                             ]
                         },
-                        "query_parameters": {
-                            "useDomainAdminAccess": true,
-                            "fields": "*"
-                        },
+                        
                         "processing_options": {
                             "output_field": "drives"
                         }
@@ -863,16 +857,17 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/groups"
+                            "path": "www.googleapis.com/admin/directory/v1/groups",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.group"
                             ]
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         }
+                        
                     },
                     "group_create": {
                         "method": "post",
@@ -991,6 +986,10 @@
                             "path": "www.googleapis.com/groups/v1/groups/{iterator}",
                             "base": {
                                 "group_email": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "alt": "json",
+                                "customer": "my_customer"
                             }
                         },
                         "authOptions": {
@@ -1001,11 +1000,8 @@
                         "maxSessionCount": 5,
                         "processing_options": {
                             "output_field": null
-                        },
-                        "query_parameters": {
-                            "alt": "json",
-                            "customer": "my_customer"
                         }
+                        
                     },
                     "group_settings_update": {
                         "method": "put",
@@ -1133,6 +1129,9 @@
                             "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/aliases",
                             "base": {
                                 "group_id": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "customer": "my_customer"
                             }
                         },
                         "authOptions": {
@@ -1143,9 +1142,6 @@
                         "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "aliases"
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         }
                     },
                     "group_alias_create": {
@@ -1451,6 +1447,9 @@
                             "path": "licensing.googleapis.com/apps/licensing/v1/product/{productId}/sku/{iterator}/users",
                             "base": {
                                 "skuId": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "customerId": "{customer_id}"
                             }
                         },
                         "authOptions": {
@@ -1461,9 +1460,6 @@
                         "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "items"
-                        },
-                        "query_parameters": {
-                            "customerId": "{customer_id}"
                         }
                     },
                     "license_assignment_create": {
@@ -1546,6 +1542,10 @@
                             "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
                             "base": {
                                 "group_id": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "customer": "my_customer",
+                                "roles": "{members_roles}"
                             }
                         },
                         "authOptions": {
@@ -1553,11 +1553,7 @@
                                 "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
-                        "maxSessionCount": 10,
-                        "query_parameters": {
-                            "customer": "my_customer",
-                            "roles": "{members_roles}"
-                        }
+                        "maxSessionCount": 10
                     },
                     "member_add": {
                         "method": "post",
@@ -1566,7 +1562,7 @@
                             "path": "www.googleapis.com/admin/directory/v1/groups/{group_id}/members"
                         },
                         "body": {
-                            "_nim_merge_attributes_": true
+                            "_nim_merge_attributes_": true                          
                         },
                         "authOptions": {
                             "scopes": [
@@ -1681,6 +1677,10 @@
                             "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
                             "base": {
                                 "group_id": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "customer": "my_customer",
+                                "roles": "OWNER"
                             }
                         },
                         "processing_options": {
@@ -1691,11 +1691,7 @@
                                 "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
-                        "maxSessionCount": 10,
-                        "query_parameters": {
-                            "customer": "my_customer",
-                            "roles": "OWNER"
-                        }
+                        "maxSessionCount": 10
                     },
                     "owner_add": {
                         "method": "post",
@@ -1792,6 +1788,10 @@
                             "path": "www.googleapis.com/admin/directory/v1/groups/{iterator}/members",
                             "base": {
                                 "group_id": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "customer": "my_customer",
+                                "roles": "MANAGER"
                             }
                         },
                         "processing_options": {
@@ -1802,11 +1802,7 @@
                                 "https://www.googleapis.com/auth/admin.directory.group"
                             ]
                         },
-                        "maxSessionCount": 10,
-                        "query_parameters": {
-                            "customer": "my_customer",
-                            "roles": "MANAGER"
-                        }
+                        "maxSessionCount": 10
                     },
                     "manager_add": {
                         "method": "post",
@@ -1898,16 +1894,16 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/mobile",
+                            "queryParameters": {
+                                "projection": "FULL",
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.device.mobile"
                             ]
-                        },
-                        "query_parameters": {
-                            "projection": "FULL",
-                            "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "mobiledevices"
@@ -1997,16 +1993,16 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/orgunits",
+                            "queryParameters": {
+                                "type": "ALL",
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.orgunit"
                             ]
-                        },
-                        "query_parameters": {
-                            "type": "ALL",
-                            "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "organizationUnits"
@@ -2093,15 +2089,15 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roles/ALL/privileges"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roles/ALL/privileges",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.rolemanagement"
                             ]
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "items"
@@ -2124,15 +2120,15 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roles"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roles",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.rolemanagement"
                             ]
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "items"
@@ -2203,15 +2199,15 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments"
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/roleassignments",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
                                 "https://www.googleapis.com/auth/admin.directory.rolemanagement"
                             ]
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         },
                         "processing_options": {
                             "output_field": "items"
@@ -2247,7 +2243,11 @@
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "www.googleapis.com/admin/directory/v1/users"
+                            "path": "www.googleapis.com/admin/directory/v1/users",
+                            "queryParameters": {
+                                "customer": "my_customer",
+                                "projection": "FULL"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
@@ -2256,10 +2256,6 @@
                         },
                         "processing_options": {
                             "output_field": "users"
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer",
-                            "projection": "FULL"
                         }
                     },
                     "user_create": {
@@ -2651,6 +2647,9 @@
                             "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/aliases",
                             "base": {
                                 "user_id": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "customer": "my_customer"
                             }
                         },
                         "authOptions": {
@@ -2661,9 +2660,6 @@
                         "maxSessionCount": 5,
                         "processing_options": {
                             "output_field": "aliases"
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         }
                     },
                     "user_alias_create": {
@@ -2722,7 +2718,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/asps"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/asps",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
@@ -2732,9 +2731,6 @@
                         "maxSessionCount": 7,
                         "processing_options": {
                             "output_field": "items"
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         }
                     },
                     "users_asps_delete": {
@@ -3358,7 +3354,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "admin.googleapis.com/admin/directory/v1/users/{iterator}/photos/thumbnail"
+                            "path": "admin.googleapis.com/admin/directory/v1/users/{iterator}/photos/thumbnail",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
@@ -3368,9 +3367,6 @@
                         "maxSessionCount": 7,
                         "processing_options": {
                             "output_field": null
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         },
                         "warning_only": [
                             404,403
@@ -3449,7 +3445,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/tokens"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/tokens",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
@@ -3459,9 +3458,6 @@
                         "maxSessionCount": 7,
                         "processing_options": {
                             "output_field": "items"
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         }
                     },
                     "users_tokens_delete": {
@@ -3503,7 +3499,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
-                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/verificationCodes"
+                            "path": "www.googleapis.com/admin/directory/v1/users/{iterator}/verificationCodes",
+                            "queryParameters": {
+                                "customer": "my_customer"
+                            }
                         },
                         "authOptions": {
                             "scopes": [
@@ -3513,9 +3512,6 @@
                         "maxSessionCount": 6,
                         "processing_options": {
                             "output_field": "items"
-                        },
-                        "query_parameters": {
-                            "customer": "my_customer"
                         }
                     },
                     "users_verificationCodes_create": {
@@ -3569,8 +3565,7 @@
         "config": {
             "baseUrl": "https://",
             "get": {
-                "maxPageCount": -1,
-                "query_parameters": {}
+                "maxPageCount": -1
             },
             "authentication": "certificate",
             "call_handling": "google",
@@ -3608,6 +3603,15 @@
                 }
             },
 			{
+                "type": "statusCode",
+                "statusCode": 502,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 1,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            },{
                 "type": "statusCode",
                 "statusCode": 503,
                 "retry": {
@@ -3697,13 +3701,25 @@
                 "name": "customer_id",
                 "type": "textbox",
                 "label": "Customer ID:",
-                "value": ""
+                "value": "",
+                "tooltip": "Required when using license_assignments",
+                "order": 31
+            },
+            {
+                "type": "text",
+                "name": "header_memberships",
+                "label": "Membership options",
+                "text": "",
+                "order": 300
             },
 			{
                 "name": "members_roles",
                 "type": "textbox",
                 "label": "Group Member Roles:",
-                "value": "MEMBER,OWNER,MANAGER"
+                "value": "MEMBER,OWNER,MANAGER",
+                "tooltip": "Provides a way to limit the members table to only member types. Useful if implementing managers and owners separately in the role model. If there is no need to control them separately, then leave default value of MEMBER,OWNER,MANAGER",
+                "order": 301,
+                "label_indent": true
             }
         ]
     },
