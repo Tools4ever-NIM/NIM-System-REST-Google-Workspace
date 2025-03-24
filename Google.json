@@ -1648,7 +1648,6 @@
                         "id": "id",
                         "fullName": "member_name",
                         "role": "role"
-
                     },
                     "group_attributes": {
                         "id": "group_id",
@@ -3578,36 +3577,48 @@
                 "type": "connectionError",
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 1,
+                    "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 5
+                    "timeSlice": 10000
                 }
-            }, {
+            }, 
+			{
                 "type": "statusCode",
                 "statusCode": 500,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 1,
+                    "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 5
+                    "timeSlice": 10000
                 }
-            }, {
+            }, 
+			{
                 "type": "statusCode",
                 "statusCode": 502,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 1,
+                    "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 5
+                    "timeSlice": 10000
+                }
+            },
+			{
+                "type": "statusCode",
+                "statusCode": 502,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 10,
+                    "ceiling": 10, 
+                    "timeSlice": 10000
                 }
             },{
                 "type": "statusCode",
                 "statusCode": 503,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 1,
+                    "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 5
+                    "timeSlice": 10000
                 }
             }, {
                 "type": "statusCode",
@@ -3616,7 +3627,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 60, 
-                    "timeSlice": 60000
+                    "timeSlice": 10000
                 },
                 "filterPath": "_reason",
                 "filterValues": ["quotaExceeded", "rateLimitExceeded"]
@@ -3627,7 +3638,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 5
+                    "timeSlice": 10000
                 }
             }, {
                 "type": "statusCode",
@@ -3636,7 +3647,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 5
+                    "timeSlice": 10000
                 },
                 "filterPath": "_reason",
                 "filterValues": ["conditionNotMet"]
