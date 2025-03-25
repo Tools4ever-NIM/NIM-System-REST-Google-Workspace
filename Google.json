@@ -3579,7 +3579,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 }
             }, 
 			{
@@ -3589,7 +3589,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 }
             }, 
 			{
@@ -3599,7 +3599,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 }
             },
 			{
@@ -3609,7 +3609,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 }
             },{
                 "type": "statusCode",
@@ -3618,7 +3618,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 }
             }, {
                 "type": "statusCode",
@@ -3638,7 +3638,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 }
             }, {
                 "type": "statusCode",
@@ -3647,7 +3647,7 @@
                     "type": "exponential",
                     "maxCount": 10,
                     "ceiling": 10, 
-                    "timeSlice": 10000
+                    "timeSlice": 5
                 },
                 "filterPath": "_reason",
                 "filterValues": ["conditionNotMet"]
