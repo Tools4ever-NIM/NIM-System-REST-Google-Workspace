@@ -1242,10 +1242,28 @@
                                     "skuName": "Google Workspace Enterprise Plus (formerly G Suite Enterprise)"
                                 },
                                 {
+                                    "productId": "101006",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010060001",
+                                    "skuName": "Google Workspace Essentials (formerly G Suite Essentials)"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010060005",
+                                    "skuName": "Google Workspace Enterprise Essentials Plus"
+                                },
+                                {
                                     "productId": "Google-Apps",
                                     "productName": "Google Workspace",
                                     "skuId": "1010020030",
-                                    "skuName": "Google Workspace Frontline"
+                                    "skuName": "Google Workspace Frontline Starter"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010020031",
+                                    "skuName": "Google Workspace Frontline Standard"
                                 },
                                 {
                                     "productId": "Google-Apps",
@@ -1272,16 +1290,28 @@
                                     "skuName": "Google Apps Message Security"
                                 },
                                 {
-                                    "productId": "101031",
-                                    "productName": "Google Workspace for Education",
-                                    "skuId": "1010310002",
-                                    "skuName": "Google Workspace for Education Plus - Legacy"
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "Google-Apps-For-Education",
+                                    "skuName": "Google Workspace for Education - Fundamentals"
                                 },
                                 {
                                     "productId": "Google-Apps",
                                     "productName": "Google Workspace",
-                                    "skuId": "Google-Apps-For-Education",
+                                    "skuId": "1010070001",
                                     "skuName": "Google Workspace for Education Fundamentals"
+                                },
+                                {
+                                    "productId": "Google-Apps",
+                                    "productName": "Google Workspace",
+                                    "skuId": "1010070004",
+                                    "skuName": "Google Workspace for Education Gmail Only"
+                                },
+                                {
+                                    "productId": "101034",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010340007",
+                                    "skuName": "Google Workspace for Education Fundamentals - Archived User"
                                 },
                                 {
                                     "productId": "101031",
@@ -1326,10 +1356,46 @@
                                     "skuName": "Google Workspace for Education: Teaching and Learning Upgrade"
                                 },
                                 {
+                                    "productId": "101047",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010470004",
+                                    "skuName": "Gemini Education"
+                                },
+                                {
+                                    "productId": "101047",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010470005",
+                                    "skuName": "Gemini Education Premium"
+                                },
+                                {
+                                    "productId": "101031",
+                                    "productName": "Google Workspace for Education",
+                                    "skuId": "1010310002",
+                                    "skuName": "Google Workspace for Education Plus - Legacy"
+                                },
+                                {
                                     "productId": "101031",
                                     "productName": "Google Workspace for Education",
                                     "skuId": "1010310003",
                                     "skuName": "Google Workspace for Education Plus - Legacy (Student)"
+                                },
+                                {
+                                    "productId": "101038",
+                                    "productName": "AppSheet",
+                                    "skuId": "1010380001",
+                                    "skuName": "AppSheet Core"
+                                },
+                                {
+                                    "productId": "101038",
+                                    "productName": "AppSheet",
+                                    "skuId": "1010380002",
+                                    "skuName": "AppSheet Enterprise Standard"
+                                },
+                                {
+                                    "productId": "101038",
+                                    "productName": "AppSheet",
+                                    "skuId": "1010380003",
+                                    "skuName": "AppSheet Enterprise Plus"
                                 },
                                 {
                                     "productId": "Google-Vault",
