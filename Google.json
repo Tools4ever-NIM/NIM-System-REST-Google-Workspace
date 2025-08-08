@@ -3650,6 +3650,16 @@
             }, 
 			{
                 "type": "statusCode",
+                "statusCode": 0,
+                "retry": {
+                    "type": "exponential",
+                    "maxCount": 10,
+                    "ceiling": 10, 
+                    "timeSlice": 5
+                }
+            }, 
+			{
+                "type": "statusCode",
                 "statusCode": 500,
                 "retry": {
                     "type": "exponential",
