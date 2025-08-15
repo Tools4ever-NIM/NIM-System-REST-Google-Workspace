@@ -11,7 +11,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses.readonly"
                             ]
                         },
                         "processing_options": {
@@ -144,7 +144,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.courses"
+                                "https://www.googleapis.com/auth/classroom.courses.readonly"
                             ]
                         },
                         "processing_options": {
@@ -214,7 +214,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters.readonly"
                             ]
                         },
                         "processing_options": {
@@ -314,7 +314,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters.readonly"
                             ]
                         },
                         "processing_options": {
@@ -330,7 +330,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters.readonly"
                             ]
                         },
                         "semantics": "create",
@@ -396,7 +396,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.rosters"
+                                "https://www.googleapis.com/auth/classroom.rosters.readonly"
                             ]
                         },
                         "processing_options": {
@@ -464,7 +464,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly"
                             ]
                         },
                         "processing_options": {
@@ -510,7 +510,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/classroom.guardianlinks.students"
+                                "https://www.googleapis.com/auth/classroom.guardianlinks.students.readonly"
                             ]
                         },
                         "processing_options": {
@@ -569,7 +569,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.device.chromeos"
+                                "https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly"
                             ]
                         },
                         "processing_options": {
@@ -704,7 +704,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.datatransfer"
+                                "https://www.googleapis.com/auth/admin.datatransfer.readonly"
                             ]
                         },
                         "processing_options": {
@@ -762,7 +762,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/drive"
+                                "https://www.googleapis.com/auth/drive.readonly"
                             ]
                         },
                         
@@ -864,7 +864,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         }
                         
@@ -1136,7 +1136,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         },
                         "maxSessionCount": 10,
@@ -1616,7 +1616,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         },
                         "maxSessionCount": 10
@@ -1754,7 +1754,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         },
                         "maxSessionCount": 10
@@ -1865,7 +1865,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.group"
+                                "https://www.googleapis.com/auth/admin.directory.group.readonly"
                             ]
                         },
                         "maxSessionCount": 10
@@ -1968,7 +1968,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.device.mobile"
+                                "https://www.googleapis.com/auth/admin.directory.device.mobile.readonly"
                             ]
                         },
                         "processing_options": {
@@ -2067,7 +2067,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.orgunit"
+                                "https://www.googleapis.com/auth/admin.directory.orgunit.readonly"
                             ]
                         },
                         "processing_options": {
@@ -2317,7 +2317,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user"
+                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
                             ]
                         },
                         "processing_options": {
@@ -2720,7 +2720,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user"
+                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
                             ]
                         },
                         "maxSessionCount": 5,
@@ -3427,7 +3427,7 @@
                         },
                         "authOptions": {
                             "scopes": [
-                                "https://www.googleapis.com/auth/admin.directory.user"
+                                "https://www.googleapis.com/auth/admin.directory.user.readonly"
                             ]
                         },
                         "maxSessionCount": 7,
@@ -3643,9 +3643,9 @@
                 "type": "connectionError",
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 1,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 5, 
+                    "timeSlice": 1000
                 }
             }, 
 			{
@@ -3653,9 +3653,9 @@
                 "statusCode": 0,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 5, 
+                    "timeSlice": 1000
                 }
             }, 
 			{
@@ -3663,9 +3663,9 @@
                 "statusCode": 500,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 5, 
+                    "timeSlice": 1000
                 }
             }, 
 			{
@@ -3673,27 +3673,27 @@
                 "statusCode": 502,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 5, 
+                    "timeSlice": 1000
                 }
             },{
                 "type": "statusCode",
                 "statusCode": 503,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 5, 
+                    "timeSlice": 1000
                 }
             }, {
                 "type": "statusCode",
                 "statusCode": 403,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 60, 
-                    "timeSlice": 60000
+                    "maxCount": 7,
+                    "ceiling": 3, 
+                    "timeSlice": 5000
                 },
                 "filterPath": "_reason",
                 "filterValues": ["quotaExceeded", "rateLimitExceeded"]
@@ -3702,18 +3702,18 @@
                 "statusCode": 429,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 3, 
+                    "timeSlice": 5000
                 }
             }, {
                 "type": "statusCode",
                 "statusCode": 412,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 10,
-                    "ceiling": 10, 
-                    "timeSlice": 5
+                    "maxCount": 7,
+                    "ceiling": 5, 
+                    "timeSlice": 1000
                 },
                 "filterPath": "_reason",
                 "filterValues": ["conditionNotMet"]
