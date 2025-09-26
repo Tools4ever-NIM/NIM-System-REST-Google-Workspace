@@ -2696,7 +2696,7 @@
                     ],
                     "gender": {
                         "addressMeAs": "_:string*",
-                        "customGener": "_:string*",
+                        "customGender": "_:string*",
                         "type": "_:string*"
                     },
                     "alias": "string"
@@ -4386,7 +4386,7 @@
               "ref_col_fields": []
             },
             {
-              "field_name": "gender_customGener",
+              "field_name": "gender_customGender",
               "field_type": "string",
               "include": true,
               "field_format": "",
@@ -4532,7 +4532,7 @@
                 "notes_contentType",
                 "notes_value",
                 "gender_addressMeAs",
-                "gender_customGener",
+                "gender_customGender",
                 "gender_type",
                 "customSchemas_Tools4ever_ID",
                 "customSchemas_Tools4ever_Type",
