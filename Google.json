@@ -693,6 +693,39 @@
                     "deprovisionReason": "string*"
                 }
             },
+            "datatransfer_applications": {
+                "operations": {
+                    "datatransfer_applications_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "admin.googleapis.com/admin/datatransfer/v1/applications",
+                            "post_processing": "child_tables"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.datatransfer"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "applications"
+                        }
+                    }
+                },
+                "key": "id",
+                "resources": {
+                    "id": "string*",
+                    "name": "string*",
+                    "transferParams": [
+                        {
+                            "key": "string*",
+                            "value": "string*"
+                        }
+                    ],
+                    "kind": "string*",
+                    "etag": "string*"
+                }
+            },
             "datatransfer_transfers": {
                 "operations": {
                     "datatransfer_transfers_get": {
@@ -725,6 +758,62 @@
                         "semantics": "create",
                         "resource_allowance_default": "prohibited",
                         "resource_prohibited": [],
+                        "resource_mandatory": [
+                            "oldOwnerUserId",
+                            "newOwnerUserId"
+                        ]
+                    },
+                    "datatransfer_transfers_create_drive_only": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "admin.googleapis.com/admin/datatransfer/v1/transfers"
+                        },
+                        "body": {
+                            "_nim_merge_attributes_": true,
+                            "applicationDataTransfers": [
+                            {
+                              "applicationId": "55656082996"
+                            }
+                            ]
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.datatransfer"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "oldOwnerUserId",
+                            "newOwnerUserId"
+                        ]
+                    },
+                    "datatransfer_transfers_create_calendar_only": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "admin.googleapis.com/admin/datatransfer/v1/transfers"
+                        },
+                        "body": {
+                            "_nim_merge_attributes_": true,
+                            "applicationDataTransfers": [
+                            {
+                              "applicationId": "435070579839"
+                            }
+                            ]
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.datatransfer"
+                            ]
+                        },
+                        "semantics": "create",
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
                         "resource_mandatory": [
                             "oldOwnerUserId",
                             "newOwnerUserId"
@@ -1571,7 +1660,7 @@
                         "warning_only": [
                             409,
                             412,
-			    404
+                404
                         ]
                     }
                 },
@@ -1648,7 +1737,7 @@
                             409
                         ]
                     },
-					"member_update": {
+                    "member_update": {
                         "method": "put",
                         "call": {
                             "mode": "normal",
@@ -3638,7 +3727,7 @@
             "test_connection": {
                 "url": "www.googleapis.com/admin/directory/v1/users?customer=my_customer&maxResults=1"
             },
-			"retry": [
+            "retry": [
             {
                 "type": "connectionError",
                 "retry": {
@@ -3648,7 +3737,7 @@
                     "timeSlice": 1000
                 }
             }, 
-			{
+            {
                 "type": "statusCode",
                 "statusCode": 0,
                 "retry": {
@@ -3658,7 +3747,7 @@
                     "timeSlice": 1000
                 }
             }, 
-			{
+            {
                 "type": "statusCode",
                 "statusCode": 500,
                 "retry": {
@@ -3668,7 +3757,7 @@
                     "timeSlice": 1000
                 }
             }, 
-			{
+            {
                 "type": "statusCode",
                 "statusCode": 502,
                 "retry": {
@@ -3720,7 +3809,7 @@
             }
       ]
         },
-		
+        
         "authOptions": {
             "scopes": [
                 "https://www.googleapis.com/auth/admin.directory.user"
@@ -3778,7 +3867,7 @@
                 "text": "",
                 "order": 300
             },
-			{
+            {
                 "name": "members_roles",
                 "type": "textbox",
                 "label": "Group Member Roles:",
@@ -3789,7 +3878,7 @@
             }
         ]
     },
-	"config_scenarios": [
+    "config_scenarios": [
     {
       "name": "Default",
       "description": "",
