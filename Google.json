@@ -596,6 +596,75 @@
                         "resource_mandatory": [
                             "deviceId"
                         ]
+                    },
+                    "chromeosdevice_action_update": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/admin/directory/v1/customer/my_customer/devices/chromeos/{deviceId}/action"
+                        },
+                        "removeBlankFields": true,
+                        "body": {
+                            "_nim_merge_attributes_": false,
+                            "action": "{status}",
+                            "deprovisionReason": "{deprovisionReason}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/admin.directory.device.chromeos"
+                            ]
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "serialNumber",
+                            "lastSync",
+                            "supportEndDate",
+                            "annotatedUser",
+                            "annotatedLocation",
+                            "notes",
+                            "model",
+                            "meid",
+                            "orderNumber",
+                            "willAutoRenew",
+                            "osVersion",
+                            "platformVersion",
+                            "firmwareVersion",
+                            "macAddress",
+                            "bootMode",
+                            "lastEnrollmentTime",
+                            "kind",
+                            "recentUsers",
+                            "activeTimeRanges",
+                            "ethernetMacAddress",
+                            "annotatedAssetId",
+                            "etag",
+                            "systemRamTotal",
+                            "cpuInfo",
+                            "deviceFiles",
+                            "systemRamFreeReports",
+                            "lastKnownNetwork",
+                            "autoUpdateExpiration",
+                            "ethernetMacAddress0",
+                            "dockMacAddress",
+                            "manufactureDate",
+                            "orgUnitPath",
+                            "tpmVersionInfo",
+                            "screenshotFiles",
+                            "orgUnitId",
+                            "osUpdateStatus",
+                            "firstEnrollmentTime",
+                            "lastDeprovisionTimestamp",
+                            "family",
+                            "manufacturer",
+                            "specLevel",
+                            "tpmModel",
+                            "vendorSpecific"
+                        ],
+                        "resource_mandatory": [
+                            "deviceId",
+                            "status"
+                        ]
                     }
                 },
                 "key": "deviceId",
