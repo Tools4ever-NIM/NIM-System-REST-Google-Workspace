@@ -28,8 +28,11 @@
 - users
 - users_aliases
 - users_asps
+- users_gmail_labels
+- users_gmail_profiles
 - users_gmail_settings_autoforwarding
 - users_gmail_settings_delegates
+- users_gmail_settings_filters
 - users_gmail_settings_forwardingAddresses
 - users_gmail_settings_imap
 - users_gmail_settings_language
@@ -98,10 +101,14 @@
         * Update
     * Delegates
         * Create/Delete
+    * Filters
+        * Create/Delete  
     * Forwarding Address
         * Create/Delete
     * IMAP
         * Update
+    * Labels
+        * Create/Update/Delete 
     * POP
         * Update
     * Send As
