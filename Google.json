@@ -3006,7 +3006,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "labels"
                         },
@@ -3130,7 +3130,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": null
                         },
@@ -3170,7 +3170,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": null
                         },
@@ -3229,12 +3229,13 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "delegates"
                         },
                         "warning_only": [
                             400,
+                            403,
                             204
                         ]
                     },
@@ -3254,7 +3255,7 @@
                         },
                         "semantics": "create",
                         "resource_allowance_default": "optional",
-                        "resource_prohibited": [],
+                        "resource_prohibited": ["verificationStatus"],
                         "resource_mandatory": [
                             "user_id"
                         ],
@@ -3278,7 +3279,7 @@
                         },
                         "semantics": "delete",
                         "resource_allowance_default": "optional",
-                        "resource_prohibited": [],
+                        "resource_prohibited": ["verificationStatus"],
                         "resource_mandatory": [
                             "user_id"
                         ]
@@ -3312,7 +3313,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "filter"
                         },
@@ -3408,7 +3409,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "forwardingAddresses"
                         },
@@ -3490,7 +3491,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": null
                         },
@@ -3550,7 +3551,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": null
                         },
@@ -3607,7 +3608,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": null
                         },
@@ -3665,7 +3666,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": "sendAs"
                         },
@@ -3787,7 +3788,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 40,
+                        "maxSessionCount": 10,
                         "processing_options": {
                             "output_field": null
                         },
