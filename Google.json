@@ -3229,7 +3229,7 @@
                                 "sub": "{iterator}"
                             }
                         },
-                        "maxSessionCount": 10,
+                        "maxSessionCount": 5,
                         "processing_options": {
                             "output_field": "delegates"
                         },
@@ -4121,8 +4121,8 @@
                 "statusCode": 429,
                 "retry": {
                     "type": "exponential",
-                    "maxCount": 7,
-                    "ceiling": 3, 
+                    "maxCount": 12,
+                    "ceiling": 7, 
                     "timeSlice": 5000
                 }
             }, {
