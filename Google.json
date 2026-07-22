@@ -2576,6 +2576,52 @@
                             "alias"
                         ]
                     },
+                    "user_gmail_settings_delegate_create_uncached": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{id}/settings/delegates"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{id:no_encode}"
+                            }
+                        },
+                        "body": {
+                            "delegateEmail": "{primaryEmail}"
+                        },
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "primaryEmail"
+                        ],
+                        "warning_only": [
+                            409
+                        ]
+                    },
+                    "user_gmail_settings_delegate_delete_uncached": {
+                        "method": "delete",
+                        "call": {
+                            "mode": "normal",
+                            "path": "www.googleapis.com/gmail/v1/users/{id}/settings/delegates/{primaryEmail}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                                "https://www.googleapis.com/auth/gmail.settings.sharing"
+                            ],
+                            "JWT": {
+                                "sub": "{id:no_encode}"
+                            }
+                        },
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "id",
+                            "primaryEmail"
+                        ]
+                    },
                     "user_update_turnOfftwoStepVerification": {
                         "method": "post",
                         "call": {
@@ -3288,7 +3334,7 @@
                 "key": "user_id",
                 "resources": {
                     "user_id": "_nim*",
-                    "delegateEmail": "boolean*",
+                    "delegateEmail": "string*",
                     "verificationStatus": "string*"
                 }
             },
