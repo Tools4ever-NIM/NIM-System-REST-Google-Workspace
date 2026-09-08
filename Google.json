@@ -3039,6 +3039,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/labels",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3163,6 +3167,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/profile",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3203,6 +3211,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/autoForwarding",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3262,6 +3274,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/delegates",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3346,6 +3362,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/filters",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3442,6 +3462,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/forwardingAddresses",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3524,6 +3548,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/imap",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3584,6 +3612,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/language",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3641,6 +3673,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/pop",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3699,6 +3735,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/sendAs",
                             "base": {
                                 "user_id": "{iterator}"
@@ -3821,6 +3861,10 @@
                             "mode": "iteration",
                             "table": "users",
                             "iterator": "id",
+                            "filter": {
+                                "attribute": "isMailboxSetup",
+                                "operation": "truthy"
+                            },
                             "path": "www.googleapis.com/gmail/v1/users/{iterator}/settings/vacation",
                             "base": {
                                 "user_id": "{iterator}"
@@ -4251,6 +4295,14 @@
                 "tooltip": "Provides a way to limit the members table to only member types. Useful if implementing managers and owners separately in the role model. If there is no need to control them separately, then leave default value of MEMBER,OWNER,MANAGER",
                 "order": 301,
                 "label_indent": true
+            },
+            {
+                "name": "custom_schema",
+                "type": "schema_upload",
+                "label": "Custom Schema:",
+                "value": "",
+                "tooltip": "Upload a custom schema",
+                "order": 302
             }
         ]
     },
