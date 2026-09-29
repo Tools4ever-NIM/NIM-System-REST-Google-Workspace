@@ -1,4 +1,7 @@
 # Google Workspace
+
+Read the [Google Workspace integration documentation](https://docs.nimsuite.com/en/integrations/google-workspace) for connector details and related guides.
+
 <img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Google-Workspace/assets/24281600/c2d03c50-1e52-4770-816c-418cbe7f67e3" width="256px" />
 
 
